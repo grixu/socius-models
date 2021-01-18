@@ -10,14 +10,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property int xl_id
- * @property int warehouse_id
- * @property int product_id
+ * @property \Illuminate\Support\Carbon syncTs
+ * @property int xlId
+ * @property int warehouseId
+ * @property int productId
  * @property int id
  * @property float amount
- * @property \Illuminate\Support\Carbon updated_at
- * @property \Illuminate\Support\Carbon reception_date
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property \Illuminate\Support\Carbon receptionDate
  * @property Warehouse warehouse
  * @property Product product
  */
@@ -25,35 +25,38 @@ class Stock extends Model
 {
     use HasFactory;
 
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+
     public $timestamps = false;
 
     protected $casts = [
         'amount' => 'double',
-        'xl_id' => 'string',
+        'xlId' => 'string',
     ];
 
     protected $dates = [
-        'reception_date',
-        'sync_ts',
-        'updated_at',
+        'receptionDate',
+        'syncTs',
+        'updatedAt',
     ];
 
     protected $fillable = [
         'amount',
-        'reception_date',
-        'warehouse_id',
-        'product_id',
-        'xl_id',
-        'sync_ts',
-        'created_at',
-        'updated_at',
+        'receptionDate',
+        'warehouseId',
+        'productId',
+        'xlId',
+        'syncTs',
+        'createdAt',
+        'updatedAt',
     ];
 
     public function warehouse(): BelongsTo
     {
         return $this->belongsTo(
             Warehouse::class,
-            'warehouse_id',
+            'warehouseId',
             'id'
         );
     }
@@ -63,7 +66,7 @@ class Stock extends Model
         if (Schema::hasTable('products')) {
             return $this->belongsTo(
                 Product::class,
-                'product_id',
+                'productId',
                 'id'
             );
         }

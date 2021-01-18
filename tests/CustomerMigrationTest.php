@@ -27,6 +27,6 @@ class CustomerMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'operator_id'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'operatorId'));
     }
 }

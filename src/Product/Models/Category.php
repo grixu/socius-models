@@ -9,17 +9,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property int parent_id
+ * @property int parentId
  * @property int id
- * @property int xl_id
+ * @property int xlId
  * @property string name
  * @property Category parent
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
+ * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon updatedAt
  */
 class Category extends Model
 {
     use HasFactory;
+
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 
     public $timestamps = false;
 
@@ -28,23 +31,23 @@ class Category extends Model
     ];
 
      protected $dates = [
-        'sync_ts',
-        'updated_at'
+        'syncTs',
+        'updatedAt'
     ];
 
     protected $fillable = [
         'name',
-        'xl_id',
-        'sync_ts',
-        'created_at',
-        'updated_at',
+        'xlId',
+        'syncTs',
+        'createdAt',
+        'updatedAt',
     ];
 
     public function parent(): BelongsTo
     {
         return $this->belongsTo(
             self::class,
-            'parent_id',
+            'parentId',
             'id'
         );
     }
@@ -53,7 +56,7 @@ class Category extends Model
     {
         return $this->hasMany(
             self::class,
-            'parent_id',
+            'parentId',
             'id'
         );
     }

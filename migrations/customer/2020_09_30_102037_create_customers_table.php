@@ -12,25 +12,26 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('country');
-            $table->string('postal_code');
+            $table->string('postalCode');
             $table->string('city');
-            $table->string('vat_number');
+            $table->string('vatNumber');
             $table->string('street');
             $table->string('voivodeship');
             $table->string('district');
             $table->string('phone1')->nullable();
             $table->string('phone2')->nullable();
             $table->string('email')->nullable();
-            $table->unsignedInteger('payment_period');
-            $table->unsignedBigInteger('xl_id');
-            $table->dateTime('sync_ts');
+            $table->unsignedInteger('paymentPeriod');
+            $table->unsignedBigInteger('xlId');
+            $table->dateTime('syncTs');
             if (Schema::hasTable('operators')) {
-                $table->foreignId('operator_id')->nullable()->constrained()->nullOnDelete();
+                $table->foreignId('operatorId')->nullable()->constrained()->nullOnDelete();
             }
             if (!empty(config('socius-models.md5_local_model_field'))) {
                 $table->string(config('socius-models.md5_local_model_field'))->nullable();
             }
-            $table->timestamps();
+            $table->timestamp('createdAt', 0)->nullable();
+            $table->timestamp('updatedAt', 0)->nullable();
         });
     }
 

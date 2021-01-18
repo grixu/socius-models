@@ -8,34 +8,37 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
- * @property int xl_id
+ * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property int xlId
  * @property string name
  */
 class Branch extends Model
 {
     use HasFactory;
 
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+
     public $timestamps = false;
     public $incrementing = true;
 
     protected $dates = [
-        'sync_ts',
-        'updated_at'
+        'syncTs',
+        'updatedAt'
     ];
 
     protected $fillable = [
         'name',
-        'sync_ts',
-        'xl_id',
-        'created_at',
-        'updated_at',
+        'syncTs',
+        'xlId',
+        'createdAt',
+        'updatedAt',
     ];
 
     protected $casts = [
         'name' => 'string',
-        'xl_id' => 'integer',
+        'xlId' => 'integer',
     ];
 
     public function operators(): BelongsToMany
@@ -43,8 +46,8 @@ class Branch extends Model
         return $this->belongsToMany(
             Operator::class,
             'operator_branch',
-            'branch_id',
-            'operator_id'
+            'branchId',
+            'operatorId'
         )
             ->withTimestamps()
             ->using(OperatorBranch::class);

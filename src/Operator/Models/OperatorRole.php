@@ -8,40 +8,43 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property \Illuminate\Support\Carbon updated_at
+ * @property \Illuminate\Support\Carbon updatedAt
  * @property string name
- * @property int xl_id
+ * @property int xlId
  * @property int id
- * @property int operator_role_id
+ * @property int operatorRoleId
  */
 class OperatorRole extends Model
 {
     use HasFactory;
 
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+
     public $timestamps = false;
     public $incrementing = true;
 
     protected $dates = [
-        'updated_at'
+        'updatedAt'
     ];
 
     protected $fillable = [
         'name',
-        'xl_id',
-        'created_at',
-        'updated_at',
+        'xlId',
+        'createdAt',
+        'updatedAt',
     ];
 
     protected $casts = [
         'name' => 'string',
-        'xl_id' => 'integer',
+        'xlId' => 'integer',
     ];
 
     public function operators(): HasMany
     {
         return $this->hasMany(
             Operator::class,
-            'operator_role_id',
+            'operatorRoleId',
             'id'
         );
     }

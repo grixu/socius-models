@@ -13,22 +13,23 @@ class CreateProductDescriptionsTable extends Migration
             $table->string('name');
             $table->text('desc')->nullable();
             if (Schema::hasTable('products')) {
-                $table->foreignId('product_id')->constrained();
+                $table->foreignId('productId')->constrained();
             }
-            $table->foreignId('language_id')->constrained();
-            $table->text('page_title')->nullable();
+            $table->foreignId('languageId')->constrained();
+            $table->text('pageTitle')->nullable();
             $table->text('keywords')->nullable();
-            $table->text('short_desc')->nullable();
-            $table->text('meta_desc')->nullable();
+            $table->text('shortDesc')->nullable();
+            $table->text('metaDesc')->nullable();
             $table->string('url')->nullable();
-            $table->dateTime('last_modification')->nullable();
-            $table->dateTime('last_modification_desc')->nullable();
-            $table->string('xl_id', 100)->index();
-            $table->dateTime('sync_ts');
+            $table->dateTime('lastModification')->nullable();
+            $table->dateTime('lastModificationDesc')->nullable();
+            $table->string('xlId', 100)->index();
+            $table->dateTime('syncTs');
             if (!empty(config('socius-models.md5_local_model_field'))) {
                 $table->string(config('socius-models.md5_local_model_field'))->nullable();
             }
-            $table->timestamps();
+            $table->timestamp('createdAt', 0)->nullable();
+            $table->timestamp('updatedAt', 0)->nullable();
         });
     }
 

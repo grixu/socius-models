@@ -15,21 +15,22 @@ class CreateWarehouseTable extends Migration
             $table->boolean('internal');
             $table->string('locked');
             $table->string('country');
-            $table->dateTime('stock_counting_date')->nullable();
-            $table->boolean('stock_counting');
-            $table->dateTime('sync_ts');
-            $table->dateTime('last_modification')->nullable();
+            $table->dateTime('stockCountingDate')->nullable();
+            $table->boolean('stockCounting');
+            $table->dateTime('syncTs');
+            $table->dateTime('lastModification')->nullable();
             if (Schema::hasTable('customers')) {
-                $table->foreignId('customer_id')->constrained();
+                $table->foreignId('customerId')->constrained();
             }
             if (Schema::hasTable('operators')) {
-                $table->foreignId('operator_id')->nullable()->constrained();
+                $table->foreignId('operatorId')->nullable()->constrained();
             }
-            $table->unsignedBigInteger('xl_id');
+            $table->unsignedBigInteger('xlId');
             if (!empty(config('socius-models.md5_local_model_field'))) {
                 $table->string(config('socius-models.md5_local_model_field'))->nullable();
             }
-            $table->timestamps();
+            $table->timestamp('createdAt', 0)->nullable();
+            $table->timestamp('updatedAt', 0)->nullable();
         });
     }
 

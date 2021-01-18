@@ -11,11 +11,12 @@ class CreateOperatorRolesTable extends Migration
         Schema::create('operator_roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('xl_id');
+            $table->unsignedBigInteger('xlId');
             if (!empty(config('socius-models.md5_local_model_field'))) {
                 $table->string(config('socius-models.md5_local_model_field'))->nullable();
             }
-            $table->timestamps();
+            $table->timestamp('createdAt', 0)->nullable();
+            $table->timestamp('updatedAt', 0)->nullable();
         });
     }
 

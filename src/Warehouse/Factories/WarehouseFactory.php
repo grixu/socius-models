@@ -20,22 +20,22 @@ class WarehouseFactory extends Factory
             'desc' => $this->faker->paragraph,
             'country' => $this->faker->userName,
             'internal' => $this->faker->numberBetween(0, 1),
-            'stock_counting' => $this->faker->numberBetween(0, 1),
-            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'stockCounting' => $this->faker->numberBetween(0, 1),
+            'xlId' => $this->faker->numberBetween(100000000, 999999999),
             'locked' => WarehouseLockEnum::UNLOCKED(),
-            'last_modification' => now()->subWeek(),
-            'stock_counting_date' => now()->subWeek(),
-            'sync_ts' => now()->subMonth(),
-            'updated_at' => now(),
-            'created_at' => now(),
+            'lastModification' => now()->subWeek(),
+            'stockCountingDate' => now()->subWeek(),
+            'syncTs' => now()->subMonth(),
+            'updatedAt' => now(),
+            'createdAt' => now(),
         ];
 
         if (Schema::hasTable('customers')) {
-            $def += ['customer_id' =>  Customer::factory()];
+            $def += ['customerId' =>  Customer::factory()];
         }
 
         if (Schema::hasTable('operators')) {
-            $def += ['operator_id' => Operator::factory()];
+            $def += ['operatorId' => Operator::factory()];
         }
 
         return $def;

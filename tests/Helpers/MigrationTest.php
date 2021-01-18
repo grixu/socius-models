@@ -2,6 +2,7 @@
 
 namespace Grixu\SociusModels\Tests\Helpers;
 
+use Grixu\SociusModels\SociusModelsServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase;
 
@@ -22,6 +23,7 @@ abstract class MigrationTest extends TestCase
     {
         return [
             \Spatie\LaravelRay\RayServiceProvider::class,
+            SociusModelsServiceProvider::class,
         ];
     }
 
