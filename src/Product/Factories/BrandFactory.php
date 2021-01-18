@@ -13,9 +13,9 @@ class BrandFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
-            'updated_at' => now()->subMonth(),
-            'created_at' => now(),
+            'xlId' => $this->faker->numberBetween(100000000, 999999999),
+            'updatedAt' => now()->subMonth(),
+            'createdAt' => now(),
         ];
     }
 }

@@ -12,14 +12,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
- * @property int operator_role_id
- * @property int operator_id
- * @property int customer_id
+ * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property int operatorRoleId
+ * @property int operatorId
+ * @property int customerId
  * @property int id
- * @property int xl_id
- * @property string xl_username
+ * @property int xlId
+ * @property string xlUsername
  * @property string name
  * @property string email
  */
@@ -27,29 +27,32 @@ class Operator extends Model
 {
     use HasFactory;
 
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+
     public $timestamps = false;
     public $incrementing = true;
 
     protected $dates = [
-        'sync_ts',
-        'updated_at'
+        'syncTs',
+        'updatedAt'
     ];
 
     protected $fillable = [
         'name',
-        'xl_username',
+        'xlUsername',
         'email',
-        'sync_ts',
-        'xl_id',
-        'created_at',
-        'updated_at',
+        'syncTs',
+        'xlId',
+        'createdAt',
+        'updatedAt',
     ];
 
     protected $casts = [
         'name' => 'string',
-        'xl_username' => 'string',
+        'xlUsername' => 'string',
         'email' => 'string',
-        'xl_id' => 'integer',
+        'xlId' => 'integer',
     ];
 
     public function customers(): ?HasMany
@@ -57,7 +60,7 @@ class Operator extends Model
         if (Schema::hasTable('customers')) {
             return $this->hasMany(
                 Customer::class,
-                'operator_id',
+                'operatorId',
                 'id'
             );
         }
@@ -69,7 +72,7 @@ class Operator extends Model
     {
         return $this->belongsTo(
             OperatorRole::class,
-            'operator_role_id',
+            'operatorRoleId',
             'id'
         );
     }
@@ -79,8 +82,8 @@ class Operator extends Model
         return $this->belongsToMany(
             Branch::class,
             'operator_branch',
-            'operator_id',
-            'branch_id'
+            'operatorId',
+            'branchId'
         )
             ->withTimestamps()
             ->using(OperatorBranch::class);

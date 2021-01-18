@@ -11,17 +11,18 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->double('amount');
-            $table->foreignId('warehouse_id')->constrained();
+            $table->foreignId('warehouseId')->constrained();
             if (Schema::hasTable('products')) {
-                $table->foreignId('product_id')->constrained();
+                $table->foreignId('productId')->constrained();
             }
-            $table->dateTime('reception_date');
-            $table->dateTime('sync_ts');
-            $table->string('xl_id', 100)->index();
+            $table->dateTime('receptionDate');
+            $table->dateTime('syncTs');
+            $table->string('xlId', 100)->index();
             if (!empty(config('socius-models.md5_local_model_field'))) {
                 $table->string(config('socius-models.md5_local_model_field'))->nullable();
             }
-            $table->timestamps();
+            $table->timestamp('createdAt', 0)->nullable();
+            $table->timestamp('updatedAt', 0)->nullable();
         });
     }
 

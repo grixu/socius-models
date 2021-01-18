@@ -10,9 +10,10 @@ class CreateOperatorBranchPivotTable extends Migration
     {
         Schema::create('operator_branch', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('operator_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('branch_id')->constrained()->cascadeOnDelete();
-            $table->timestamps();
+            $table->foreignId('operatorId')->constrained()->cascadeOnDelete();
+            $table->foreignId('branchId')->constrained()->cascadeOnDelete();
+            $table->timestamp('createdAt', 0)->nullable();
+            $table->timestamp('updatedAt', 0)->nullable();
         });
     }
 

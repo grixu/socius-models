@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Schema;
  * @property string name
  * @property string index
  * @property string ean
- * @property ProductMeasureUnitEnum measure_unit
- * @property ProductVatTypeEnum tax_group
- * @property int tax_value
+ * @property ProductMeasureUnitEnum measureUnit
+ * @property ProductVatTypeEnum taxGroup
+ * @property int taxValue
  * @property double weight
  * @property double price
  * @property bool eshop
@@ -27,21 +27,24 @@ use Illuminate\Support\Facades\Schema;
  * @property bool attachments
  * @property bool archived
  * @property bool blocked
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
- * @property int xl_id
+ * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property int xlId
  * @property int id
- * @property int brand_id
+ * @property int brandId
  * @property Brand brand
- * @property int product_type_id
+ * @property int productTypeId
  * @property ProductType productType
- * @property double eshop_price
- * @property \Illuminate\Support\Carbon price_updated
+ * @property double eshopPrice
+ * @property \Illuminate\Support\Carbon priceUpdated
  * @property int flags
  */
 class Product extends Model
 {
     use HasFactory;
+
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 
     public $timestamps = false;
 
@@ -49,13 +52,13 @@ class Product extends Model
         'name' => 'string',
         'index' => 'string',
         'ean' => 'string',
-        'measure_unit' => ProductMeasureUnitEnum::class,
-        'tax_group' => ProductVatTypeEnum::class,
-        'tax_value' => 'integer',
+        'measureUnit' => ProductMeasureUnitEnum::class,
+        'taxGroup' => ProductVatTypeEnum::class,
+        'taxValue' => 'integer',
         'weight' => 'double',
-        'xl_id' => 'integer',
+        'xlId' => 'integer',
         'price' => 'double',
-        'eshop_price' => 'double',
+        'eshopPrice' => 'double',
         'flags' => 'integer',
         'availability' => 'boolean',
         'attachments' => 'boolean',
@@ -65,32 +68,32 @@ class Product extends Model
     ];
 
     protected $dates = [
-        'price_updated',
-        'sync_ts',
-        'updated_at',
-        'created_at'
+        'priceUpdated',
+        'syncTs',
+        'updatedAt',
+        'createdAt'
     ];
 
     protected $fillable = [
         'name',
         'index',
         'ean',
-        'measure_unit',
-        'tax_group',
-        'tax_value',
+        'measureUnit',
+        'taxGroup',
+        'taxValue',
         'eshop',
         'availability',
         'attachments',
         'blocked',
         'archived',
         'weight',
-        'created_at',
-        'updated_at',
-        'sync_ts',
-        'xl_id',
+        'createdAt',
+        'updatedAt',
+        'syncTs',
+        'xlId',
         'price',
-        'eshop_price',
-        'price_updated',
+        'eshopPrice',
+        'priceUpdated',
         'flags'
     ];
 
@@ -98,7 +101,7 @@ class Product extends Model
     {
         return $this->belongsTo(
             Brand::class,
-            'brand_id',
+            'brandId',
             'id'
         );
     }
@@ -107,7 +110,7 @@ class Product extends Model
     {
         return $this->belongsTo(
             ProductType::class,
-            'product_type_id',
+            'productTypeId',
             'id'
         );
     }
@@ -117,7 +120,7 @@ class Product extends Model
         if (Schema::hasTable('stocks')) {
             return $this->hasMany(
                 Stock::class,
-                'product_id',
+                'productId',
                 'id'
             );
         }
@@ -130,7 +133,7 @@ class Product extends Model
         if (Schema::hasTable('product_descriptions')) {
             return $this->hasMany(
                 ProductDescription::class,
-                'product_id',
+                'productId',
                 'id'
             );
         }

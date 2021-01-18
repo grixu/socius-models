@@ -16,16 +16,16 @@ class StockFactory extends Factory
     {
         $def = [
             'amount' => $this->faker->numberBetween(0, 10000),
-            'warehouse_id' => Warehouse::factory(),
-            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
-            'reception_date' => now()->subWeek(),
-            'sync_ts' => now()->subMonth(),
-            'updated_at' => now(),
-            'created_at' => now(),
+            'warehouseId' => Warehouse::factory(),
+            'xlId' => $this->faker->numberBetween(100000000, 999999999),
+            'receptionDate' => now()->subWeek(),
+            'syncTs' => now()->subMonth(),
+            'updatedAt' => now(),
+            'createdAt' => now(),
         ];
 
         if (Schema::hasTable('products')) {
-            $def += ['product_id' => Product::factory()];
+            $def += ['productId' => Product::factory()];
         }
 
         return $def;

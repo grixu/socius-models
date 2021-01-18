@@ -11,14 +11,14 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon sync_ts
- * @property int operator_id
+ * @property Carbon syncTs
+ * @property int operatorId
  * @property string name
  * @property string country
- * @property string vat_number
- * @property Carbon updated_at
- * @property int payment_period
- * @property int xl_id
+ * @property string vatNumber
+ * @property Carbon updatedAt
+ * @property int paymentPeriod
+ * @property int xlId
  * @property mixed email
  * @property mixed phone2
  * @property mixed phone1
@@ -26,11 +26,14 @@ use Illuminate\Support\Facades\Schema;
  * @property mixed voivodeship
  * @property mixed street
  * @property mixed city
- * @property mixed postal_code
+ * @property mixed postalCode
  */
 class Customer extends Model
 {
     use HasFactory;
+
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 
     public $timestamps = false;
     public $incrementing = true;
@@ -38,41 +41,41 @@ class Customer extends Model
     protected $fillable = [
         'name',
         'country',
-        'postal_code',
+        'postalCode',
         'city',
-        'vat_number',
+        'vatNumber',
         'street',
         'voivodeship',
         'district',
         'phone1',
         'phone2',
         'email',
-        'payment_period',
-        'xl_id',
-        'sync_ts',
-        'created_at',
-        'updated_at',
+        'paymentPeriod',
+        'xlId',
+        'syncTs',
+        'createdAt',
+        'updatedAt',
     ];
 
     protected $casts = [
         'name' => 'string',
         'country' => 'string',
-        'postal_code' => 'string',
+        'postalCode' => 'string',
         'city' => 'string',
-        'vat_number' => 'string',
+        'vatNumber' => 'string',
         'street' => 'string',
         'voivodeship' => 'string',
         'district' => 'string',
         'phone1' => 'string',
         'phone2' => 'string',
         'email' => 'string',
-        'payment_period' => 'integer',
-        'xl_id' => 'integer',
+        'paymentPeriod' => 'integer',
+        'xlId' => 'integer',
     ];
 
     protected $dates = [
-        'sync_ts',
-        'updated_at',
+        'syncTs',
+        'updatedAt',
     ];
 
     public function operator(): ?BelongsTo
@@ -80,7 +83,7 @@ class Customer extends Model
         if (Schema::hasTable('operators')) {
             return $this->belongsTo(
                 Operator::class,
-                'operator_id',
+                'operatorId',
                 'id'
             );
         }

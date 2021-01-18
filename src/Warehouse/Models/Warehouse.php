@@ -13,26 +13,29 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
+ * @property \Illuminate\Support\Carbon syncTs
  * @property string name
  * @property string desc
  * @property bool internal
  * @property string country
- * @property bool stock_counting
+ * @property bool stockCounting
  * @property WarehouseLockEnum locked
  * @property Operator operator
  * @property Customer customer
- * @property \Illuminate\Support\Carbon stock_counting_date
- * @property \Illuminate\Support\Carbon last_modification
- * @property \Illuminate\Support\Carbon updated_at
- * @property int xl_id
+ * @property \Illuminate\Support\Carbon stockCountingDate
+ * @property \Illuminate\Support\Carbon lastModification
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property int xlId
  * @property int id
- * @property int operator_id
- * @property int customer_id
+ * @property int operatorId
+ * @property int customerId
  */
 class Warehouse extends Model
 {
     use HasFactory;
+
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
 
     public $timestamps = false;
 
@@ -41,15 +44,15 @@ class Warehouse extends Model
         'desc' => 'string',
         'internal' => 'boolean',
         'country' => 'string',
-        'stock_counting' => 'boolean',
+        'stockCounting' => 'boolean',
         'locked' => WarehouseLockEnum::class,
     ];
 
     protected $dates = [
-        'sync_ts',
-        'stock_counting_date',
-        'last_modification',
-        'updated_at',
+        'syncTs',
+        'stockCountingDate',
+        'lastModification',
+        'updatedAt',
     ];
 
     protected $fillable = [
@@ -58,14 +61,14 @@ class Warehouse extends Model
         'internal',
         'locked',
         'country',
-        'stock_counting_date',
-        'stock_counting',
-        'last_modification',
-        'customer_id',
-        'xl_id',
-        'sync_ts',
-        'created_at',
-        'updated_at',
+        'stockCountingDate',
+        'stockCounting',
+        'lastModification',
+        'customerId',
+        'xlId',
+        'syncTs',
+        'createdAt',
+        'updatedAt',
     ];
 
     public function operator(): ?BelongsTo
@@ -73,7 +76,7 @@ class Warehouse extends Model
         if (Schema::hasTable('operators')) {
             return $this->belongsTo(
                 Operator::class,
-                'operator_id',
+                'operatorId',
                 'id'
             );
         }
@@ -86,7 +89,7 @@ class Warehouse extends Model
         if (Schema::hasTable('customers')) {
             return $this->belongsTo(
                 Customer::class,
-                'customer_id',
+                'customerId',
                 'id'
             );
         }
@@ -98,7 +101,7 @@ class Warehouse extends Model
     {
         return $this->hasMany(
             Stock::class,
-            'warehouse_id',
+            'warehouseId',
             'id'
         );
     }

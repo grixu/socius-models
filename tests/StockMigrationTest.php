@@ -28,7 +28,7 @@ class StockMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'warehouse_id'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'warehouseId'));
     }
 
     /** @test */
@@ -39,6 +39,6 @@ class StockMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'product_id'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'productId'));
     }
 }

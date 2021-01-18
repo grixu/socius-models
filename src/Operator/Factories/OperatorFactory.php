@@ -14,13 +14,13 @@ class OperatorFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'xl_username' => $this->faker->userName,
+            'xlUsername' => $this->faker->userName,
             'email' => $this->faker->email,
-            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
-            'sync_ts' => now(),
-            'operator_role_id' => OperatorRole::factory(),
-            'updated_at' => now(),
-            'created_at' => now(),
+            'xlId' => $this->faker->numberBetween(100000000, 999999999),
+            'syncTs' => now(),
+            'operatorRoleId' => OperatorRole::factory(),
+            'updatedAt' => now(),
+            'createdAt' => now(),
         ];
     }
 }
