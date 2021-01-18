@@ -25,7 +25,7 @@ class CreateCustomersTable extends Migration
             $table->unsignedBigInteger('xlId');
             $table->dateTime('syncTs');
             if (Schema::hasTable('operators')) {
-                $table->foreignId('operatorId')->nullable()->constrained()->nullOnDelete();
+                $table->foreignId('operatorId')->nullable()->constrained('operators')->nullOnDelete();
             }
             if (!empty(config('socius-models.md5_local_model_field'))) {
                 $table->string(config('socius-models.md5_local_model_field'))->nullable();

@@ -20,10 +20,10 @@ class CreateWarehouseTable extends Migration
             $table->dateTime('syncTs');
             $table->dateTime('lastModification')->nullable();
             if (Schema::hasTable('customers')) {
-                $table->foreignId('customerId')->constrained();
+                $table->foreignId('customerId')->constrained('customers');
             }
             if (Schema::hasTable('operators')) {
-                $table->foreignId('operatorId')->nullable()->constrained();
+                $table->foreignId('operatorId')->nullable()->constrained('operators');
             }
             $table->unsignedBigInteger('xlId');
             if (!empty(config('socius-models.md5_local_model_field'))) {

@@ -11,9 +11,9 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->double('amount');
-            $table->foreignId('warehouseId')->constrained();
+            $table->foreignId('warehouseId')->constrained('warehouses');
             if (Schema::hasTable('products')) {
-                $table->foreignId('productId')->constrained();
+                $table->foreignId('productId')->constrained('products');
             }
             $table->dateTime('receptionDate');
             $table->dateTime('syncTs');

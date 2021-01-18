@@ -24,8 +24,8 @@ class CreateProductsTable extends Migration
             $table->boolean('attachments')->default(false);
             $table->dateTime('syncTs');
             $table->unsignedBigInteger('xlId');
-            $table->foreignId('brandId')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('productTypeId')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('brandId')->nullable()->constrained('brands')->nullOnDelete();
+            $table->foreignId('productTypeId')->nullable()->constrained('product_types')->nullOnDelete();
             $table->double('price', 10,2)->nullable();
             $table->dateTime('priceUpdated')->nullable();
             $table->double('eshopPrice', 10,2)->nullable();

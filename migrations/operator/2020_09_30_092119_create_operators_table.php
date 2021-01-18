@@ -13,7 +13,7 @@ class CreateOperatorsTable extends Migration
             $table->string('name');
             $table->string('xlUsername');
             $table->string('email');
-            $table->foreignId('operatorRoleId')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('operatorRoleId')->nullable()->constrained('operator_roles')->nullOnDelete();
             $table->unsignedBigInteger('xlId');
             $table->dateTime('syncTs');
             if (!empty(config('socius-models.md5_local_model_field'))) {
