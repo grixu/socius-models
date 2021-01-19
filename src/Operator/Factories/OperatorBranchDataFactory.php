@@ -18,8 +18,8 @@ class OperatorBranchDataFactory extends Factory
             $parameters +
             [
                 'updatedAt' => now(),
-                'xlBranchId' => 1,
-                'xlOperatorId' => 1,
+                'branchId' => 1,
+                'operatorId' => 1,
             ]
         );
     }

@@ -6,6 +6,7 @@ use Grixu\SociusModels\Product\Enums\ProductMeasureUnitEnum;
 use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\DataTransferObject;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class ProductData extends DataTransferObject
 {
@@ -28,8 +29,6 @@ class ProductData extends DataTransferObject
     public bool $archived=true;
     public bool $blocked=true;
     public ?int $flags;
-    public ?ProductTypeData $productType;
-    public ?BrandData $brand;
     public ?float $price;
     public ?float $eshopPrice;
     public ?Carbon $priceUpdated;

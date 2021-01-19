@@ -7,7 +7,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class OperatorBranchData extends DataTransferObject
 {
-    public int $xlBranchId;
-    public int $xlOperatorId;
+    public int $branchId;
+    public int $operatorId;
     public Carbon $updatedAt;
 }

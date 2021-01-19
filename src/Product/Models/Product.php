@@ -40,6 +40,7 @@ use Illuminate\Support\Facades\Schema;
  * @property double eshopPrice
  * @property \Illuminate\Support\Carbon priceUpdated
  * @property int flags
+ * @property int operatorId
  */
 class Product extends Model
 {

@@ -28,8 +28,8 @@ class ProductDescriptionDataFactory extends Factory
                 'updatedAt' => now(),
                 'syncTs' => now(),
                 'xlId' => '1',
-                'xlLanguageId' => 1,
-                'xlProductId' => 1,
+                'languageId' => 1,
+                'productId' => 1,
             ]
         );
     }
