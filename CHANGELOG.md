@@ -2,12 +2,18 @@
 
 All notable changes to `socius-models` will be documented in this file
 
-## 1.1.2 - 2020-01-19
+## 1.1.3 - 2021-01-19
+
+- Added foreign key in products for relationship with Operator
+- Updated Product model
+- Updated migration & model tests
+
+## 1.1.2 - 2021-01-19
 
 - Bug fix in product_descriptions migration
 - Changed foreign key names in DTOs (from xlForeignId to foreignId)
 
-## 1.1.1 - 2020-01-18
+## 1.1.1 - 2021-01-18
 
 - Bug fixes in migrations
 
