@@ -3,6 +3,7 @@
 namespace Grixu\SociusModels\Product\Models;
 
 use Grixu\SociusModels\Description\Models\ProductDescription;
+use Grixu\SociusModels\Operator\Models\Operator;
 use Grixu\SociusModels\Product\Enums\ProductMeasureUnitEnum;
 use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
 use Grixu\SociusModels\Product\Factories\ProductFactory;
@@ -35,6 +36,7 @@ use Illuminate\Support\Facades\Schema;
  * @property Brand brand
  * @property int productTypeId
  * @property ProductType productType
+ * @property Operator|null operator
  * @property double eshopPrice
  * @property \Illuminate\Support\Carbon priceUpdated
  * @property int flags
@@ -113,6 +115,19 @@ class Product extends Model
             'productTypeId',
             'id'
         );
+    }
+
+    public function operator(): ?BelongsTo
+    {
+        if (Schema::hasTable('operators')) {
+            return $this->belongsTo(
+                Operator::class,
+                'operatorId',
+                'id'
+            );
+        }
+
+        return null;
     }
 
     public function stocks(): ?HasMany
