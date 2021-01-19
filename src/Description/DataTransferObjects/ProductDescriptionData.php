@@ -17,8 +17,8 @@ class ProductDescriptionData extends DataTransferObject
     public ?Carbon $lastModification;
     public ?Carbon $lastModificationDesc;
     public string $xlId;
-    public int $xlLanguageId;
-    public int $xlProductId;
+    public int $languageId;
+    public int $productId;
     public Carbon $syncTs;
     public Carbon $updatedAt;
 }

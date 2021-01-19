@@ -11,7 +11,7 @@ class StockData extends DataTransferObject
     public Carbon $receptionDate;
     public Carbon $syncTs;
     public Carbon $updatedAt;
-    public int $xlWarehouseId;
-    public int $xlProductId;
+    public int $warehouseId;
+    public int $productId;
     public string $xlId;
 }

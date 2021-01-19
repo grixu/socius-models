@@ -11,5 +11,5 @@ class CategoryData extends DataTransferObject
     public Carbon $syncTs;
     public Carbon $updatedAt;
     public int $xlId;
-    public ?int $xlParentId;
+    public ?int $parentId;
 }

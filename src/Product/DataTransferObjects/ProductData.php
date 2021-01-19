@@ -9,7 +9,6 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class ProductData extends DataTransferObject
 {
-    public ?int $id;
     public string $name;
     public string $index;
     public string $ean;
@@ -18,9 +17,9 @@ class ProductData extends DataTransferObject
     public int $taxValue;
     public float $weight;
     public int $xlId;
-    public int $xlOperatorId;
+    public int $operatorId;
     public ?int $brandId;
-    public ?int $xlProductTypeId;
+    public ?int $ProductTypeId;
     public Carbon $syncTs;
     public Carbon $updatedAt;
     public bool $eshop=false;

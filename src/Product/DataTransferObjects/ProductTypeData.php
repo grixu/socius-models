@@ -7,7 +7,6 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class ProductTypeData  extends DataTransferObject
 {
-    public ?int $id;
     public string $name;
     public Carbon $updatedAt;
     public int $xlId;

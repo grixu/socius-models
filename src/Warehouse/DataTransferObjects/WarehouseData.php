@@ -15,8 +15,8 @@ class WarehouseData  extends DataTransferObject
     public bool $stockCounting;
     public ?Carbon $stockCountingDate;
     public WarehouseLockEnum $locked;
-    public ?int $xlOperatorId;
-    public int $xlCustomerId;
+    public ?int $operatorId;
+    public int $customerId;
     public ?Carbon $lastModification;
     public Carbon $syncTs;
     public Carbon $updatedAt;

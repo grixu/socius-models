@@ -22,5 +22,5 @@ class CustomerData extends DataTransferObject
     public int $xlId;
     public Carbon $syncTs;
     public Carbon $updatedAt;
-    public ?int $xlOperatorId;
+    public ?int $operatorId;
 }
