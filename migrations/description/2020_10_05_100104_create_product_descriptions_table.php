@@ -15,7 +15,7 @@ class CreateProductDescriptionsTable extends Migration
             if (Schema::hasTable('products')) {
                 $table->foreignId('productId')->constrained('products');
             }
-            $table->foreignId('languageId')->constrained('language');
+            $table->foreignId('languageId')->constrained('languages');
             $table->text('pageTitle')->nullable();
             $table->text('keywords')->nullable();
             $table->text('shortDesc')->nullable();
