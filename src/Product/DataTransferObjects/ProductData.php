@@ -17,7 +17,7 @@ class ProductData extends DataTransferObject
     public int $taxValue;
     public float $weight;
     public int $xlId;
-    public int $operatorId;
+    public ?int $operatorId;
     public ?int $brandId;
     public ?int $ProductTypeId;
     public Carbon $syncTs;

@@ -24,6 +24,9 @@ class CreateProductsTable extends Migration
             $table->boolean('attachments')->default(false);
             $table->dateTime('syncTs');
             $table->unsignedBigInteger('xlId');
+            if (Schema::hasTable('operators')) {
+                $table->foreignId('operatorId')->nullable()->constrained('operators')->nullOnDelete();
+            }
             $table->foreignId('brandId')->nullable()->constrained('brands')->nullOnDelete();
             $table->foreignId('productTypeId')->nullable()->constrained('product_types')->nullOnDelete();
             $table->double('price', 10,2)->nullable();

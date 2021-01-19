@@ -3,6 +3,7 @@
 namespace Grixu\SociusModels\Tests;
 
 use CreateBrandsTable;
+use CreateOperatorsTable;
 use CreateProductsTable;
 use CreateProductTypesTable;
 use Grixu\SociusModels\Tests\Helpers\MigrationTest;
@@ -40,5 +41,16 @@ class ProductMigrationTest extends MigrationTest
         $this->up();
 
         $this->assertTrue(Schema::hasColumn($this->table, 'productTypeId'));
+    }
+
+    /** @test */
+    public function operator_relationship(): void
+    {
+        require_once __DIR__ . '/../migrations/operator/2020_09_30_092119_create_operators_table.php';
+        (new CreateOperatorsTable())->up();
+
+        $this->up();
+
+        $this->assertTrue(Schema::hasColumn($this->table, 'operatorId'));
     }
 }

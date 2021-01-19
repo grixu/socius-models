@@ -71,4 +71,20 @@ class ProductTest extends ModelTest
 
         $this->assertEquals(null, $this->modelInstance->descriptions());
     }
+
+    /** @test */
+    public function operator_relationship(): void
+    {
+        $this->migrateOperator();
+        $this->makeModelInstance();
+
+        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->operator()));
+    }
+
+    public function operator_relationship_without_table(): void
+    {
+        $this->makeModelInstance();
+
+        $this->assertNull($this->modelInstance->operator());
+    }
 }
