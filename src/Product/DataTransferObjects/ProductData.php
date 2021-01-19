@@ -19,7 +19,7 @@ class ProductData extends DataTransferObject
     public int $xlId;
     public ?int $operatorId;
     public ?int $brandId;
-    public ?int $ProductTypeId;
+    public ?int $productTypeId;
     public Carbon $syncTs;
     public Carbon $updatedAt;
     public bool $eshop=false;
