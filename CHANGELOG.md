@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.1.4 - 2020-01-20
+
+- Many small bugs fixed
+
 ## 1.1.3 - 2021-01-19
 
 - Added foreign key in products for relationship with Operator
