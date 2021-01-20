@@ -2,9 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
-## 1.1.4 - 2020-01-20
+## 1.1.4 - 2021-01-20
 
 - Many small bugs fixed
+- Updated to PHP8
 
 ## 1.1.3 - 2021-01-19
 
