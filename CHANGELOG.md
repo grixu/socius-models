@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.1.5 - 2021-01-21
+
+- Bugs fixed: Added relationship fields to `$fillable`
+
 ## 1.1.4 - 2021-01-20
 
 - Many small bugs fixed
