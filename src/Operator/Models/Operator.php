@@ -46,6 +46,7 @@ class Operator extends Model
         'xlId',
         'createdAt',
         'updatedAt',
+        'operatorRoleId',
     ];
 
     protected $casts = [

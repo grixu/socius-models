@@ -65,6 +65,7 @@ class Warehouse extends Model
         'stockCounting',
         'lastModification',
         'customerId',
+        'operatorId',
         'xlId',
         'syncTs',
         'createdAt',

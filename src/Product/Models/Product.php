@@ -97,7 +97,10 @@ class Product extends Model
         'price',
         'eshopPrice',
         'priceUpdated',
-        'flags'
+        'flags',
+        'brandId',
+        'productTypeId',
+        'operatorId',
     ];
 
     public function brand(): BelongsTo

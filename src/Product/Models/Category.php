@@ -39,6 +39,7 @@ class Category extends Model
         'name',
         'xlId',
         'syncTs',
+        'parentId',
         'createdAt',
         'updatedAt',
     ];

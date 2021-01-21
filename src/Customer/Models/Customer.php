@@ -55,6 +55,7 @@ class Customer extends Model
         'syncTs',
         'createdAt',
         'updatedAt',
+        'operatorId',
     ];
 
     protected $casts = [
