@@ -26,7 +26,7 @@ class ProductDataFactory extends Factory
                 'taxGroup' => ProductVatTypeEnum::VAT23(),
                 'taxValue' => 23,
                 'weight' => 1.00,
-                'xlId' => 1,
+                'xlId' => rand(1,100000000),
                 'eshop' => false,
                 'operatorId' => 1,
                 'brandId' => rand(11111,55555),
