@@ -41,4 +41,12 @@ class StockMigrationTest extends MigrationTest
 
         $this->assertTrue(Schema::hasColumn($this->table, 'productId'));
     }
+
+    /** @test */
+    public function customer_field_without_constrained(): void
+    {
+        $this->up();
+
+        $this->assertTrue(Schema::hasColumn($this->table, 'productId'));
+    }
 }

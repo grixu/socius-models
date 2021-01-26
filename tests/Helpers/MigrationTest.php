@@ -48,7 +48,7 @@ abstract class MigrationTest extends TestCase
 
     protected function emptyChecksumConfig($app): void
     {
-        $app->config->set('socius-models.md5_local_model_field', null);
+        $app->config->set('socius-models.checksum_field', null);
     }
 
     /**

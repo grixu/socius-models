@@ -26,6 +26,8 @@ class CreateCustomersTable extends Migration
             $table->dateTime('syncTs');
             if (Schema::hasTable('operators')) {
                 $table->foreignId('operatorId')->nullable()->constrained('operators')->nullOnDelete();
+            } else {
+                $table->foreignId('operatorId')->nullable();
             }
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();

@@ -14,6 +14,8 @@ class CreateStocksTable extends Migration
             $table->foreignId('warehouseId')->constrained('warehouses');
             if (Schema::hasTable('products')) {
                 $table->foreignId('productId')->constrained('products');
+            } else {
+                $table->foreignId('productId')->nullable();
             }
             $table->dateTime('receptionDate');
             $table->dateTime('syncTs');

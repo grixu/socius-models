@@ -32,11 +32,27 @@ class WarehouseMigrationTest extends MigrationTest
     }
 
     /** @test */
+    public function customer_field_without_constrained(): void
+    {
+        $this->up();
+
+        $this->assertTrue(Schema::hasColumn($this->table, 'customerId'));
+    }
+
+    /** @test */
     public function operator_relationship(): void
     {
         require_once __DIR__ . '/../migrations/operator/2020_09_30_092119_create_operators_table.php';
         (new CreateOperatorsTable())->up();
 
+        $this->up();
+
+        $this->assertTrue(Schema::hasColumn($this->table, 'operatorId'));
+    }
+
+    /** @test */
+    public function operator_field_without_constrained(): void
+    {
         $this->up();
 
         $this->assertTrue(Schema::hasColumn($this->table, 'operatorId'));

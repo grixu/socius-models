@@ -29,4 +29,12 @@ class CustomerMigrationTest extends MigrationTest
 
         $this->assertTrue(Schema::hasColumn($this->table, 'operatorId'));
     }
+
+    /** @test */
+    public function operator_field_without_constrained(): void
+    {
+        $this->up();
+
+        $this->assertTrue(Schema::hasColumn($this->table, 'operatorId'));
+    }
 }
