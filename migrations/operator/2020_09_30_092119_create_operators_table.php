@@ -16,8 +16,8 @@ class CreateOperatorsTable extends Migration
             $table->foreignId('operatorRoleId')->nullable()->constrained('operator_roles')->nullOnDelete();
             $table->unsignedBigInteger('xlId');
             $table->dateTime('syncTs');
-            if (!empty(config('socius-models.md5_local_model_field'))) {
-                $table->string(config('socius-models.md5_local_model_field'))->nullable();
+            if (!empty(config('socius-models.checksum_field'))) {
+                $table->string(config('socius-models.checksum_field'))->nullable();
             }
             $table->timestamp('createdAt', 0)->nullable();
             $table->timestamp('updatedAt', 0)->nullable();
