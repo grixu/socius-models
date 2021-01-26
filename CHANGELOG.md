@@ -2,6 +2,15 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.1.6 - 2021-01-26
+
+- Bug fixed: operator filed will always be created in Product
+- Bug fixed: operator field will always be created in Customer table
+- Bug fixed: product field will always be created in Stock table
+- Bugs fixed: customer & operator fields will always be created in Warehouse table
+- Added tests for check is mandatory (empty relationship) fields are creating
+- Changed config name from `md5_local_model_field` to `checksum_field`
+
 ## 1.1.5 - 2021-01-21
 
 - Bugs fixed: Added relationship fields to `$fillable`
