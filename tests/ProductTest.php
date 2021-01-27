@@ -81,6 +81,7 @@ class ProductTest extends ModelTest
         $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->operator()));
     }
 
+    /** @test */
     public function operator_relationship_without_table(): void
     {
         $this->makeModelInstance();
