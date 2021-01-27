@@ -19,8 +19,6 @@ class StockDataFactory extends Factory
             [
                 'amount' => (double) rand(1,1000),
                 'receptionDate' => now()->subDay(),
-                'productId' => rand(1,4),
-                'warehouseId' => 1,
                 'syncTs' => now(),
                 'updatedAt' => now(),
                 'xlId' => '1',

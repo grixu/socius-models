@@ -25,7 +25,6 @@ class CustomerDataFactory extends Factory
                 'syncTs' => now(),
                 'updatedAt' => now(),
                 'xlId' => 1,
-                'operatorId' => 1,
             ]
         );
     }

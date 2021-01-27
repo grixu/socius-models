@@ -23,7 +23,6 @@ class OperatorDataFactory extends Factory
                 'syncTs' => now(),
                 'updatedAt' => now(),
                 'xlId' => 1,
-                'roleId' => 2,
             ]
         );
     }

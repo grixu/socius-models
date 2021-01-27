@@ -3,15 +3,13 @@
 namespace Grixu\SociusModels\Warehouse\DataTransferObjects;
 
 use Carbon\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 
-class StockData extends DataTransferObject
+class StockData extends RelationshipDataTransferObject
 {
     public float $amount;
     public Carbon $receptionDate;
     public Carbon $syncTs;
     public Carbon $updatedAt;
-    public int $warehouseId;
-    public int $productId;
     public string $xlId;
 }

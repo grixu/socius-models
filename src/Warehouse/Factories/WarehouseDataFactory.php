@@ -26,8 +26,6 @@ class WarehouseDataFactory extends Factory
                 'stockCountingDate' => now()->subDay(),
                 'lastModification' => now()->subWeek(),
                 'locked' => WarehouseLockEnum::UNLOCKED(),
-                'operatorId' => rand(1,4),
-                'customerId' => 1,
                 'syncTs' => now(),
                 'updatedAt' => now(),
                 'xlId' => 1,
