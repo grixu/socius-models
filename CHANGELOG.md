@@ -2,6 +2,14 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.2.0 - 2021-01-27
+
+- Added `grixu/relationship-data-transfer-objects`
+- All DTOs base class changed to RelationshipDataTransferObject
+- Updated tests
+- Updated data factories
+- Updated migrations: all FKs are nullable now
+
 ## 1.1.6 - 2021-01-26
 
 - Bug fixed: operator filed will always be created in Product
