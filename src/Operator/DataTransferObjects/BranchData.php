@@ -2,10 +2,10 @@
 
 namespace Grixu\SociusModels\Operator\DataTransferObjects;
 
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class BranchData extends DataTransferObject
+class BranchData extends RelationshipDataTransferObject
 {
     public string $name;
     public int $xlId;

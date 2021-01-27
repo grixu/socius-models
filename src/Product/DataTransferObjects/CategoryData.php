@@ -2,14 +2,13 @@
 
 namespace Grixu\SociusModels\Product\DataTransferObjects;
 
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class CategoryData extends DataTransferObject
+class CategoryData extends RelationshipDataTransferObject
 {
     public string $name;
     public Carbon $syncTs;
     public Carbon $updatedAt;
     public int $xlId;
-    public ?int $parentId;
 }

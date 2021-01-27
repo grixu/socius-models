@@ -2,10 +2,10 @@
 
 namespace Grixu\SociusModels\Description\DataTransferObjects;
 
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class ProductDescriptionData extends DataTransferObject
+class ProductDescriptionData extends RelationshipDataTransferObject
 {
     public string $name;
     public ?string $desc;
@@ -17,8 +17,6 @@ class ProductDescriptionData extends DataTransferObject
     public ?Carbon $lastModification;
     public ?Carbon $lastModificationDesc;
     public string $xlId;
-    public int $languageId;
-    public int $productId;
     public Carbon $syncTs;
     public Carbon $updatedAt;
 }

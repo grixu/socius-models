@@ -2,10 +2,10 @@
 
 namespace Grixu\SociusModels\Description\DataTransferObjects;
 
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class LanguageData extends DataTransferObject
+class LanguageData extends RelationshipDataTransferObject
 {
     public string $name;
     public int $xlId;

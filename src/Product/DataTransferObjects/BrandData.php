@@ -3,9 +3,9 @@
 namespace Grixu\SociusModels\Product\DataTransferObjects;
 
 use Carbon\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 
-class BrandData  extends DataTransferObject
+class BrandData  extends RelationshipDataTransferObject
 {
     public string $name;
     public Carbon $updatedAt;

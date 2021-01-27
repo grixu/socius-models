@@ -2,10 +2,10 @@
 
 namespace Grixu\SociusModels\Customer\DataTransferObjects;
 
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class CustomerData extends DataTransferObject
+class CustomerData extends RelationshipDataTransferObject
 {
     public string $name;
     public string $country;
@@ -22,5 +22,4 @@ class CustomerData extends DataTransferObject
     public int $xlId;
     public Carbon $syncTs;
     public Carbon $updatedAt;
-    public ?int $operatorId;
 }

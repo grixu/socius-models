@@ -2,10 +2,10 @@
 
 namespace Grixu\SociusModels\Operator\DataTransferObjects;
 
+use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\DataTransferObject;
 
-class OperatorData extends DataTransferObject
+class OperatorData extends RelationshipDataTransferObject
 {
     public string $name;
     public string $xlUsername;
@@ -13,5 +13,4 @@ class OperatorData extends DataTransferObject
     public Carbon $syncTs;
     public int $xlId;
     public Carbon $updatedAt;
-    public ?int $roleId;
 }
