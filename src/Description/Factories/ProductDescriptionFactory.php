@@ -2,11 +2,8 @@
 
 namespace Grixu\SociusModels\Description\Factories;
 
-use Grixu\SociusModels\Description\Models\Language;
 use Grixu\SociusModels\Description\Models\ProductDescription;
-use Grixu\SociusModels\Product\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Schema;
 
 class ProductDescriptionFactory extends Factory
 {
@@ -14,10 +11,9 @@ class ProductDescriptionFactory extends Factory
 
     public function definition()
     {
-        $def = [
+        return [
             'name' => $this->faker->name,
             'desc' => $this->faker->name,
-            'languageId' => Language::factory(),
             'pageTitle' => $this->faker->name,
             'keywords' => $this->faker->paragraph,
             'shortDesc' => $this->faker->name,
@@ -36,11 +32,5 @@ class ProductDescriptionFactory extends Factory
             'updatedAt' => now(),
             'createdAt' => now(),
         ];
-
-        if (Schema::hasTable('products')) {
-            $def += ['productId' => Product::factory()];
-        }
-
-        return $def;
     }
 }

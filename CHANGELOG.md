@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.2.1 - 2021-01-27
+
+- Updated models factories
+
 ## 1.2.0 - 2021-01-27
 
 - Added `grixu/relationship-data-transfer-objects`

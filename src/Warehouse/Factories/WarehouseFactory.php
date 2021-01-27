@@ -2,12 +2,9 @@
 
 namespace Grixu\SociusModels\Warehouse\Factories;
 
-use Grixu\SociusModels\Customer\Models\Customer;
-use Grixu\SociusModels\Operator\Models\Operator;
 use Grixu\SociusModels\Warehouse\Enums\WarehouseLockEnum;
 use Grixu\SociusModels\Warehouse\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Schema;
 
 class WarehouseFactory extends Factory
 {
@@ -15,7 +12,7 @@ class WarehouseFactory extends Factory
 
     public function definition()
     {
-        $def = [
+        return [
             'name' => $this->faker->name,
             'desc' => $this->faker->paragraph,
             'country' => $this->faker->userName,
@@ -29,15 +26,5 @@ class WarehouseFactory extends Factory
             'updatedAt' => now(),
             'createdAt' => now(),
         ];
-
-        if (Schema::hasTable('customers')) {
-            $def += ['customerId' =>  Customer::factory()];
-        }
-
-        if (Schema::hasTable('operators')) {
-            $def += ['operatorId' => Operator::factory()];
-        }
-
-        return $def;
     }
 }
