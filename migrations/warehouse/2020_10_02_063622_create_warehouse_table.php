@@ -20,7 +20,7 @@ class CreateWarehouseTable extends Migration
             $table->dateTime('syncTs');
             $table->dateTime('lastModification')->nullable();
             if (Schema::hasTable('customers')) {
-                $table->foreignId('customerId')->constrained('customers');
+                $table->foreignId('customerId')->nullable()->constrained('customers');
             } else {
                 $table->foreignId('customerId')->nullable();
             }

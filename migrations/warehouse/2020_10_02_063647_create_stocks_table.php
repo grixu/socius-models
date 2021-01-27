@@ -11,9 +11,9 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->double('amount');
-            $table->foreignId('warehouseId')->constrained('warehouses');
+            $table->foreignId('warehouseId')->nullable()->constrained('warehouses');
             if (Schema::hasTable('products')) {
-                $table->foreignId('productId')->constrained('products');
+                $table->foreignId('productId')->nullable()->constrained('products');
             } else {
                 $table->foreignId('productId')->nullable();
             }
