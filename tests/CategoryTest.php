@@ -37,4 +37,12 @@ class CategoryTest extends ModelTest
 
         $this->assertEquals(HasMany::class, get_class($this->modelInstance->children()));
     }
+
+    /** @test */
+    public function products_relationship(): void
+    {
+        $this->makeModelInstance();
+
+        $this->assertEquals(HasMany::class, get_class($this->modelInstance->products()));
+    }
 }

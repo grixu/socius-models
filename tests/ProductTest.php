@@ -88,4 +88,12 @@ class ProductTest extends ModelTest
 
         $this->assertNull($this->modelInstance->operator());
     }
+
+    /** @test */
+    public function category_relationship(): void
+    {
+        $this->makeModelInstance();
+
+        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->category()));
+    }
 }

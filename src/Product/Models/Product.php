@@ -134,6 +134,15 @@ class Product extends Model
         return null;
     }
 
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(
+            Category::class,
+            'categoryId',
+            'id'
+        );
+    }
+
     public function stocks(): ?HasMany
     {
         if (Schema::hasTable('stocks')) {
