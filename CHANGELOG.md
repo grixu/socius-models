@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.2.3 - 2021-02-22
+
+- Bug fixed in products migration
+
 ## 1.2.2 - 2021-02-19
 
 - Added relationship between a product and category

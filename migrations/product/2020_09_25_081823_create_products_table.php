@@ -30,7 +30,7 @@ class CreateProductsTable extends Migration
                 $table->foreignId('operatorId')->nullable();
             }
             $table->foreignId('brandId')->nullable()->constrained('brands')->nullOnDelete();
-            $table->foreignId('categoryId')->nullable()->constrained('category')->nullOnDelete();
+            $table->foreignId('categoryId')->nullable()->constrained('categories')->nullOnDelete();
             $table->foreignId('productTypeId')->nullable()->constrained('product_types')->nullOnDelete();
             $table->double('price', 10,2)->nullable();
             $table->dateTime('priceUpdated')->nullable();
