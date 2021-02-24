@@ -2,6 +2,11 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.3.0 - 2021-02-24
+
+- Dropped operator relationships
+- Updated dependencies
+
 ## 1.2.3 - 2021-02-22
 
 - Bug fixed in products migration
