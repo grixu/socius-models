@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Schema;
 
 /**
  * @property \Illuminate\Support\Carbon syncTs
- * @property int operatorId
  * @property string name
  * @property string desc
  * @property string pageTitle

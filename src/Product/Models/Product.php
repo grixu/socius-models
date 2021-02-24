@@ -36,11 +36,9 @@ use Illuminate\Support\Facades\Schema;
  * @property Brand brand
  * @property int productTypeId
  * @property ProductType productType
- * @property Operator|null operator
  * @property double eshopPrice
  * @property \Illuminate\Support\Carbon priceUpdated
  * @property int flags
- * @property int operatorId
  */
 class Product extends Model
 {
@@ -100,7 +98,6 @@ class Product extends Model
         'flags',
         'brandId',
         'productTypeId',
-        'operatorId',
     ];
 
     public function brand(): BelongsTo
@@ -119,19 +116,6 @@ class Product extends Model
             'productTypeId',
             'id'
         );
-    }
-
-    public function operator(): ?BelongsTo
-    {
-        if (Schema::hasTable('operators')) {
-            return $this->belongsTo(
-                Operator::class,
-                'operatorId',
-                'id'
-            );
-        }
-
-        return null;
     }
 
     public function category(): BelongsTo

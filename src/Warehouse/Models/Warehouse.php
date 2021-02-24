@@ -20,14 +20,12 @@ use Illuminate\Support\Facades\Schema;
  * @property string country
  * @property bool stockCounting
  * @property WarehouseLockEnum locked
- * @property Operator operator
  * @property Customer customer
  * @property \Illuminate\Support\Carbon stockCountingDate
  * @property \Illuminate\Support\Carbon lastModification
  * @property \Illuminate\Support\Carbon updatedAt
  * @property int xlId
  * @property int id
- * @property int operatorId
  * @property int customerId
  */
 class Warehouse extends Model
@@ -65,25 +63,11 @@ class Warehouse extends Model
         'stockCounting',
         'lastModification',
         'customerId',
-        'operatorId',
         'xlId',
         'syncTs',
         'createdAt',
         'updatedAt',
     ];
-
-    public function operator(): ?BelongsTo
-    {
-        if (Schema::hasTable('operators')) {
-            return $this->belongsTo(
-                Operator::class,
-                'operatorId',
-                'id'
-            );
-        }
-
-        return null;
-    }
 
     public function customer(): ?BelongsTo
     {

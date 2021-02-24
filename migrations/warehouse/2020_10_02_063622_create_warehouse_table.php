@@ -24,11 +24,6 @@ class CreateWarehouseTable extends Migration
             } else {
                 $table->foreignId('customerId')->nullable();
             }
-            if (Schema::hasTable('operators')) {
-                $table->foreignId('operatorId')->nullable()->constrained('operators');
-            } else {
-                $table->foreignId('operatorId')->nullable();
-            }
             $table->unsignedBigInteger('xlId');
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();

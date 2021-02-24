@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Schema;
 
 /**
  * @property Carbon syncTs
- * @property int operatorId
  * @property string name
  * @property string country
  * @property string vatNumber
@@ -55,7 +54,6 @@ class Customer extends Model
         'syncTs',
         'createdAt',
         'updatedAt',
-        'operatorId',
     ];
 
     protected $casts = [
@@ -78,19 +76,6 @@ class Customer extends Model
         'syncTs',
         'updatedAt',
     ];
-
-    public function operator(): ?BelongsTo
-    {
-        if (Schema::hasTable('operators')) {
-            return $this->belongsTo(
-                Operator::class,
-                'operatorId',
-                'id'
-            );
-        }
-
-        return null;
-    }
 
     public static function newFactory()
     {

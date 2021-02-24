@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Schema;
  * @property \Illuminate\Support\Carbon syncTs
  * @property \Illuminate\Support\Carbon updatedAt
  * @property int operatorRoleId
- * @property int operatorId
- * @property int customerId
  * @property int id
  * @property int xlId
  * @property string xlUsername
@@ -55,19 +53,6 @@ class Operator extends Model
         'email' => 'string',
         'xlId' => 'integer',
     ];
-
-    public function customers(): ?HasMany
-    {
-        if (Schema::hasTable('customers')) {
-            return $this->hasMany(
-                Customer::class,
-                'operatorId',
-                'id'
-            );
-        }
-
-        return null;
-    }
 
     public function role(): BelongsTo
     {
