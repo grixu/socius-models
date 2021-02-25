@@ -13,9 +13,9 @@ class CreateWarehouseTable extends Migration
             $table->string('name');
             $table->text('desc');
             $table->string('country');
-            $table->string('street');
-            $table->string('city');
-            $table->string('postCode');
+            $table->string('street')->nullable();
+            $table->string('city')->nullable();
+            $table->string('postCode')->nullable();
             $table->string('type');
             $table->boolean('locked');
             $table->dateTime('syncTs');
