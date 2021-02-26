@@ -1,6 +1,6 @@
 <?php
 
-namespace Grixu\SociusModels\Tests;
+namespace Grixu\SociusModels\Tests\Warehouse;
 
 use CreateProductsTable;
 use CreateStocksTable;
@@ -16,14 +16,14 @@ class StockMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../migrations/warehouse/2020_10_02_063647_create_stocks_table.php';
+        require_once __DIR__ . '/../../migrations/warehouse/2020_10_02_063647_create_stocks_table.php';
         $this->obj = new CreateStocksTable();
     }
 
     /** @test */
     public function warehouse_relationship(): void
     {
-        require_once __DIR__ . '/../migrations/warehouse/2020_10_02_063622_create_warehouse_table.php';
+        require_once __DIR__ . '/../../migrations/warehouse/2020_10_02_063622_create_warehouse_table.php';
         (new CreateWarehouseTable())->up();
 
         $this->up();
@@ -34,7 +34,7 @@ class StockMigrationTest extends MigrationTest
     /** @test */
     public function customer_relationship(): void
     {
-        require_once __DIR__ . '/../migrations/product/2020_09_25_081823_create_products_table.php';
+        require_once __DIR__ . '/../../migrations/product/2020_09_25_081823_create_products_table.php';
         (new CreateProductsTable())->up();
 
         $this->up();
