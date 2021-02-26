@@ -1,6 +1,6 @@
 <?php
 
-namespace Grixu\SociusModels\Tests;
+namespace Grixu\SociusModels\Tests\Operator;
 
 use Grixu\SociusModels\Operator\Factories\OperatorRoleFactory;
 use Grixu\SociusModels\Operator\Models\OperatorRole;
