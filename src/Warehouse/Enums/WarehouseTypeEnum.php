@@ -15,7 +15,7 @@ class WarehouseTypeEnum extends Enum
     {
         return [
             'DEPOSIT' => 'Depozyt',
-            'PSPG' => '',
+            'PSPG' => 'Szafa PSPG',
             'IVM' => 'Szafa IVM',
         ];
     }
