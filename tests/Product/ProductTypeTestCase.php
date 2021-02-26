@@ -4,10 +4,10 @@ namespace Grixu\SociusModels\Tests\Product;
 
 use Grixu\SociusModels\Product\Factories\ProductTypeFactory;
 use Grixu\SociusModels\Product\Models\ProductType;
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class ProductTypeTest extends ModelTest
+class ProductTypeTestCase extends ModelTestCase
 {
     protected string $model = ProductType::class;
     protected string $factory = ProductTypeFactory::class;

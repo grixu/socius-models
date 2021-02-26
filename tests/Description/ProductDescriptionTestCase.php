@@ -1,31 +1,31 @@
 <?php
 
-namespace Grixu\SociusModels\Tests\Warehouse;
+namespace Grixu\SociusModels\Tests\Description;
 
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
-use Grixu\SociusModels\Warehouse\Factories\StockFactory;
-use Grixu\SociusModels\Warehouse\Models\Stock;
+use Grixu\SociusModels\Description\Factories\ProductDescriptionFactory;
+use Grixu\SociusModels\Description\Models\ProductDescription;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class StockTest extends ModelTest
+class ProductDescriptionTestCase extends ModelTestCase
 {
-    protected string $model = Stock::class;
-    protected string $factory = StockFactory::class;
-    protected string $table = 'stocks';
+    protected string $model = ProductDescription::class;
+    protected string $factory = ProductDescriptionFactory::class;
+    protected string $table = 'product_descriptions';
     protected Model $modelInstance;
 
     /** @test */
-    public function warehouse_relationship(): void
+    public function language_relationship(): void
     {
         $this->makeModelInstance();
 
-        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->warehouse()));
+        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->language()));
     }
 
     protected function makeModelInstance(): void
     {
-        $this->migrateWarehouse();
+        $this->migrateDescription();
         $this->modelInstance = $this->model::factory()->create();
     }
 

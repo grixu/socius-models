@@ -4,10 +4,10 @@ namespace Grixu\SociusModels\Tests\Operator;
 
 use Grixu\SociusModels\Operator\Factories\BranchFactory;
 use Grixu\SociusModels\Operator\Models\Branch;
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class BranchTest extends ModelTest
+class BranchTestCase extends ModelTestCase
 {
     protected string $model = Branch::class;
     protected string $factory = BranchFactory::class;

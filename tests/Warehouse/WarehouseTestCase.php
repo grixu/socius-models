@@ -2,14 +2,14 @@
 
 namespace Grixu\SociusModels\Tests\Warehouse;
 
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Grixu\SociusModels\Warehouse\Factories\WarehouseFactory;
 use Grixu\SociusModels\Warehouse\Models\Warehouse;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class WarehouseTest extends ModelTest
+class WarehouseTestCase extends ModelTestCase
 {
     protected string $model = Warehouse::class;
     protected string $factory = WarehouseFactory::class;

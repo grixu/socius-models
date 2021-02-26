@@ -4,10 +4,10 @@ namespace Grixu\SociusModels\Tests\Operator;
 
 use Grixu\SociusModels\Operator\Factories\OperatorRoleFactory;
 use Grixu\SociusModels\Operator\Models\OperatorRole;
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class OperatorRoleTest extends ModelTest
+class OperatorRoleTestCase extends ModelTestCase
 {
     protected string $model = OperatorRole::class;
     protected string $factory = OperatorRoleFactory::class;

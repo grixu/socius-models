@@ -5,7 +5,7 @@ namespace Grixu\SociusModels\Tests\Helpers;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase;
 
-abstract class ModelTest extends TestCase
+abstract class ModelTestCase extends TestCase
 {
     use RefreshDatabase;
 
@@ -79,6 +79,15 @@ abstract class ModelTest extends TestCase
         (new \CreateStocksTable())->up();
     }
 
+    protected function migrateOrder(): void
+    {
+        require_once __DIR__.'/../../migrations/order/2021_02_25_144019_create_orders_table.php';
+        (new \CreateOrdersTable())->up();
+
+        require_once __DIR__.'/../../migrations/order/2021_02_25_144519_create_order_elements_table.php';
+        (new \CreateOrderElementsTable())->up();
+    }
+
     public function migrateAll(): void
     {
         $this->migrateProduct();
@@ -86,6 +95,7 @@ abstract class ModelTest extends TestCase
         $this->migrateCustomer();
         $this->migrateDescription();
         $this->migrateWarehouse();
+        $this->migrateOrder();
     }
 
     /** @test */

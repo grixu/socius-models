@@ -4,12 +4,12 @@ namespace Grixu\SociusModels\Tests\Operator;
 
 use Grixu\SociusModels\Operator\Factories\OperatorFactory;
 use Grixu\SociusModels\Operator\Models\Operator;
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class OperatorTest extends ModelTest
+class OperatorTestCase extends ModelTestCase
 {
     protected string $model = Operator::class;
     protected string $factory = OperatorFactory::class;

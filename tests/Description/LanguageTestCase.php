@@ -4,10 +4,10 @@ namespace Grixu\SociusModels\Tests\Description;
 
 use Grixu\SociusModels\Description\Factories\LanguageFactory;
 use Grixu\SociusModels\Description\Models\Language;
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class LanguageTest extends ModelTest
+class LanguageTestCase extends ModelTestCase
 {
     protected string $model = Language::class;
     protected string $factory = LanguageFactory::class;

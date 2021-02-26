@@ -2,25 +2,25 @@
 
 namespace Grixu\SociusModels\Tests\Order;
 
-use Grixu\SociusModels\Order\Factories\OrderFactory;
-use Grixu\SociusModels\Order\Models\Order;
-use Grixu\SociusModels\Tests\Helpers\ModelTest;
+use Grixu\SociusModels\Order\Factories\OrderElementFactory;
+use Grixu\SociusModels\Order\Models\OrderElement;
+use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class OrderTest extends ModelTest
+class OrderElementTestCase extends ModelTestCase
 {
-    protected string $model = Order::class;
-    protected string $factory = OrderFactory::class;
+    protected string $model = OrderElement::class;
+    protected string $factory = OrderElementFactory::class;
     protected string $table = 'orders';
     protected Model $modelInstance;
 
     /** @test */
-    public function operator_relationship()
+    public function product_relationship()
     {
         $this->makeModelInstance();
-        $this->migrateOperator();
-        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->operator()));
+        $this->migrateProduct();
+        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->product()));
     }
 
     protected function makeModelInstance(): void
@@ -39,11 +39,19 @@ class OrderTest extends ModelTest
     }
 
     /** @test */
-    public function operator_relationship_without_table(): void
+    public function order_relationship(): void
     {
         $this->makeModelInstance();
 
-        $this->assertEquals(null, $this->modelInstance->operator());
+        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->order()));
+    }
+
+    /** @test */
+    public function product_relationship_without_table(): void
+    {
+        $this->makeModelInstance();
+
+        $this->assertEquals(null, $this->modelInstance->product());
     }
 
     /** @test */
