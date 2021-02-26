@@ -1,6 +1,6 @@
 <?php
 
-namespace Grixu\SociusModels\Tests;
+namespace Grixu\SociusModels\Tests\Customer;
 
 use Grixu\SociusModels\Customer\Factories\CustomerFactory;
 use Grixu\SociusModels\Customer\Models\Customer;
