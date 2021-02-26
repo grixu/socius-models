@@ -1,6 +1,6 @@
 <?php
 
-namespace Grixu\SociusModels\Tests;
+namespace Grixu\SociusModels\Tests\Product;
 
 use CreateCategoriesTable;
 use Grixu\SociusModels\Tests\Helpers\MigrationTest;
@@ -13,7 +13,7 @@ class CategoryMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../migrations/product/2020_09_25_081713_create_categories_table.php';
+        require_once __DIR__ . '/../../migrations/product/2020_09_25_081713_create_categories_table.php';
         $this->obj = new CreateCategoriesTable();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Grixu\SociusModels\Tests;
+namespace Grixu\SociusModels\Tests\Product;
 
 use Grixu\SociusModels\Product\Enums\DictionaryTypeEnum;
 use Orchestra\Testbench\TestCase;
