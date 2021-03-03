@@ -3,8 +3,7 @@
 namespace Grixu\SociusModels\Warehouse\Models;
 
 use Grixu\SociusModels\Customer\Models\Customer;
-use Grixu\SociusModels\Operator\Models\Operator;
-use Grixu\SociusModels\Warehouse\Enums\WarehouseLockEnum;
+use Grixu\SociusModels\Warehouse\Enums\WarehouseTypeEnum;
 use Grixu\SociusModels\Warehouse\Factories\WarehouseFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,13 +15,14 @@ use Illuminate\Support\Facades\Schema;
  * @property \Illuminate\Support\Carbon syncTs
  * @property string name
  * @property string desc
- * @property bool internal
  * @property string country
+ * @property string street
+ * @property string city
+ * @property string postCode
+ * @property WarehouseTypeEnum type
  * @property bool stockCounting
- * @property WarehouseLockEnum locked
+ * @property bool locked
  * @property Customer customer
- * @property \Illuminate\Support\Carbon stockCountingDate
- * @property \Illuminate\Support\Carbon lastModification
  * @property \Illuminate\Support\Carbon updatedAt
  * @property int xlId
  * @property int id
@@ -40,10 +40,10 @@ class Warehouse extends Model
     protected $casts = [
         'name' => 'string',
         'desc' => 'string',
-        'internal' => 'boolean',
         'country' => 'string',
         'stockCounting' => 'boolean',
-        'locked' => WarehouseLockEnum::class,
+        'locked' => 'boolean',
+        'type' => WarehouseTypeEnum::class,
     ];
 
     protected $dates = [
@@ -56,15 +56,15 @@ class Warehouse extends Model
     protected $fillable = [
         'name',
         'desc',
-        'internal',
-        'locked',
         'country',
-        'stockCountingDate',
-        'stockCounting',
-        'lastModification',
+        'street',
+        'city',
+        'postCode',
+        'type',
+        'locked',
+        'syncTs',
         'customerId',
         'xlId',
-        'syncTs',
         'createdAt',
         'updatedAt',
     ];

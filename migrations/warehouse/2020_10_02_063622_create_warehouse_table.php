@@ -12,13 +12,13 @@ class CreateWarehouseTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('desc');
-            $table->boolean('internal');
-            $table->string('locked');
             $table->string('country');
-            $table->dateTime('stockCountingDate')->nullable();
-            $table->boolean('stockCounting');
+            $table->string('street')->nullable();
+            $table->string('city')->nullable();
+            $table->string('postCode')->nullable();
+            $table->string('type');
+            $table->boolean('locked');
             $table->dateTime('syncTs');
-            $table->dateTime('lastModification')->nullable();
             if (Schema::hasTable('customers')) {
                 $table->foreignId('customerId')->nullable()->constrained('customers');
             } else {

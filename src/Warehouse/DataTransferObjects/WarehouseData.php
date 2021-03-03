@@ -3,19 +3,19 @@
 namespace Grixu\SociusModels\Warehouse\DataTransferObjects;
 
 use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
-use Grixu\SociusModels\Warehouse\Enums\WarehouseLockEnum;
+use Grixu\SociusModels\Warehouse\Enums\WarehouseTypeEnum;
 use Illuminate\Support\Carbon;
 
 class WarehouseData extends RelationshipDataTransferObject
 {
     public string $name;
     public string $desc;
-    public bool $internal;
     public string $country;
-    public bool $stockCounting;
-    public ?Carbon $stockCountingDate;
-    public WarehouseLockEnum $locked;
-    public ?Carbon $lastModification;
+    public string $street;
+    public string $city;
+    public string $postCode;
+    public WarehouseTypeEnum $type;
+    public bool $locked;
     public Carbon $syncTs;
     public Carbon $updatedAt;
     public int $xlId;

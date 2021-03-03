@@ -2,6 +2,17 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.4.0 - 2021-02-26
+
+- Created a new block: Order 
+- Two new models: Order & OrderElement + factories for them
+- Two new tables: orders & order_elements
+- DTOs for new models in Order block + data factories for them
+- Tests refactored
+- Removed DTO Collections
+- Updated Warehouse migration, model
+- Added type of Warehouse
+
 ## 1.3.0 - 2021-02-24
 
 - Dropped operator relationships
