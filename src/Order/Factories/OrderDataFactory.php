@@ -5,7 +5,6 @@ namespace Grixu\SociusModels\Order\Factories;
 use Grixu\DataFactories\Factory;
 use Grixu\SociusModels\Order\DataTransferObjects\OrderData;
 use Grixu\SociusModels\Order\Enums\ReceiveStatusEnum;
-use Grixu\SociusModels\Order\Enums\SendingStatusEnum;
 
 class OrderDataFactory extends Factory
 {
@@ -23,7 +22,6 @@ class OrderDataFactory extends Factory
                 'orderNumber' => (string) rand(100000000, 999999999),
                 'receiveStatus' => ReceiveStatusEnum::WAITING_FOR_ADD(),
                 'receiveCreatedAt' => now(),
-                'sendingStatus' => SendingStatusEnum::OPENED(),
             ]
         );
     }

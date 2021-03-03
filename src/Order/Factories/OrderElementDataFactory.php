@@ -18,12 +18,9 @@ class OrderElementDataFactory extends Factory
             $parameters +
             [
                 'xlId' => rand(1,1000),
-                'orderId' => rand(100000000, 999999999),
-                'productId' => rand(100000000, 999999999),
                 'productIndex' => (string) rand(100000000, 999999999),
-                'warehouseId' => rand(100000000, 999999999),
                 'amount' => (float) rand(1, 999),
-                'sentAt' => now(),
+                'receivedAt' => now(),
             ]
         );
     }

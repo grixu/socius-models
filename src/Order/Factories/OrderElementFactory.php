@@ -16,7 +16,6 @@ class OrderElementFactory extends Factory
             'xlId' => $this->faker->numberBetween(100000000, 999999999),
             'orderId' => Order::factory(),
             'amount' => $this->faker->numberBetween(1, 999),
-            'sentAt' => now(),
             'receivedAt' => now(),
             'receivedDetailedStatus' => $this->faker->paragraph,
             'productIndex' => $this->faker->numberBetween(100000000000, 999999999999),
