@@ -2,9 +2,9 @@
 
 namespace Grixu\SociusModels\Order\Models;
 
+use Grixu\SociusModels\Customer\Models\Customer;
 use Grixu\SociusModels\Operator\Models\Operator;
 use Grixu\SociusModels\Order\Enums\ReceiveStatusEnum;
-use Grixu\SociusModels\Order\Enums\SendingStatusEnum;
 use Grixu\SociusModels\Order\Factories\OrderFactory;
 use Grixu\SociusModels\Warehouse\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,16 +16,13 @@ use Illuminate\Support\Facades\Schema;
 /**
  * @property Carbon receiveCreatedAt
  * @property Carbon receiveUpdatedAt
- * @property Carbon sendingCreatedAt
- * @property Carbon sendingUpdatedAt
  * @property int id
  * @property int xlId
  * @property int warehouseId
  * @property int operatorId
  * @property string orderNumber
  * @property string receivedDetailedStatus
- * @property string receiveStatus
- * @property string sendingStatus
+ * @property ReceiveStatusEnum receiveStatus
  */
 class Order extends Model
 {
@@ -37,8 +34,6 @@ class Order extends Model
     protected $dates = [
         'receiveCreatedAt',
         'receiveUpdatedAt',
-        'sendingCreatedAt',
-        'sendingUpdatedAt'
     ];
 
     protected $fillable = [
@@ -47,17 +42,14 @@ class Order extends Model
         'receiveStatus',
         'receiveCreatedAt',
         'receiveUpdatedAt',
-        'sendingStatus',
-        'sendingCreatedAt',
-        'sendingUpdatedAt',
         'receivedDetailedStatus',
         'warehouseId',
+        'customerId',
         'operatorId',
     ];
 
     protected $casts = [
         'receiveStatus' => ReceiveStatusEnum::class,
-        'sendingStatus' => SendingStatusEnum::class,
         'xlId' => 'integer',
     ];
 
@@ -80,6 +72,19 @@ class Order extends Model
             return $this->belongsTo(
                 Warehouse::class,
                 'warehouseId',
+                'id'
+            );
+        }
+
+        return null;
+    }
+
+    public function customer(): ?BelongsTo
+    {
+        if (Schema::hasTable('customers')) {
+            return $this->belongsTo(
+                Customer::class,
+                'customerId',
                 'id'
             );
         }
