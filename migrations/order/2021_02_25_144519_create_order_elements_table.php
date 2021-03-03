@@ -10,10 +10,9 @@ class CreateOrderElementsTable extends Migration
     {
         Schema::create('order_elements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('xlId');
-            $table->foreignId('orderId')->constrained('orders');
+            $table->unsignedBigInteger('xlId')->nullable();
+            $table->foreignId('orderId')->nullable()->constrained('orders');
             $table->decimal('amount', 15, 5);
-            $table->timestamp('sentAt', 0)->nullable();
             $table->timestamp('receivedAt', 0)->nullable();
             $table->text('receivedDetailedStatus')->nullable();
             $table->string('productIndex', 50);
