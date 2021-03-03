@@ -8,7 +8,7 @@ use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class OrderTestCase extends ModelTestCase
+class OrderTest extends ModelTestCase
 {
     protected string $model = Order::class;
     protected string $factory = OrderFactory::class;
@@ -21,6 +21,14 @@ class OrderTestCase extends ModelTestCase
         $this->makeModelInstance();
         $this->migrateOperator();
         $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->operator()));
+    }
+
+    /** @test */
+    public function customer_relationship()
+    {
+        $this->makeModelInstance();
+        $this->migrateCustomer();
+        $this->assertEquals(BelongsTo::class, get_class($this->modelInstance->customer()));
     }
 
     protected function makeModelInstance(): void
@@ -52,5 +60,13 @@ class OrderTestCase extends ModelTestCase
         $this->makeModelInstance();
 
         $this->assertEquals(null, $this->modelInstance->warehouse());
+    }
+
+    /** @test */
+    public function customer_relationship_without_table(): void
+    {
+        $this->makeModelInstance();
+
+        $this->assertEquals(null, $this->modelInstance->customer());
     }
 }

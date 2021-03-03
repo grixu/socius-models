@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class WarehouseTestCase extends ModelTestCase
+class WarehouseTest extends ModelTestCase
 {
     protected string $model = Warehouse::class;
     protected string $factory = WarehouseFactory::class;

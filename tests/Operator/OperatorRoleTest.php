@@ -7,7 +7,7 @@ use Grixu\SociusModels\Operator\Models\OperatorRole;
 use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class OperatorRoleTestCase extends ModelTestCase
+class OperatorRoleTest extends ModelTestCase
 {
     protected string $model = OperatorRole::class;
     protected string $factory = OperatorRoleFactory::class;

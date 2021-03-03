@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class OperatorTestCase extends ModelTestCase
+class OperatorTest extends ModelTestCase
 {
     protected string $model = Operator::class;
     protected string $factory = OperatorFactory::class;

@@ -7,7 +7,7 @@ use Grixu\SociusModels\Product\Models\Brand;
 use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class BrandTestCase extends ModelTestCase
+class BrandTest extends ModelTestCase
 {
     protected string $model = Brand::class;
     protected string $factory = BrandFactory::class;

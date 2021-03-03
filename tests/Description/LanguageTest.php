@@ -7,7 +7,7 @@ use Grixu\SociusModels\Description\Models\Language;
 use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class LanguageTestCase extends ModelTestCase
+class LanguageTest extends ModelTestCase
 {
     protected string $model = Language::class;
     protected string $factory = LanguageFactory::class;

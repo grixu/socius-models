@@ -7,7 +7,7 @@ use Grixu\SociusModels\Customer\Models\Customer;
 use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Model;
 
-class CustomerTestCase extends ModelTestCase
+class CustomerTest extends ModelTestCase
 {
     protected string $model = Customer::class;
     protected string $factory = CustomerFactory::class;

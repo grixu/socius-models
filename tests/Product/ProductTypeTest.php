@@ -7,7 +7,7 @@ use Grixu\SociusModels\Product\Models\ProductType;
 use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class ProductTypeTestCase extends ModelTestCase
+class ProductTypeTest extends ModelTestCase
 {
     protected string $model = ProductType::class;
     protected string $factory = ProductTypeFactory::class;

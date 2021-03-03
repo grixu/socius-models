@@ -7,7 +7,7 @@ use Grixu\SociusModels\Operator\Models\Branch;
 use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class BranchTestCase extends ModelTestCase
+class BranchTest extends ModelTestCase
 {
     protected string $model = Branch::class;
     protected string $factory = BranchFactory::class;

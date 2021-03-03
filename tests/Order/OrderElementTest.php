@@ -8,7 +8,7 @@ use Grixu\SociusModels\Tests\Helpers\ModelTestCase;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class OrderElementTestCase extends ModelTestCase
+class OrderElementTest extends ModelTestCase
 {
     protected string $model = OrderElement::class;
     protected string $factory = OrderElementFactory::class;

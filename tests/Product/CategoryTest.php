@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class CategoryTestCase extends ModelTestCase
+class CategoryTest extends ModelTestCase
 {
     protected string $model = Category::class;
     protected string $factory = CategoryFactory::class;
