@@ -10,14 +10,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('xlId');
-            $table->string('orderNumber');
+            $table->unsignedBigInteger('xlId')->nullable();
+            $table->string('orderNumber')->nullable();
             $table->smallInteger('receiveStatus');
             $table->timestamp('receiveCreatedAt', 0)->nullable();
             $table->timestamp('receiveUpdatedAt', 0)->nullable();
-            $table->smallInteger('sendingStatus');
-            $table->timestamp('sendingCreatedAt', 0)->nullable();
-            $table->timestamp('sendingUpdatedAt', 0)->nullable();
             $table->text('receivedDetailedStatus')->nullable();
 
             if (Schema::hasTable('warehouses')) {
@@ -30,6 +27,12 @@ class CreateOrdersTable extends Migration
                 $table->foreignId('operatorId')->nullable()->constrained('operators');
             } else {
                 $table->foreignId('operatorId')->nullable();
+            }
+
+            if (Schema::hasTable('customers')) {
+                $table->foreignId('customerId')->nullable()->constrained('customers');
+            } else {
+                $table->foreignId('customerId')->nullable();
             }
 
             if (!empty(config('socius-models.checksum_field'))) {
