@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 1.4.1 - 2021-03-30
+
+- Updated dependencies
+
 ## 1.4.0 - 2021-02-26
 
 - Created a new block: Order 
