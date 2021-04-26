@@ -1,0 +1,23 @@
+<?php
+
+namespace DummyNamespace;
+
+use NamespacedDummyModel;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class DummyModelFactory extends Factory
+{
+    protected $model = DummyModel::class;
+
+    public function definition()
+    {
+        return [
+            'amount' => $this->faker->numberBetween(0, 10000),
+            'xlId' => $this->faker->numberBetween(100000000, 999999999),
+            'receptionDate' => now()->subWeek(),
+            'syncTs' => now()->subMonth(),
+            'updatedAt' => now(),
+            'createdAt' => now(),
+        ];
+    }
+}
