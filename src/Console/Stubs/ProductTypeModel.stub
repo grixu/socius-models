@@ -1,0 +1,54 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFactoryNamespace\DummyModelFactory;
+use Grixu\SociusModels\Product\Models\ProductType as Base;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+/**
+ * @property string name
+ * @property int xlId
+ * @property int id
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property Product products
+ */
+class DummyModel extends Base
+{
+    use HasFactory;
+
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+
+    public $timestamps = false;
+
+    protected $casts = [
+        'name' => 'string',
+    ];
+
+    protected $dates = [
+        'updatedAt',
+    ];
+
+    protected $fillable = [
+        'name',
+        'xlId',
+        'createdAt',
+        'updatedAt',
+    ];
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(
+            Product::class,
+            'productTypeId',
+            'id'
+        );
+    }
+
+    public static function newFactory(): DummyModelFactory
+    {
+        return DummyModelFactory::new();
+    }
+}

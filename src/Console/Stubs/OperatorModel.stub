@@ -1,0 +1,79 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFactoryNamespace\DummyModelFactory;
+use Grixu\SociusModels\Operator\Models\Operator as Base;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+/**
+ * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon updatedAt
+ * @property int operatorRoleId
+ * @property int id
+ * @property int xlId
+ * @property string xlUsername
+ * @property string name
+ * @property string email
+ */
+class DummyModel extends Base
+{
+    use HasFactory;
+
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+
+    public $timestamps = false;
+    public $incrementing = true;
+
+    protected $dates = [
+        'syncTs',
+        'updatedAt'
+    ];
+
+    protected $fillable = [
+        'name',
+        'xlUsername',
+        'email',
+        'syncTs',
+        'xlId',
+        'createdAt',
+        'updatedAt',
+        'operatorRoleId',
+    ];
+
+    protected $casts = [
+        'name' => 'string',
+        'xlUsername' => 'string',
+        'email' => 'string',
+        'xlId' => 'integer',
+    ];
+
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(
+            OperatorRole::class,
+            'operatorRoleId',
+            'id'
+        );
+    }
+
+    public function branches(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Branch::class,
+            'operator_branch',
+            'operatorId',
+            'branchId'
+        )
+            ->withTimestamps()
+            ->using(OperatorBranch::class);
+    }
+
+    public static function newFactory(): DummyModelFactory
+    {
+        return DummyModelFactory::new();
+    }
+}
