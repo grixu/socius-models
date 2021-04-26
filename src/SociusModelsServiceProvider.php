@@ -155,7 +155,7 @@ class SociusModelsServiceProvider extends ServiceProvider
                     'migrations/' . date('Y_m_d_His', time()) . '_create_operators_table.php'
                 ),
             ],
-            'socius-migrations-operator'
+            'socius-migrations-customer'
         );
     }
 
