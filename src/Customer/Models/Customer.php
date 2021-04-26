@@ -3,12 +3,9 @@
 namespace Grixu\SociusModels\Customer\Models;
 
 use Grixu\SociusModels\Customer\Factories\CustomerFactory;
-use Grixu\SociusModels\Operator\Models\Operator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Schema;
 
 /**
  * @property Carbon syncTs

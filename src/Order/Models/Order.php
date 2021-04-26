@@ -92,7 +92,7 @@ class Order extends Model
         return null;
     }
 
-    public static function newFactory(): OrderFactory
+    public static function newFactory()
     {
         return OrderFactory::new();
     }

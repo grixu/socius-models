@@ -87,7 +87,7 @@ class OrderElement extends Model
         return null;
     }
 
-    public static function newFactory(): OrderElementFactory
+    public static function newFactory()
     {
         return OrderElementFactory::new();
     }

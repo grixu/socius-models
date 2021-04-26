@@ -3,7 +3,6 @@
 namespace Grixu\SociusModels\Product\Models;
 
 use Grixu\SociusModels\Description\Models\ProductDescription;
-use Grixu\SociusModels\Operator\Models\Operator;
 use Grixu\SociusModels\Product\Enums\ProductMeasureUnitEnum;
 use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
 use Grixu\SociusModels\Product\Factories\ProductFactory;
