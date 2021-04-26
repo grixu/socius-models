@@ -13,7 +13,7 @@ class ProductTypeMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081724_create_product_types_table.php';
+        require_once __DIR__ . '/../../migrations/create_product_types_table.php.stub';
         $this->obj = new CreateProductTypesTable();
     }
 }

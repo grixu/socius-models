@@ -17,14 +17,14 @@ class ProductMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081823_create_products_table.php';
+        require_once __DIR__ . '/../../migrations/create_products_table.php.stub';
         $this->obj = new CreateProductsTable();
     }
 
     /** @test */
     public function brand_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081701_create_brands_table.php';
+        require_once __DIR__ . '/../../migrations/create_brands_table.php.stub';
         (new CreateBrandsTable())->up();
 
         $this->up();
@@ -35,7 +35,7 @@ class ProductMigrationTest extends MigrationTest
     /** @test */
     public function product_type_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081724_create_product_types_table.php';
+        require_once __DIR__ . '/../../migrations/create_product_types_table.php.stub';
         (new CreateProductTypesTable())->up();
 
         $this->up();
@@ -46,7 +46,7 @@ class ProductMigrationTest extends MigrationTest
     /** @test */
     public function category_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081713_create_categories_table.php';
+        require_once __DIR__ . '/../../migrations/create_categories_table.php.stub';
         (new CreateCategoriesTable())->up();
 
         $this->up();

@@ -13,7 +13,7 @@ class BranchMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/operator/2020_09_30_135749_create_branches_table.php';
+        require_once __DIR__ . '/../../migrations/create_branches_table.php.stub';
         $this->obj = new CreateBranchesTable();
     }
 }

@@ -17,14 +17,14 @@ class OrderElementMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/order/2021_02_25_144519_create_order_elements_table.php';
+        require_once __DIR__ . '/../../migrations/create_order_elements_table.php.stub';
         $this->obj = new CreateOrderElementsTable();
     }
 
     /** @test */
     public function warehouse_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/warehouse/2020_10_02_063622_create_warehouse_table.php';
+        require_once __DIR__ . '/../../migrations/create_warehouse_table.php.stub';
         (new CreateWarehouseTable())->up();
 
         $this->up();
@@ -35,7 +35,7 @@ class OrderElementMigrationTest extends MigrationTest
     /** @test */
     public function product_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081823_create_products_table.php';
+        require_once __DIR__ . '/../../migrations/create_products_table.php.stub';
         (new CreateProductsTable())->up();
 
         $this->up();
@@ -47,7 +47,7 @@ class OrderElementMigrationTest extends MigrationTest
     /** @test */
     public function order_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/order/2021_02_25_144019_create_orders_table.php';
+        require_once __DIR__ . '/../../migrations/create_orders_table.php.stub';
         (new CreateOrdersTable())->up();
 
         $this->up();
