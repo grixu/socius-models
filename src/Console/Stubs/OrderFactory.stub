@@ -13,12 +13,12 @@ class DummyModelFactory extends Factory
     public function definition()
     {
         return [
-            'xlId' => $this->faker->numberBetween(100000000, 999999999),
-            'orderNumber' => $this->faker->numberBetween(100000000, 999999999),
-            'receiveStatus' => ReceiveStatusEnum::ADDED(),
-            'receiveCreatedAt' => now(),
-            'receiveUpdatedAt' => now(),
-            'receivedDetailedStatus' => $this->faker->paragraph,
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'order_number' => $this->faker->numberBetween(100000000, 999999999),
+            'receive_status' => ReceiveStatusEnum::ADDED(),
+            'receive_created_at' => now(),
+            'receive_updated_at' => now(),
+            'received_detailed_status' => $this->faker->paragraph,
         ];
     }
 }

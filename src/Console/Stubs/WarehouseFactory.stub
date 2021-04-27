@@ -18,13 +18,13 @@ class DummyModelFactory extends Factory
             'country' => $this->faker->userName,
             'street' => $this->faker->userName,
             'city' => $this->faker->userName,
-            'postCode' => $this->faker->userName,
+            'post_code' => $this->faker->userName,
             'type' => WarehouseTypeEnum::DEPOSIT(),
             'locked' => $this->faker->numberBetween(0, 1),
-            'syncTs' => now()->subMonth(),
-            'xlId' => $this->faker->numberBetween(100000000, 999999999),
-            'updatedAt' => now(),
-            'createdAt' => now(),
+            'sync_ts' => now()->subMonth(),
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'updated_at' => now(),
+            'created_at' => now(),
         ];
     }
 }

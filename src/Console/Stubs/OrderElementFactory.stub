@@ -13,12 +13,12 @@ class DummyModelFactory extends Factory
     public function definition()
     {
         return [
-            'xlId' => $this->faker->numberBetween(100000000, 999999999),
-            'orderId' => Order::factory(),
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'order_id' => Order::factory(),
             'amount' => $this->faker->numberBetween(1, 999),
-            'receivedAt' => now(),
-            'receivedDetailedStatus' => $this->faker->paragraph,
-            'productIndex' => $this->faker->numberBetween(100000000000, 999999999999),
+            'received_at' => now(),
+            'received_detailed_status' => $this->faker->paragraph,
+            'product_index' => $this->faker->numberBetween(100000000000, 999999999999),
         ];
     }
 }
