@@ -10,28 +10,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon sync_ts
  * @property string name
  * @property string desc
- * @property string pageTitle
+ * @property string page_title
  * @property string keywords
- * @property string shortDesc
- * @property string metaDesc
+ * @property string short_desc
+ * @property string meta_desc
  * @property string url
- * @property \Illuminate\Support\Carbon createdAt
- * @property \Illuminate\Support\Carbon updatedAt
- * @property \Illuminate\Support\Carbon|null lastModification
- * @property \Illuminate\Support\Carbon|null lastModificationDesc
- * @property int xlId
- * @property int languageId
- * @property int productId
+ * @property \Illuminate\Support\Carbon created_at
+ * @property \Illuminate\Support\Carbon updated_at
+ * @property \Illuminate\Support\Carbon|null last_modification
+ * @property \Illuminate\Support\Carbon|null last_modification_desc
+ * @property int xl_id
+ * @property int language_id
+ * @property int product_id
  */
 class ProductDescription extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
     public $incrementing = true;
@@ -39,44 +39,44 @@ class ProductDescription extends Model
     protected $fillable = [
         'name',
         'desc',
-        'pageTitle',
+        'page_title',
         'keywords',
-        'shortDesc',
-        'metaDesc',
+        'short_desc',
+        'meta_desc',
         'url',
-        'lastModification',
-        'lastModificationDesc',
-        'productId',
-        'languageId',
-        'xlId',
-        'syncTs',
-        'createdAt',
-        'updatedAt',
+        'last_modification',
+        'last_modification_desc',
+        'product_id',
+        'language_id',
+        'xl_id',
+        'sync_ts',
+        'created_at',
+        'updated_at',
     ];
 
     protected $casts = [
         'name' => 'string',
         'desc' => 'string',
-        'pageTitle' => 'string',
+        'page_title' => 'string',
         'keywords' => 'string',
-        'shortDesc' => 'string',
-        'metaDesc' => 'string',
+        'short_desc' => 'string',
+        'meta_desc' => 'string',
         'url' => 'string',
-        'xlId' => 'string',
+        'xl_id' => 'string',
     ];
 
     protected $dates = [
-        'lastModification',
-        'lastModificationDesc',
-        'syncTs',
-        'updatedAt',
+        'last_modification',
+        'last_modification_desc',
+        'sync_ts',
+        'updated_at',
     ];
 
     public function language(): BelongsTo
     {
         return $this->belongsTo(
             Language::class,
-            'languageId',
+            'language_id',
             'id'
         );
     }
@@ -86,7 +86,7 @@ class ProductDescription extends Model
         if (Schema::hasTable('products')) {
             return $this->belongsTo(
                 Product::class,
-                'productId',
+                'product_id',
                 'id'
             );
         }
