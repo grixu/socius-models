@@ -15,21 +15,21 @@ class CreateWarehouseTable extends Migration
             $table->string('country');
             $table->string('street')->nullable();
             $table->string('city')->nullable();
-            $table->string('postCode')->nullable();
+            $table->string('post_code')->nullable();
             $table->string('type');
             $table->boolean('locked');
-            $table->dateTime('syncTs');
+            $table->dateTime('sync_ts');
             if (Schema::hasTable('customers')) {
-                $table->foreignId('customerId')->nullable()->constrained('customers');
+                $table->foreignId('customer_id')->nullable()->constrained('customers');
             } else {
-                $table->foreignId('customerId')->nullable();
+                $table->foreignId('customer_id')->nullable();
             }
-            $table->unsignedBigInteger('xlId');
+            $table->unsignedBigInteger('xl_id');
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();
             }
-            $table->timestamp('createdAt', 0)->nullable();
-            $table->timestamp('updatedAt', 0)->nullable();
+            $table->timestamp('created_at', 0)->nullable();
+            $table->timestamp('updated_at', 0)->nullable();
         });
     }
 

@@ -10,29 +10,29 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('xlId')->nullable();
-            $table->string('orderNumber')->nullable();
-            $table->smallInteger('receiveStatus');
-            $table->timestamp('receiveCreatedAt', 0)->nullable();
-            $table->timestamp('receiveUpdatedAt', 0)->nullable();
-            $table->text('receivedDetailedStatus')->nullable();
+            $table->unsignedBigInteger('xl_id')->nullable();
+            $table->string('order_number')->nullable();
+            $table->smallInteger('receive_status');
+            $table->timestamp('receive_created_at', 0)->nullable();
+            $table->timestamp('receive_updated_at', 0)->nullable();
+            $table->text('received_detailed_status')->nullable();
 
             if (Schema::hasTable('warehouses')) {
-                $table->foreignId('warehouseId')->nullable()->constrained('warehouses');
+                $table->foreignId('warehouse_id')->nullable()->constrained('warehouses');
             } else {
-                $table->foreignId('warehouseId')->nullable();
+                $table->foreignId('warehouse_id')->nullable();
             }
 
             if (Schema::hasTable('operators')) {
-                $table->foreignId('operatorId')->nullable()->constrained('operators');
+                $table->foreignId('operator_id')->nullable()->constrained('operators');
             } else {
-                $table->foreignId('operatorId')->nullable();
+                $table->foreignId('operator_id')->nullable();
             }
 
             if (Schema::hasTable('customers')) {
-                $table->foreignId('customerId')->nullable()->constrained('customers');
+                $table->foreignId('customer_id')->nullable()->constrained('customers');
             } else {
-                $table->foreignId('customerId')->nullable();
+                $table->foreignId('customer_id')->nullable();
             }
 
             if (!empty(config('socius-models.checksum_field'))) {

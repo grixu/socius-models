@@ -10,23 +10,23 @@ class CreateOrderElementsTable extends Migration
     {
         Schema::create('order_elements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('xlId')->nullable();
-            $table->foreignId('orderId')->nullable()->constrained('orders');
+            $table->unsignedBigInteger('xl_id')->nullable();
+            $table->foreignId('order_id')->nullable()->constrained('orders');
             $table->decimal('amount', 15, 5);
-            $table->timestamp('receivedAt', 0)->nullable();
-            $table->text('receivedDetailedStatus')->nullable();
-            $table->string('productIndex', 50);
+            $table->timestamp('received_at', 0)->nullable();
+            $table->text('received_detailed_status')->nullable();
+            $table->string('product_index', 50);
 
             if (Schema::hasTable('products')) {
-                $table->foreignId('productId')->nullable()->constrained('products');
+                $table->foreignId('product_id')->nullable()->constrained('products');
             } else {
-                $table->foreignId('productId')->nullable();
+                $table->foreignId('product_id')->nullable();
             }
 
             if (Schema::hasTable('warehouses')) {
-                $table->foreignId('warehouseId')->nullable()->constrained('warehouses');
+                $table->foreignId('warehouse_id')->nullable()->constrained('warehouses');
             } else {
-                $table->foreignId('warehouseId')->nullable();
+                $table->foreignId('warehouse_id')->nullable();
             }
 
             if (!empty(config('socius-models.checksum_field'))) {
