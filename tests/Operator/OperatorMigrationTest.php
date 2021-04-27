@@ -27,6 +27,6 @@ class OperatorMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'operatorRoleId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'operator_role_id'));
     }
 }

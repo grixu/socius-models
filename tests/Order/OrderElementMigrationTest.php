@@ -29,7 +29,7 @@ class OrderElementMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'warehouseId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'warehouse_id'));
     }
 
     /** @test */
@@ -40,8 +40,8 @@ class OrderElementMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'productId'));
-        $this->assertTrue(Schema::hasColumn($this->table, 'productIndex'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'product_id'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'product_index'));
     }
 
     /** @test */
@@ -52,6 +52,6 @@ class OrderElementMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'orderId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'order_id'));
     }
 }

@@ -29,7 +29,7 @@ class ProductMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'brandId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'brand_id'));
     }
 
     /** @test */
@@ -40,7 +40,7 @@ class ProductMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'productTypeId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'product_type_id'));
     }
 
     /** @test */
@@ -51,6 +51,6 @@ class ProductMigrationTest extends MigrationTest
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'categoryId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'category_id'));
     }
 }
