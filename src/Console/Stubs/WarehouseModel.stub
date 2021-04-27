@@ -12,28 +12,28 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon syncTs
+ * @property \Illuminate\Support\Carbon sync_ts
  * @property string name
  * @property string desc
  * @property string country
  * @property string street
  * @property string city
- * @property string postCode
+ * @property string post_code
  * @property WarehouseTypeEnum type
  * @property bool stockCounting
  * @property bool locked
  * @property Customer customer
- * @property \Illuminate\Support\Carbon updatedAt
- * @property int xlId
+ * @property \Illuminate\Support\Carbon updated_at
+ * @property int xl_id
  * @property int id
- * @property int customerId
+ * @property int customer_id
  */
 class DummyModel extends Base
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 
@@ -47,10 +47,10 @@ class DummyModel extends Base
     ];
 
     protected $dates = [
-        'syncTs',
+        'sync_ts',
         'stockCountingDate',
-        'lastModification',
-        'updatedAt',
+        'last_modification',
+        'updated_at',
     ];
 
     protected $fillable = [
@@ -59,14 +59,14 @@ class DummyModel extends Base
         'country',
         'street',
         'city',
-        'postCode',
+        'post_code',
         'type',
         'locked',
-        'syncTs',
-        'customerId',
-        'xlId',
-        'createdAt',
-        'updatedAt',
+        'sync_ts',
+        'customer_id',
+        'xl_id',
+        'created_at',
+        'updated_at',
     ];
 
     public function customer(): ?BelongsTo
@@ -74,7 +74,7 @@ class DummyModel extends Base
         if (Schema::hasTable('customers')) {
             return $this->belongsTo(
                 Customer::class,
-                'customerId',
+                'customer_id',
                 'id'
             );
         }
@@ -86,7 +86,7 @@ class DummyModel extends Base
     {
         return $this->hasMany(
             Stock::class,
-            'warehouseId',
+            'warehouse_id',
             'id'
         );
     }

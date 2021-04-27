@@ -10,14 +10,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon syncTs
- * @property int xlId
- * @property int warehouseId
- * @property int productId
+ * @property \Illuminate\Support\Carbon sync_ts
+ * @property int xl_id
+ * @property int warehouse_id
+ * @property int product_id
  * @property int id
  * @property float amount
- * @property \Illuminate\Support\Carbon updatedAt
- * @property \Illuminate\Support\Carbon receptionDate
+ * @property \Illuminate\Support\Carbon updated_at
+ * @property \Illuminate\Support\Carbon reception_date
  * @property Warehouse warehouse
  * @property Product product
  */
@@ -25,38 +25,38 @@ class DummyModel extends Base
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 
     protected $casts = [
         'amount' => 'double',
-        'xlId' => 'string',
+        'xl_id' => 'string',
     ];
 
     protected $dates = [
-        'receptionDate',
-        'syncTs',
-        'updatedAt',
+        'reception_date',
+        'sync_ts',
+        'updated_at',
     ];
 
     protected $fillable = [
         'amount',
-        'receptionDate',
-        'warehouseId',
-        'productId',
-        'xlId',
-        'syncTs',
-        'createdAt',
-        'updatedAt',
+        'reception_date',
+        'warehouse_id',
+        'product_id',
+        'xl_id',
+        'sync_ts',
+        'created_at',
+        'updated_at',
     ];
 
     public function warehouse(): BelongsTo
     {
         return $this->belongsTo(
             Warehouse::class,
-            'warehouseId',
+            'warehouse_id',
             'id'
         );
     }
@@ -66,7 +66,7 @@ class DummyModel extends Base
         if (Schema::hasTable('products')) {
             return $this->belongsTo(
                 Product::class,
-                'productId',
+                'product_id',
                 'id'
             );
         }

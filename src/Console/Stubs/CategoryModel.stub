@@ -9,20 +9,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property int parentId
+ * @property int parent_id
  * @property int id
- * @property int xlId
+ * @property int xl_id
  * @property string name
  * @property Category parent
- * @property \Illuminate\Support\Carbon syncTs
- * @property \Illuminate\Support\Carbon updatedAt
+ * @property \Illuminate\Support\Carbon sync_ts
+ * @property \Illuminate\Support\Carbon updated_at
  */
 class DummyModel extends Base
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 
@@ -31,24 +31,24 @@ class DummyModel extends Base
     ];
 
      protected $dates = [
-        'syncTs',
-        'updatedAt'
+        'sync_ts',
+        'updated_at'
     ];
 
     protected $fillable = [
         'name',
-        'xlId',
-        'syncTs',
-        'parentId',
-        'createdAt',
-        'updatedAt',
+        'xl_id',
+        'sync_ts',
+        'parent_id',
+        'created_at',
+        'updated_at',
     ];
 
     public function parent(): BelongsTo
     {
         return $this->belongsTo(
             self::class,
-            'parentId',
+            'parent_id',
             'id'
         );
     }
@@ -57,7 +57,7 @@ class DummyModel extends Base
     {
         return $this->hasMany(
             self::class,
-            'parentId',
+            'parent_id',
             'id'
         );
     }
@@ -66,7 +66,7 @@ class DummyModel extends Base
     {
         return $this->hasMany(
             Product::class,
-            'categoryId',
+            'category_id',
             'id'
         );
     }
