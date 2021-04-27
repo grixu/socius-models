@@ -13,9 +13,9 @@ class LanguageFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'xlId' => $this->faker->numberBetween(100000000, 999999999),
-            'updatedAt' => now(),
-            'createdAt' => now(),
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'updated_at' => now(),
+            'created_at' => now(),
         ];
     }
 }

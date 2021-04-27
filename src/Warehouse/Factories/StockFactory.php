@@ -13,11 +13,11 @@ class StockFactory extends Factory
     {
         return [
             'amount' => $this->faker->numberBetween(0, 10000),
-            'xlId' => $this->faker->numberBetween(100000000, 999999999),
-            'receptionDate' => now()->subWeek(),
-            'syncTs' => now()->subMonth(),
-            'updatedAt' => now(),
-            'createdAt' => now(),
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'reception_date' => now()->subWeek(),
+            'sync_ts' => now()->subMonth(),
+            'updated_at' => now(),
+            'created_at' => now(),
         ];
     }
 }
