@@ -1,0 +1,56 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFactoryNamespace\DummyModelFactory;
+use Grixu\SociusModels\Operator\Models\OperatorRole as Base;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+/**
+ * @property \Illuminate\Support\Carbon updated_at
+ * @property string name
+ * @property int xl_id
+ * @property int id
+ * @property int operator_role_id
+ */
+class DummyModel extends Base
+{
+    use HasFactory;
+
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
+    public $timestamps = false;
+    public $incrementing = true;
+
+    protected $dates = [
+        'updated_at'
+    ];
+
+    protected $fillable = [
+        'name',
+        'xl_id',
+        'created_at',
+        'updated_at',
+    ];
+
+    protected $casts = [
+        'name' => 'string',
+        'xl_id' => 'integer',
+    ];
+
+    public function operators(): HasMany
+    {
+        return $this->hasMany(
+            Operator::class,
+            'operator_role_id',
+            'id'
+        );
+    }
+
+    public static function newFactory(): DummyModelFactory
+    {
+        return DummyModelFactory::new();
+    }
+}

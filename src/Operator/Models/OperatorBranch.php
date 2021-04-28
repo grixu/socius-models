@@ -6,21 +6,21 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class OperatorBranch extends Pivot
 {
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = true;
     public $incrementing = false;
     protected $table = 'operator_branch';
 
     protected $dates = [
-        'updatedAt'
+        'updated_at'
     ];
 
     protected $fillable = [
-        'branchId',
-        'operatorId',
-        'createdAt',
-        'updatedAt',
+        'branch_id',
+        'operator_id',
+        'created_at',
+        'updated_at',
     ];
 }

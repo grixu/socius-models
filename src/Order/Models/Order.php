@@ -14,15 +14,15 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon receiveCreatedAt
- * @property Carbon receiveUpdatedAt
+ * @property Carbon receive_created_at
+ * @property Carbon receive_updated_at
  * @property int id
- * @property int xlId
- * @property int warehouseId
- * @property int operatorId
- * @property string orderNumber
- * @property string receivedDetailedStatus
- * @property ReceiveStatusEnum receiveStatus
+ * @property int xl_id
+ * @property int warehouse_id
+ * @property int operator_id
+ * @property string order_number
+ * @property string received_detailed_status
+ * @property ReceiveStatusEnum receive_status
  */
 class Order extends Model
 {
@@ -32,25 +32,25 @@ class Order extends Model
     public $incrementing = true;
 
     protected $dates = [
-        'receiveCreatedAt',
-        'receiveUpdatedAt',
+        'receive_created_at',
+        'receive_updated_at',
     ];
 
     protected $fillable = [
-        'xlId',
-        'orderNumber',
-        'receiveStatus',
-        'receiveCreatedAt',
-        'receiveUpdatedAt',
-        'receivedDetailedStatus',
-        'warehouseId',
-        'customerId',
-        'operatorId',
+        'xl_id',
+        'order_number',
+        'receive_status',
+        'receive_created_at',
+        'receive_updated_at',
+        'received_detailed_status',
+        'warehouse_id',
+        'customer_id',
+        'operator_id',
     ];
 
     protected $casts = [
-        'receiveStatus' => ReceiveStatusEnum::class,
-        'xlId' => 'integer',
+        'receive_status' => ReceiveStatusEnum::class,
+        'xl_id' => 'integer',
     ];
 
     public function operator(): ?BelongsTo
@@ -58,7 +58,7 @@ class Order extends Model
         if (Schema::hasTable('operators')) {
             return $this->belongsTo(
                 Operator::class,
-                'operatorId',
+                'operator_id',
                 'id'
             );
         }
@@ -71,7 +71,7 @@ class Order extends Model
         if (Schema::hasTable('warehouses')) {
             return $this->belongsTo(
                 Warehouse::class,
-                'warehouseId',
+                'warehouse_id',
                 'id'
             );
         }
@@ -84,7 +84,7 @@ class Order extends Model
         if (Schema::hasTable('customers')) {
             return $this->belongsTo(
                 Customer::class,
-                'customerId',
+                'customer_id',
                 'id'
             );
         }
@@ -92,7 +92,7 @@ class Order extends Model
         return null;
     }
 
-    public static function newFactory(): OrderFactory
+    public static function newFactory()
     {
         return OrderFactory::new();
     }

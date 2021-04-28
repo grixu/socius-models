@@ -13,7 +13,7 @@ class CustomerMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/customer/2020_09_30_102037_create_customers_table.php';
+        require_once __DIR__ . '/../../migrations/create_customers_table.stub';
         $this->obj = new CreateCustomersTable();
     }
 }

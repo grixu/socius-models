@@ -3,7 +3,6 @@
 namespace Grixu\SociusModels\Product\Models;
 
 use Grixu\SociusModels\Description\Models\ProductDescription;
-use Grixu\SociusModels\Operator\Models\Operator;
 use Grixu\SociusModels\Product\Enums\ProductMeasureUnitEnum;
 use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
 use Grixu\SociusModels\Product\Factories\ProductFactory;
@@ -18,9 +17,9 @@ use Illuminate\Support\Facades\Schema;
  * @property string name
  * @property string index
  * @property string ean
- * @property ProductMeasureUnitEnum measureUnit
- * @property ProductVatTypeEnum taxGroup
- * @property int taxValue
+ * @property ProductMeasureUnitEnum measure_unit
+ * @property ProductVatTypeEnum tax_group
+ * @property int tax_value
  * @property double weight
  * @property double price
  * @property bool eshop
@@ -28,24 +27,24 @@ use Illuminate\Support\Facades\Schema;
  * @property bool attachments
  * @property bool archived
  * @property bool blocked
- * @property \Illuminate\Support\Carbon syncTs
- * @property \Illuminate\Support\Carbon updatedAt
- * @property int xlId
+ * @property \Illuminate\Support\Carbon sync_ts
+ * @property \Illuminate\Support\Carbon updated_at
+ * @property int xl_id
  * @property int id
- * @property int brandId
+ * @property int brand_id
  * @property Brand brand
- * @property int productTypeId
+ * @property int product_type_id
  * @property ProductType productType
- * @property double eshopPrice
- * @property \Illuminate\Support\Carbon priceUpdated
+ * @property double eshop_price
+ * @property \Illuminate\Support\Carbon price_updated
  * @property int flags
  */
 class Product extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 
@@ -53,13 +52,13 @@ class Product extends Model
         'name' => 'string',
         'index' => 'string',
         'ean' => 'string',
-        'measureUnit' => ProductMeasureUnitEnum::class,
-        'taxGroup' => ProductVatTypeEnum::class,
-        'taxValue' => 'integer',
+        'measure_unit' => ProductMeasureUnitEnum::class,
+        'tax_group' => ProductVatTypeEnum::class,
+        'tax_value' => 'integer',
         'weight' => 'double',
-        'xlId' => 'integer',
+        'xl_id' => 'integer',
         'price' => 'double',
-        'eshopPrice' => 'double',
+        'eshop_price' => 'double',
         'flags' => 'integer',
         'availability' => 'boolean',
         'attachments' => 'boolean',
@@ -69,42 +68,42 @@ class Product extends Model
     ];
 
     protected $dates = [
-        'priceUpdated',
-        'syncTs',
-        'updatedAt',
-        'createdAt'
+        'price_updated',
+        'sync_ts',
+        'updated_at',
+        'created_at'
     ];
 
     protected $fillable = [
         'name',
         'index',
         'ean',
-        'measureUnit',
-        'taxGroup',
-        'taxValue',
+        'measure_unit',
+        'tax_group',
+        'tax_value',
         'eshop',
         'availability',
         'attachments',
         'blocked',
         'archived',
         'weight',
-        'createdAt',
-        'updatedAt',
-        'syncTs',
-        'xlId',
+        'created_at',
+        'updated_at',
+        'sync_ts',
+        'xl_id',
         'price',
-        'eshopPrice',
-        'priceUpdated',
+        'eshop_price',
+        'price_updated',
         'flags',
-        'brandId',
-        'productTypeId',
+        'brand_id',
+        'product_type_id',
     ];
 
     public function brand(): BelongsTo
     {
         return $this->belongsTo(
             Brand::class,
-            'brandId',
+            'brand_id',
             'id'
         );
     }
@@ -113,7 +112,7 @@ class Product extends Model
     {
         return $this->belongsTo(
             ProductType::class,
-            'productTypeId',
+            'product_type_id',
             'id'
         );
     }
@@ -122,7 +121,7 @@ class Product extends Model
     {
         return $this->belongsTo(
             Category::class,
-            'categoryId',
+            'category_id',
             'id'
         );
     }
@@ -132,7 +131,7 @@ class Product extends Model
         if (Schema::hasTable('stocks')) {
             return $this->hasMany(
                 Stock::class,
-                'productId',
+                'product_id',
                 'id'
             );
         }
@@ -145,7 +144,7 @@ class Product extends Model
         if (Schema::hasTable('product_descriptions')) {
             return $this->hasMany(
                 ProductDescription::class,
-                'productId',
+                'product_id',
                 'id'
             );
         }

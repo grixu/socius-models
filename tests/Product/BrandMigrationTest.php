@@ -13,7 +13,7 @@ class BrandMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081701_create_brands_table.php';
+        require_once __DIR__ . '/../../migrations/create_brands_table.stub';
         $this->obj = new CreateBrandsTable();
     }
 }

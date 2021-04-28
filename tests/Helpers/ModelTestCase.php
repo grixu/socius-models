@@ -27,64 +27,64 @@ abstract class ModelTestCase extends TestCase
 
     protected function migrateCustomer(): void
     {
-        require_once __DIR__.'/../../migrations/customer/2020_09_30_102037_create_customers_table.php';
+        require_once __DIR__ . '/../../migrations/create_customers_table.stub';
         (new \CreateCustomersTable())->up();
     }
 
     protected function migrateDescription(): void
     {
-        require_once __DIR__.'/../../migrations/description/2020_10_05_085814_create_languages_table.php';
+        require_once __DIR__ . '/../../migrations/create_languages_table.stub';
         (new \CreateLanguagesTable())->up();
 
-        require_once __DIR__.'/../../migrations/description/2020_10_05_100104_create_product_descriptions_table.php';
+        require_once __DIR__ . '/../../migrations/create_product_descriptions_table.stub';
         (new \CreateProductDescriptionsTable())->up();
     }
 
     protected function migrateProduct(): void
     {
-        require_once __DIR__.'/../../migrations/product/2020_09_25_081701_create_brands_table.php';
+        require_once __DIR__ . '/../../migrations/create_brands_table.stub';
         (new \CreateBrandsTable())->up();
 
-        require_once __DIR__.'/../../migrations/product/2020_09_25_081724_create_product_types_table.php';
+        require_once __DIR__ . '/../../migrations/create_product_types_table.stub';
         (new \CreateProductTypesTable())->up();
 
-        require_once __DIR__.'/../../migrations/product/2020_09_25_081713_create_categories_table.php';
+        require_once __DIR__ . '/../../migrations/create_categories_table.stub';
         (new \CreateCategoriesTable())->up();
 
-        require_once __DIR__.'/../../migrations/product/2020_09_25_081823_create_products_table.php';
+        require_once __DIR__ . '/../../migrations/create_products_table.stub';
         (new \CreateProductsTable())->up();
     }
 
     protected function migrateOperator(): void
     {
-        require_once __DIR__.'/../../migrations/operator/2020_09_30_135749_create_branches_table.php';
+        require_once __DIR__ . '/../../migrations/create_branches_table.stub';
         (new \CreateBranchesTable())->up();
 
-        require_once __DIR__.'/../../migrations/operator/2020_09_30_082556_create_operator_roles_table.php';
+        require_once __DIR__ . '/../../migrations/create_operator_roles_table.stub';
         (new \CreateOperatorRolesTable())->up();
 
-        require_once __DIR__.'/../../migrations/operator/2020_09_30_092119_create_operators_table.php';
+        require_once __DIR__ . '/../../migrations/create_operators_table.stub';
         (new \CreateOperatorsTable())->up();
 
-        require_once __DIR__.'/../../migrations/operator/2020_10_01_064502_create_operator_branch_pivot_table.php';
+        require_once __DIR__ . '/../../migrations/create_operator_branch_pivot_table.stub';
         (new \CreateOperatorBranchPivotTable())->up();
     }
 
     protected function migrateWarehouse(): void
     {
-        require_once __DIR__.'/../../migrations/warehouse/2020_10_02_063622_create_warehouse_table.php';
+        require_once __DIR__ . '/../../migrations/create_warehouse_table.stub';
         (new \CreateWarehouseTable())->up();
 
-        require_once __DIR__.'/../../migrations/warehouse/2020_10_02_063647_create_stocks_table.php';
+        require_once __DIR__ . '/../../migrations/create_stocks_table.stub';
         (new \CreateStocksTable())->up();
     }
 
     protected function migrateOrder(): void
     {
-        require_once __DIR__.'/../../migrations/order/2021_02_25_144019_create_orders_table.php';
+        require_once __DIR__ . '/../../migrations/create_orders_table.stub';
         (new \CreateOrdersTable())->up();
 
-        require_once __DIR__.'/../../migrations/order/2021_02_25_144519_create_order_elements_table.php';
+        require_once __DIR__ . '/../../migrations/create_order_elements_table.stub';
         (new \CreateOrderElementsTable())->up();
     }
 

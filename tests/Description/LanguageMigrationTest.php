@@ -13,7 +13,7 @@ class LanguageMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/description/2020_10_05_085814_create_languages_table.php';
+        require_once __DIR__ . '/../../migrations/create_languages_table.stub';
         $this->obj = new CreateLanguagesTable();
     }
 }

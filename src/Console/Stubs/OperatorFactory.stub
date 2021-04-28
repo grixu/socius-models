@@ -1,0 +1,24 @@
+<?php
+
+namespace DummyNamespace;
+
+use NamespacedDummyModel;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class DummyModelFactory extends Factory
+{
+    protected $model = DummyModel::class;
+
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->name,
+            'xl_username' => $this->faker->userName,
+            'email' => $this->faker->email,
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'sync_ts' => now(),
+            'updated_at' => now(),
+            'created_at' => now(),
+        ];
+    }
+}

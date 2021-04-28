@@ -13,10 +13,10 @@ class BranchFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'xlId' => $this->faker->numberBetween(100000000, 999999999),
-            'syncTs' => now(),
-            'updatedAt' => now(),
-            'createdAt' => now(),
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'sync_ts' => now(),
+            'updated_at' => now(),
+            'created_at' => now(),
         ];
     }
 }

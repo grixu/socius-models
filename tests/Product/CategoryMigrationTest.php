@@ -13,7 +13,7 @@ class CategoryMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081713_create_categories_table.php';
+        require_once __DIR__ . '/../../migrations/create_categories_table.stub';
         $this->obj = new CreateCategoriesTable();
     }
 }

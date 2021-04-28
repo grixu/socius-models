@@ -1,0 +1,55 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFactoryNamespace\DummyModelFactory;
+use Grixu\SociusModels\Description\Models\Language as Base;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+
+/**
+ * @property string name
+ * @property Carbon updated_at
+ * @property int xl_id
+ */
+class DummyModel extends Base
+{
+    use HasFactory;
+
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
+    public $timestamps = false;
+    public $incrementing = true;
+
+    protected $fillable = [
+        'name',
+        'xl_id',
+        'created_at',
+        'updated_at',
+    ];
+
+    protected $casts = [
+        'name' => 'string',
+        'xl_id' => 'integer',
+    ];
+
+    protected $dates = [
+        'updated_at',
+    ];
+
+    public function descriptions(): HasMany
+    {
+        return $this->hasMany(
+            ProductDescription::class,
+            'language_id',
+            'id'
+        );
+    }
+
+    public static function newFactory(): DummyModelFactory
+    {
+        return DummyModelFactory::new();
+    }
+}

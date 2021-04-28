@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Schema;
 
 /**
  * @property Carbon sentAt
- * @property Carbon receivedAt
+ * @property Carbon received_at
  * @property int id
- * @property int xlId
- * @property int orderId
- * @property int warehouseId
- * @property int productId
- * @property string productIndex
- * @property string receivedDetailedStatus
+ * @property int xl_id
+ * @property int order_id
+ * @property int warehouse_id
+ * @property int product_id
+ * @property string product_index
+ * @property string received_detailed_status
  * @property double amount
  */
 class OrderElement extends Model
@@ -32,31 +32,31 @@ class OrderElement extends Model
 
     protected $dates = [
         'sentAt',
-        'receivedAt',
+        'received_at',
     ];
 
     protected $fillable = [
-        'xlId',
-        'orderId',
+        'xl_id',
+        'order_id',
         'amount',
         'sentAt',
-        'receivedAt',
-        'receivedDetailedStatus',
-        'productIndex',
-        'productId',
-        'warehouseId',
+        'received_at',
+        'received_detailed_status',
+        'product_index',
+        'product_id',
+        'warehouse_id',
     ];
 
     protected $casts = [
         'amount' => 'double',
-        'xlId' => 'integer',
+        'xl_id' => 'integer',
     ];
 
     public function order(): BelongsTo
     {
         return $this->belongsTo(
             Order::class,
-            'orderId',
+            'order_id',
             'id'
         );
     }
@@ -66,7 +66,7 @@ class OrderElement extends Model
         if (Schema::hasTable('products')) {
             return $this->belongsTo(
                 Product::class,
-                'productId',
+                'product_id',
                 'id'
             );
         }
@@ -79,7 +79,7 @@ class OrderElement extends Model
         if (Schema::hasTable('warehouses')) {
             return $this->belongsTo(
                 Warehouse::class,
-                'warehouseId',
+                'warehouse_id',
                 'id'
             );
         }
@@ -87,7 +87,7 @@ class OrderElement extends Model
         return null;
     }
 
-    public static function newFactory(): OrderElementFactory
+    public static function newFactory()
     {
         return OrderElementFactory::new();
     }

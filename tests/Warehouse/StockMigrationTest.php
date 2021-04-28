@@ -16,30 +16,30 @@ class StockMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/warehouse/2020_10_02_063647_create_stocks_table.php';
+        require_once __DIR__ . '/../../migrations/create_stocks_table.stub';
         $this->obj = new CreateStocksTable();
     }
 
     /** @test */
     public function warehouse_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/warehouse/2020_10_02_063622_create_warehouse_table.php';
+        require_once __DIR__ . '/../../migrations/create_warehouse_table.stub';
         (new CreateWarehouseTable())->up();
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'warehouseId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'warehouse_id'));
     }
 
     /** @test */
     public function customer_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/product/2020_09_25_081823_create_products_table.php';
+        require_once __DIR__ . '/../../migrations/create_products_table.stub';
         (new CreateProductsTable())->up();
 
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'productId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'product_id'));
     }
 
     /** @test */
@@ -47,6 +47,6 @@ class StockMigrationTest extends MigrationTest
     {
         $this->up();
 
-        $this->assertTrue(Schema::hasColumn($this->table, 'productId'));
+        $this->assertTrue(Schema::hasColumn($this->table, 'product_id'));
     }
 }

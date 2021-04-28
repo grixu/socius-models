@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateOrderElementsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('order_elements', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('xl_id')->nullable();
+            $table->foreignId('order_id')->nullable()->constrained('orders');
+            $table->decimal('amount', 15, 5);
+            $table->timestamp('received_at', 0)->nullable();
+            $table->text('received_detailed_status')->nullable();
+            $table->string('product_index', 50);
+
+            if (Schema::hasTable('products')) {
+                $table->foreignId('product_id')->nullable()->constrained('products');
+            } else {
+                $table->foreignId('product_id')->nullable();
+            }
+
+            if (Schema::hasTable('warehouses')) {
+                $table->foreignId('warehouse_id')->nullable()->constrained('warehouses');
+            } else {
+                $table->foreignId('warehouse_id')->nullable();
+            }
+
+            if (!empty(config('socius-models.checksum_field'))) {
+                $table->string(config('socius-models.checksum_field'))->nullable();
+            }
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('order_elements');
+    }
+}

@@ -1,0 +1,24 @@
+<?php
+
+namespace DummyNamespace;
+
+use Grixu\SociusModels\Order\Enums\ReceiveStatusEnum;
+use NamespacedDummyModel;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class DummyModelFactory extends Factory
+{
+    protected $model = DummyModel::class;
+
+    public function definition()
+    {
+        return [
+            'xl_id' => $this->faker->numberBetween(100000000, 999999999),
+            'order_number' => $this->faker->numberBetween(100000000, 999999999),
+            'receive_status' => ReceiveStatusEnum::ADDED(),
+            'receive_created_at' => now(),
+            'receive_updated_at' => now(),
+            'received_detailed_status' => $this->faker->paragraph,
+        ];
+    }
+}

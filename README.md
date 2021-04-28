@@ -31,14 +31,38 @@ please remember about extending Model and overwrite default `$fillable`.
 
 To publish migrations:
 ```bash
-php artisan vendor:publish --tag=socius-migrations-description
-php artisan vendor:publish --tag=socius-migrations-product
-php artisan vendor:publish --tag=socius-migrations-customer
-php artisan vendor:publish --tag=socius-migrations-warehouse
-php artisan vendor:publish --tag=socius-migrations-operator
+# php artisan vendor:publish --tag=socius-migrations-model-name
+# Eg:
+php artisan vendor:publish --tag=socius-migrations-branch
 
 # Or all at once:
-php artisan vendor:publish --tag=socius-migrations-all
+php artisan vendor:publish --tag=socius-migrations
+```
+
+### Generating models & factories
+
+You can also create local, customizable version both models & their factories. To do that just type:
+```bash
+# php artisan socius:model-name ModelNameInLocalApp
+# Eg:
+php artisan socius:product MyProduct
+```
+
+You also could generate them with custom namespace for model & factory:
+
+```bash
+php artisan socius:product MyProduct Custom\\Namespace\\Models Custom\\Namespace\\Factories
+```
+
+Same way with factories:
+
+```bash
+# php artisan socius:model-name-factory ModelNameInLocalApp
+# Eg:
+php artisan socius:product-factory MyFactory
+
+# With custom namespace:
+php artisan socius:product-factory MyFactory Custom\\Namespace\\Factories Custom\\Namespace\\Models
 ```
 
 ### Testing

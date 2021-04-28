@@ -3,21 +3,18 @@
 namespace Grixu\SociusModels\Customer\Models;
 
 use Grixu\SociusModels\Customer\Factories\CustomerFactory;
-use Grixu\SociusModels\Operator\Models\Operator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon syncTs
+ * @property Carbon sync_ts
  * @property string name
  * @property string country
- * @property string vatNumber
- * @property Carbon updatedAt
- * @property int paymentPeriod
- * @property int xlId
+ * @property string vat_number
+ * @property Carbon updated_at
+ * @property int payment_period
+ * @property int xl_id
  * @property mixed email
  * @property mixed phone2
  * @property mixed phone1
@@ -25,14 +22,14 @@ use Illuminate\Support\Facades\Schema;
  * @property mixed voivodeship
  * @property mixed street
  * @property mixed city
- * @property mixed postalCode
+ * @property mixed postal_code
  */
 class Customer extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
     public $incrementing = true;
@@ -40,41 +37,41 @@ class Customer extends Model
     protected $fillable = [
         'name',
         'country',
-        'postalCode',
+        'postal_code',
         'city',
-        'vatNumber',
+        'vat_number',
         'street',
         'voivodeship',
         'district',
         'phone1',
         'phone2',
         'email',
-        'paymentPeriod',
-        'xlId',
-        'syncTs',
-        'createdAt',
-        'updatedAt',
+        'payment_period',
+        'xl_id',
+        'sync_ts',
+        'created_at',
+        'updated_at',
     ];
 
     protected $casts = [
         'name' => 'string',
         'country' => 'string',
-        'postalCode' => 'string',
+        'postal_code' => 'string',
         'city' => 'string',
-        'vatNumber' => 'string',
+        'vat_number' => 'string',
         'street' => 'string',
         'voivodeship' => 'string',
         'district' => 'string',
         'phone1' => 'string',
         'phone2' => 'string',
         'email' => 'string',
-        'paymentPeriod' => 'integer',
-        'xlId' => 'integer',
+        'payment_period' => 'integer',
+        'xl_id' => 'integer',
     ];
 
     protected $dates = [
-        'syncTs',
-        'updatedAt',
+        'sync_ts',
+        'updated_at',
     ];
 
     public static function newFactory()

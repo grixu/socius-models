@@ -9,17 +9,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property string name
- * @property int xlId
+ * @property int xl_id
  * @property int id
- * @property \Illuminate\Support\Carbon updatedAt
+ * @property \Illuminate\Support\Carbon updated_at
  * @property Product products
  */
 class ProductType extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 
@@ -28,21 +28,21 @@ class ProductType extends Model
     ];
 
     protected $dates = [
-        'updatedAt',
+        'updated_at',
     ];
 
     protected $fillable = [
         'name',
-        'xlId',
-        'createdAt',
-        'updatedAt',
+        'xl_id',
+        'created_at',
+        'updated_at',
     ];
 
     public function products(): HasMany
     {
         return $this->hasMany(
             Product::class,
-            'productTypeId',
+            'product_type_id',
             'id'
         );
     }
