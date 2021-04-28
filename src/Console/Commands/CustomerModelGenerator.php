@@ -13,6 +13,6 @@ class CustomerModelGenerator extends ModelGenerator
 
     protected function getStub(): string
     {
-        return __DIR__ . '/../Stubs/CustomerModel.php.stub';
+        return __DIR__ . '/../Stubs/CustomerModel.stub';
     }
 }

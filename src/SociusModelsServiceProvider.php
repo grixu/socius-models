@@ -88,9 +88,6 @@ class SociusModelsServiceProvider extends ServiceProvider
                     __DIR__ . '/../migrations/create_operators_table.php.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_operators_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_operator_branch_pivot_table.php.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_operator_branch_pivot_table.php'
-                    ),
                     __DIR__ . '/../migrations/create_categories_table.php.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_categories_table.php'
                     ),
@@ -104,25 +101,28 @@ class SociusModelsServiceProvider extends ServiceProvider
                         'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                     ),
                     __DIR__ . '/../migrations/create_customers_table.php.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_operators_table.php'
-                    ),
-                    __DIR__ . '/../migrations/create_orders_table.php.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_orders_table.php'
-                    ),
-                    __DIR__ . '/../migrations/create_order_elements_table.php.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_order_elements_table.php'
+                        'migrations/' . date('Y_m_d_His', time()) . '_create_customers_table.php'
                     ),
                     __DIR__ . '/../migrations/create_languages_table.php.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_languages_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_product_descriptions_table.php.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_product_descriptions_table.php'
-                    ),
                     __DIR__ . '/../migrations/create_warehouse_table.php.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_warehouse_table.php'
                     ),
+                    __DIR__ . '/../migrations/create_product_descriptions_table.php.stub' => database_path(
+                        'migrations/' . date('Y_m_d_His', time()+1) . '_create_product_descriptions_table.php'
+                    ),
                     __DIR__ . '/../migrations/create_stocks_table.php.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_stocks_table.php'
+                        'migrations/' . date('Y_m_d_His', time()+1) . '_create_stocks_table.php'
+                    ),
+                    __DIR__ . '/../migrations/create_operator_branch_pivot_table.php.stub' => database_path(
+                        'migrations/' . date('Y_m_d_His', time()+2) . '_create_operator_branch_pivot_table.php'
+                    ),
+                    __DIR__ . '/../migrations/create_orders_table.php.stub' => database_path(
+                        'migrations/' . date('Y_m_d_His', time()+2) . '_create_orders_table.php'
+                    ),
+                    __DIR__ . '/../migrations/create_order_elements_table.php.stub' => database_path(
+                        'migrations/' . date('Y_m_d_His', time()+3) . '_create_order_elements_table.php'
                     ),
 
                 ],
@@ -152,7 +152,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         $this->publishes(
             [
                 __DIR__ . '/../migrations/create_customers_table.php.stub' => database_path(
-                    'migrations/' . date('Y_m_d_His', time()) . '_create_operators_table.php'
+                    'migrations/' . date('Y_m_d_His', time()) . '_create_customers_table.php'
                 ),
             ],
             'socius-migrations-customer'

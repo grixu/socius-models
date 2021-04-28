@@ -17,14 +17,14 @@ class OrderElementMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/create_order_elements_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_order_elements_table.stub';
         $this->obj = new CreateOrderElementsTable();
     }
 
     /** @test */
     public function warehouse_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_warehouse_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_warehouse_table.stub';
         (new CreateWarehouseTable())->up();
 
         $this->up();
@@ -35,7 +35,7 @@ class OrderElementMigrationTest extends MigrationTest
     /** @test */
     public function product_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_products_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_products_table.stub';
         (new CreateProductsTable())->up();
 
         $this->up();
@@ -47,7 +47,7 @@ class OrderElementMigrationTest extends MigrationTest
     /** @test */
     public function order_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_orders_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_orders_table.stub';
         (new CreateOrdersTable())->up();
 
         $this->up();

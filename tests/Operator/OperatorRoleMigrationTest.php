@@ -13,7 +13,7 @@ class OperatorRoleMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/create_operator_roles_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_operator_roles_table.stub';
         $this->obj = new CreateOperatorRolesTable();
     }
 }

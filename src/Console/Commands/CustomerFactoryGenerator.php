@@ -13,6 +13,6 @@ class CustomerFactoryGenerator extends FactoryGenerator
 
     protected function getStub(): string
     {
-        return __DIR__ . '/../Stubs/CustomerFactory.php.stub';
+        return __DIR__ . '/../Stubs/CustomerFactory.stub';
     }
 }

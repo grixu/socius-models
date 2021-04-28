@@ -14,7 +14,7 @@ class OperatorBranchMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/create_operator_branch_pivot_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_operator_branch_pivot_table.stub';
         $this->obj = new CreateOperatorBranchPivotTable();
     }
 }

@@ -16,14 +16,14 @@ class StockMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/create_stocks_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_stocks_table.stub';
         $this->obj = new CreateStocksTable();
     }
 
     /** @test */
     public function warehouse_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_warehouse_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_warehouse_table.stub';
         (new CreateWarehouseTable())->up();
 
         $this->up();
@@ -34,7 +34,7 @@ class StockMigrationTest extends MigrationTest
     /** @test */
     public function customer_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_products_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_products_table.stub';
         (new CreateProductsTable())->up();
 
         $this->up();

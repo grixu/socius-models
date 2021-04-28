@@ -17,14 +17,14 @@ class ProductMigrationTest extends MigrationTest
     {
         parent::setUp();
 
-        require_once __DIR__ . '/../../migrations/create_products_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_products_table.stub';
         $this->obj = new CreateProductsTable();
     }
 
     /** @test */
     public function brand_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_brands_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_brands_table.stub';
         (new CreateBrandsTable())->up();
 
         $this->up();
@@ -35,7 +35,7 @@ class ProductMigrationTest extends MigrationTest
     /** @test */
     public function product_type_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_product_types_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_product_types_table.stub';
         (new CreateProductTypesTable())->up();
 
         $this->up();
@@ -46,7 +46,7 @@ class ProductMigrationTest extends MigrationTest
     /** @test */
     public function category_relationship(): void
     {
-        require_once __DIR__ . '/../../migrations/create_categories_table.php.stub';
+        require_once __DIR__ . '/../../migrations/create_categories_table.stub';
         (new CreateCategoriesTable())->up();
 
         $this->up();
