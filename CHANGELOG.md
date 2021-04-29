@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.0.1 - 2021-04-29
+
+- Bugs fixed
+
 ## 2.0.0 - 2021-04-28
 
 - Changed migration publishing - now it uses .stub & generating timestamp in name to simplify migrations updating process

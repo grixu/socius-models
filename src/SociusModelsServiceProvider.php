@@ -79,49 +79,49 @@ class SociusModelsServiceProvider extends ServiceProvider
 
             $this->publishes(
                 [
-                    __DIR__ . '/../migrations/create_branches_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_branches_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_branches_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_operator_roles_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_operator_roles_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_operator_roles_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_operators_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_operators_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_operators_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_categories_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_categories_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_categories_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_brands_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_brands_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_brands_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_product_types_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_product_types_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_product_types_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_products_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_products_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_customers_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_customers_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_customers_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_languages_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_languages_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_languages_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_warehouse_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_warehouse_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_warehouse_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_product_descriptions_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_product_descriptions_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()+1) . '_create_product_descriptions_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_stocks_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_stocks_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()+1) . '_create_stocks_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_operator_branch_pivot_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_operator_branch_pivot_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()+2) . '_create_operator_branch_pivot_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_orders_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_orders_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()+2) . '_create_orders_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_order_elements_table.php.stub' => database_path(
+                    __DIR__ . '/../migrations/create_order_elements_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()+3) . '_create_order_elements_table.php'
                     ),
 
@@ -151,7 +151,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_customers_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_customers_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_customers_table.php'
                 ),
             ],
@@ -163,7 +163,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_languages_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_languages_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_languages_table.php'
                 ),
             ],
@@ -175,7 +175,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_product_descriptions_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_product_descriptions_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_product_descriptions_table.php'
                 ),
             ],
@@ -187,7 +187,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_branches_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_branches_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_branches_table.php'
                 ),
             ],
@@ -199,7 +199,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_operator_roles_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_operator_roles_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_operator_roles_table.php'
                 ),
             ],
@@ -211,7 +211,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_operators_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_operators_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_operators_table.php'
                 ),
             ],
@@ -223,7 +223,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_operator_branch_pivot_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_operator_branch_pivot_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_operator_branch_pivot_table.php'
                 ),
             ],
@@ -235,7 +235,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_orders_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_orders_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_orders_table.php'
                 ),
             ],
@@ -247,7 +247,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_order_elements_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_order_elements_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_order_elements_table.php'
                 ),
             ],
@@ -259,7 +259,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_brands_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_brands_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_brands_table.php'
                 ),
             ],
@@ -271,7 +271,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_categories_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_categories_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_categories_table.php'
                 ),
             ],
@@ -283,7 +283,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_product_types_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_product_types_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_product_types_table.php'
                 ),
             ],
@@ -295,7 +295,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_products_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_products_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                 ),
             ],
@@ -307,7 +307,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_warehouse_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_warehouse_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_warehouse_table.php'
                 ),
             ],
@@ -319,7 +319,7 @@ class SociusModelsServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../migrations/create_stocks_table.php.stub' => database_path(
+                __DIR__ . '/../migrations/create_stocks_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_stocks_table.php'
                 ),
             ],
