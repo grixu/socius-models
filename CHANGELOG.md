@@ -2,6 +2,13 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.1.0 - 2021-04-30
+
+- Updated `relationship-data-transfer-object`
+- DTO v3
+- Created Caster for Carbon fields
+- Created Casters for all enum fields
+
 ## 2.0.1 - 2021-04-29
 
 - Bugs fixed
