@@ -3,8 +3,11 @@
 namespace Grixu\SociusModels\Warehouse\DataTransferObjects;
 
 use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
+use Grixu\SociusModels\Casters\CarbonCaster;
+use Grixu\SociusModels\Casters\WarehouseTypeEnumCaster;
 use Grixu\SociusModels\Warehouse\Enums\WarehouseTypeEnum;
 use Illuminate\Support\Carbon;
+use Spatie\DataTransferObject\Attributes\CastWith;
 
 class WarehouseData extends RelationshipDataTransferObject
 {
@@ -14,9 +17,15 @@ class WarehouseData extends RelationshipDataTransferObject
     public string $street;
     public string $city;
     public string $postCode;
-    public WarehouseTypeEnum $type;
     public bool $locked;
-    public Carbon $syncTs;
-    public Carbon $updatedAt;
     public int $xlId;
+
+    #[CastWith(WarehouseTypeEnumCaster::class)]
+    public WarehouseTypeEnum $type;
+
+    #[CastWith(CarbonCaster::class)]
+    public Carbon $syncTs;
+
+    #[CastWith(CarbonCaster::class)]
+    public Carbon $updatedAt;
 }
