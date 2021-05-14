@@ -23,7 +23,7 @@ class CreateProductDescriptionsTable extends Migration
             $table->string('url')->nullable();
             $table->dateTime('last_modification')->nullable();
             $table->dateTime('last_modification_desc')->nullable();
-            $table->string('xl_id', 100)->index();
+            $table->string('xl_id', 100)->unique();
             $table->dateTime('sync_ts');
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();
