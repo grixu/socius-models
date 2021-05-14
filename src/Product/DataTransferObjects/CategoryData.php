@@ -2,12 +2,12 @@
 
 namespace Grixu\SociusModels\Product\DataTransferObjects;
 
-use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
+use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\Attributes\CastWith;
 
-class CategoryData extends RelationshipDataTransferObject
+class CategoryData extends SociusDto
 {
     public string $name;
 

@@ -2,14 +2,14 @@
 
 namespace Grixu\SociusModels\Warehouse\DataTransferObjects;
 
-use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
+use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Grixu\SociusModels\Casters\WarehouseTypeEnumCaster;
 use Grixu\SociusModels\Warehouse\Enums\WarehouseTypeEnum;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\Attributes\CastWith;
 
-class WarehouseData extends RelationshipDataTransferObject
+class WarehouseData extends SociusDto
 {
     public string $name;
     public string $desc;
