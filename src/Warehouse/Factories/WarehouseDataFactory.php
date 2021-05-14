@@ -28,7 +28,7 @@ class WarehouseDataFactory extends Factory
                 'locked' => (bool) rand(0,1),
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

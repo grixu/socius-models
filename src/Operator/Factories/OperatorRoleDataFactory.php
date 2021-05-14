@@ -19,7 +19,7 @@ class OperatorRoleDataFactory extends Factory
             [
                 'name' => 'Testowy klient',
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

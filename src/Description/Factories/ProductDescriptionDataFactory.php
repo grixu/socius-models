@@ -27,7 +27,7 @@ class ProductDescriptionDataFactory extends Factory
                 'lastModification' => now()->subMinute(),
                 'updatedAt' => now(),
                 'syncTs' => now(),
-                'xlId' => '1',
+                'xlId' => (string)rand(100,999),
             ]
         );
     }

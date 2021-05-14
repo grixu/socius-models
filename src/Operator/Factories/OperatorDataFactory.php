@@ -22,7 +22,7 @@ class OperatorDataFactory extends Factory
                 'email' => 'user@cdn.xl',
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

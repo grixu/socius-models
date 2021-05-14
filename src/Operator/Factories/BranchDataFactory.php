@@ -20,7 +20,7 @@ class BranchDataFactory extends Factory
                 'name' => 'Testowy klient',
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

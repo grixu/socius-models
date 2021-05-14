@@ -19,7 +19,7 @@ class LanguageDataFactory extends Factory
             [
                 'name' => 'Testowy język',
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

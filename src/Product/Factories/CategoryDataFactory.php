@@ -20,7 +20,7 @@ class CategoryDataFactory extends Factory
                 'name' => 'Testowa kat',
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }
