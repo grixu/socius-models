@@ -2,6 +2,11 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.2.0 - 2021-05-14
+
+- Use `socius-dto` instead of `relationship-data-transfer-object`
+- Updated migrations: now every `xl_id` are `unique()`
+
 ## 2.1.0 - 2021-04-30
 
 - Updated `relationship-data-transfer-object`
