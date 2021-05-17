@@ -2,7 +2,7 @@
 
 namespace Grixu\SociusModels\Tests\Helpers;
 
-use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
+use Grixu\SociusDto\SociusDto;
 use Orchestra\Testbench\TestCase;
 
 abstract class DataFactoryTestCase extends TestCase
@@ -24,6 +24,6 @@ abstract class DataFactoryTestCase extends TestCase
         $obj = $this->factory::new()->create();
 
         $this->assertNotEmpty($obj);
-        $this->assertInstanceOf(RelationshipDataTransferObject::class, $obj);
+        $this->assertInstanceOf(SociusDto::class, $obj);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Grixu\SociusModels\Product\DataTransferObjects;
 
-use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
+use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Grixu\SociusModels\Casters\ProductMeasureUnitEnumCaster;
 use Grixu\SociusModels\Casters\ProductVatTypeEnumCaster;
@@ -11,7 +11,7 @@ use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\Attributes\CastWith;
 
-class ProductData extends RelationshipDataTransferObject
+class ProductData extends SociusDto
 {
     public string $name;
     public string $index;

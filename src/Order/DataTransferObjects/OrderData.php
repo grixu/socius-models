@@ -2,14 +2,14 @@
 
 namespace Grixu\SociusModels\Order\DataTransferObjects;
 
-use Grixu\RelationshipDataTransferObject\RelationshipDataTransferObject;
+use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Grixu\SociusModels\Casters\ReceiveStatusEnumCaster;
 use Grixu\SociusModels\Order\Enums\ReceiveStatusEnum;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\Attributes\CastWith;
 
-class OrderData extends RelationshipDataTransferObject
+class OrderData extends SociusDto
 {
     public int $xlId;
 

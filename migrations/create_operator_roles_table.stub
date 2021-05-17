@@ -11,7 +11,7 @@ class CreateOperatorRolesTable extends Migration
         Schema::create('operator_roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('xl_id');
+            $table->unsignedBigInteger('xl_id')->unique();
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();
             }

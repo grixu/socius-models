@@ -24,7 +24,7 @@ class CustomerDataFactory extends Factory
                 'paymentPeriod' => 15,
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

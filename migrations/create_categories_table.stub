@@ -12,7 +12,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('parent_id')->nullable()->constrained('categories', 'id');
-            $table->unsignedInteger('xl_id');
+            $table->unsignedInteger('xl_id')->unique();
             $table->dateTime('sync_ts');
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();

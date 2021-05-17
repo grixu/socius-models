@@ -19,7 +19,7 @@ class BrandDataFactory extends Factory
             [
                 'name' => 'Testowa marka',
                 'updatedAt' => now()->subWeek(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

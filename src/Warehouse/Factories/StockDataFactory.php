@@ -21,7 +21,7 @@ class StockDataFactory extends Factory
                 'receptionDate' => now()->subDay(),
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => '1',
+                'xlId' => (string)rand(100,999),
             ]
         );
     }

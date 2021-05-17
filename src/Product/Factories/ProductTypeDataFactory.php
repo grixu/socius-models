@@ -19,7 +19,7 @@ class ProductTypeDataFactory extends Factory
             [
                 'name' => 'Testowy typ',
                 'updatedAt' => now()->subWeek(),
-                'xlId' => 1,
+                'xlId' => rand(100,999),
             ]
         );
     }

@@ -10,7 +10,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('xl_id')->nullable();
+            $table->unsignedBigInteger('xl_id')->unique();
             $table->string('order_number')->nullable();
             $table->smallInteger('receive_status');
             $table->timestamp('receive_created_at', 0)->nullable();
