@@ -15,16 +15,16 @@ class ProductData extends SociusDto
 {
     public string $name;
     public string $index;
-    public string $ean;
+    public string|null $ean;
 
     #[CastWith(ProductMeasureUnitEnumCaster::class)]
-    public ProductMeasureUnitEnum $measureUnit;
+    public ProductMeasureUnitEnum|null $measureUnit;
 
     #[CastWith(ProductVatTypeEnumCaster::class)]
-    public ProductVatTypeEnum $taxGroup;
+    public ProductVatTypeEnum|null $taxGroup;
 
-    public int $taxValue;
-    public float $weight;
+    public int|null $taxValue;
+    public float|null $weight;
     public int $xlId;
 
     #[CastWith(CarbonCaster::class)]
@@ -41,6 +41,7 @@ class ProductData extends SociusDto
     public int|null $flags;
     public float|int|null $price;
     public float|int|null $eshopPrice;
+    public string|null $eshopUrl;
 
     #[CastWith(CarbonCaster::class)]
     public Carbon|null $priceUpdated;
