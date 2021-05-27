@@ -2,6 +2,11 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.3.0 - 2021-05-27
+
+- New field in Product
+- Updated nullables in Product migration & DTO
+
 ## 2.2.0 - 2021-05-14
 
 - Use `socius-dto` instead of `relationship-data-transfer-object`

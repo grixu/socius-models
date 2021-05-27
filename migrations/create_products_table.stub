@@ -31,6 +31,7 @@ class CreateProductsTable extends Migration
             $table->dateTime('price_updated')->nullable();
             $table->double('eshop_price', 10,2)->nullable();
             $table->unsignedInteger('flags')->nullable();
+            $table->string('eshop_url')->nullable();
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();
             }
