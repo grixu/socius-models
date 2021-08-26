@@ -125,7 +125,7 @@ class SociusModelsServiceProvider extends ServiceProvider
                         'migrations/' . date('Y_m_d_His', time() + 3) . '_create_order_elements_table.php'
                     ),
                     __DIR__ . '/../migrations/update_products_table_add_availabilities.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time() + 3) . 'update_products_table_add_availabilities.php'
+                        'migrations/' . date('Y_m_d_His', time() + 3) . '_update_products_table_add_availabilities.php'
                     ),
                 ],
                 'socius-migrations'
@@ -246,7 +246,7 @@ class SociusModelsServiceProvider extends ServiceProvider
                     'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                 ),
                 __DIR__ . '/../migrations/update_products_table_add_availabilities.stub' => database_path(
-                    'migrations/' . date('Y_m_d_His', time()) . 'update_products_table_add_availabilities.php'
+                    'migrations/' . date('Y_m_d_His', time()) . '_update_products_table_add_availabilities.php'
                 ),
             ],
             'socius-migrations-product'
