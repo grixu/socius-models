@@ -8,14 +8,17 @@ class UpdateProductsTableAddAvailabilities extends Migration
 {
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->boolean('availability_days')->nullable();
-            $table->boolean('availability_days_in_words')->nullable();
+        Schema::table('products', function (Blueprint $table) {
+            $table->boolean('availability_in_days')->nullable();
+            $table->string('availability_in_days_in_words')->nullable();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('availability_in_days');
+            $table->dropColumn('availability_in_days_in_words');
+        });
     }
 }
