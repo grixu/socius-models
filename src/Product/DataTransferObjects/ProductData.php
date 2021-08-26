@@ -33,11 +33,13 @@ class ProductData extends SociusDto
     #[CastWith(CarbonCaster::class)]
     public Carbon $updatedAt;
 
-    public bool $eshop=false;
-    public bool $availability=false;
-    public bool $attachments=false;
-    public bool $archived=true;
-    public bool $blocked=true;
+    public bool $eshop = false;
+    public bool $availability = false;
+    public int|null $availabilityInDays = null;
+    public string|null $availabilityInDaysInWords = null;
+    public bool $attachments = false;
+    public bool $archived = true;
+    public bool $blocked = true;
     public int|null $flags;
     public float|int|null $price;
     public float|int|null $eshopPrice;
