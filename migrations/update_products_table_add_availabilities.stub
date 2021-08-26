@@ -9,7 +9,7 @@ class UpdateProductsTableAddAvailabilities extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->boolean('availability_in_days')->nullable();
+            $table->unsignedSmallInteger('availability_in_days')->nullable();
             $table->string('availability_in_days_in_words')->nullable();
         });
     }
