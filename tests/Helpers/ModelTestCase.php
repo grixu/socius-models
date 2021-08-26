@@ -53,6 +53,9 @@ abstract class ModelTestCase extends TestCase
 
         require_once __DIR__ . '/../../migrations/create_products_table.stub';
         (new \CreateProductsTable())->up();
+
+        require_once __DIR__ . '/../../migrations/update_products_table_add_availabilities.stub';
+        (new \UpdateProductsTableAddAvailabilities())->up();
     }
 
     protected function migrateOperator(): void
