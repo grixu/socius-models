@@ -14,15 +14,15 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon receive_created_at
- * @property Carbon receive_updated_at
- * @property int id
- * @property int xl_id
- * @property int warehouse_id
- * @property int operator_id
- * @property string order_number
- * @property string received_detailed_status
- * @property ReceiveStatusEnum receive_status
+ * @property Carbon $receive_created_at
+ * @property Carbon $receive_updated_at
+ * @property int $id
+ * @property int $xl_id
+ * @property int $warehouse_id
+ * @property int $operator_id
+ * @property string $order_number
+ * @property string $received_detailed_status
+ * @property ReceiveStatusEnum $receive_status
  */
 class Order extends Model
 {

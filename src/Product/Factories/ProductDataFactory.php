@@ -17,8 +17,8 @@ class ProductDataFactory extends Factory
     public function create(array $parameters = []): ProductData
     {
         return new ProductData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Test',
                 'index' => '00000',
                 'ean' => '000000',
@@ -26,7 +26,7 @@ class ProductDataFactory extends Factory
                 'taxGroup' => ProductVatTypeEnum::VAT23(),
                 'taxValue' => 23,
                 'weight' => 1.00,
-                'xlId' => rand(1,100000000),
+                'xlId' => rand(1, 100000000),
                 'eshop' => false,
                 'syncTs' => now(),
                 'updatedAt' => now(),

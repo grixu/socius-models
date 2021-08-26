@@ -15,11 +15,11 @@ class BrandDataFactory extends Factory
     public function create(array $parameters = []): BrandData
     {
         return new BrandData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowa marka',
                 'updatedAt' => now()->subWeek(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

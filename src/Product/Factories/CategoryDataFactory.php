@@ -15,12 +15,12 @@ class CategoryDataFactory extends Factory
     public function create(array $parameters = []): CategoryData
     {
         return new CategoryData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowa kat',
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

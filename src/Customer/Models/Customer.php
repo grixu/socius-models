@@ -8,28 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
 /**
- * @property Carbon sync_ts
- * @property string name
- * @property string country
- * @property string vat_number
- * @property Carbon updated_at
- * @property int payment_period
- * @property int xl_id
- * @property mixed email
- * @property mixed phone2
- * @property mixed phone1
- * @property mixed district
- * @property mixed voivodeship
- * @property mixed street
- * @property mixed city
- * @property mixed postal_code
+ * @property Carbon $sync_ts
+ * @property string $name
+ * @property string $country
+ * @property string $vat_number
+ * @property Carbon $updated_at
+ * @property int $payment_period
+ * @property int $xl_id
+ * @property mixed $email
+ * @property mixed $phone2
+ * @property mixed $phone1
+ * @property mixed $district
+ * @property mixed $voivodeship
+ * @property mixed $street
+ * @property mixed $city
+ * @property mixed $postal_code
  */
 class Customer extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
     public $incrementing = true;

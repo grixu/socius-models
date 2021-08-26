@@ -15,12 +15,12 @@ class BranchDataFactory extends Factory
     public function create(array $parameters = []): BranchData
     {
         return new BranchData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy klient',
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

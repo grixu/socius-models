@@ -9,7 +9,9 @@ class ProductMeasureUnitEnumCaster implements Caster
 {
     public function cast(mixed $value): ProductMeasureUnitEnum
     {
-        if ($value instanceof ProductMeasureUnitEnum) return $value;
+        if ($value instanceof ProductMeasureUnitEnum) {
+            return $value;
+        }
 
         return ProductMeasureUnitEnum::make($value);
     }

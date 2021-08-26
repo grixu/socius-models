@@ -9,7 +9,9 @@ class ReceiveStatusEnumCaster implements Caster
 {
     public function cast(mixed $value): ReceiveStatusEnum
     {
-        if ($value instanceof ReceiveStatusEnum) return $value;
+        if ($value instanceof ReceiveStatusEnum) {
+            return $value;
+        }
 
         return ReceiveStatusEnum::make($value);
     }

@@ -16,9 +16,9 @@ class OrderDataFactory extends Factory
     public function create(array $parameters = []): OrderData
     {
         return new OrderData(
-            $parameters +
-            [
-                'xlId' => rand(1,1000),
+            $parameters
+            + [
+                'xlId' => rand(1, 1000),
                 'orderNumber' => (string) rand(100000000, 999999999),
                 'receiveStatus' => ReceiveStatusEnum::WAITING_FOR_ADD(),
                 'receiveCreatedAt' => now(),

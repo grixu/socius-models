@@ -9,30 +9,30 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * @property int parent_id
- * @property int id
- * @property int xl_id
- * @property string name
- * @property Category parent
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
+ * @property int $parent_id
+ * @property int $id
+ * @property int $xl_id
+ * @property string $name
+ * @property Category $parent
+ * @property \Illuminate\Support\Carbon $sync_ts
+ * @property \Illuminate\Support\Carbon $updated_at
  */
 class Category extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 
     protected $casts = [
-        'name' => 'string'
+        'name' => 'string',
     ];
 
-     protected $dates = [
+    protected $dates = [
         'sync_ts',
-        'updated_at'
+        'updated_at',
     ];
 
     protected $fillable = [

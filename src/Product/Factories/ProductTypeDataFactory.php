@@ -15,11 +15,11 @@ class ProductTypeDataFactory extends Factory
     public function create(array $parameters = []): ProductTypeData
     {
         return new ProductTypeData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy typ',
                 'updatedAt' => now()->subWeek(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

@@ -15,9 +15,9 @@ class OrderElementDataFactory extends Factory
     public function create(array $parameters = []): OrderElementData
     {
         return new OrderElementData(
-            $parameters +
-            [
-                'xlId' => rand(1,1000),
+            $parameters
+            + [
+                'xlId' => rand(1, 1000),
                 'productIndex' => (string) rand(100000000, 999999999),
                 'amount' => (float) rand(1, 999),
                 'receivedAt' => now(),

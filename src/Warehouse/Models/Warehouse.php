@@ -12,28 +12,28 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property string name
- * @property string desc
- * @property string country
- * @property string street
- * @property string city
- * @property string post_code
- * @property WarehouseTypeEnum type
- * @property bool stockCounting
- * @property bool locked
- * @property Customer customer
- * @property \Illuminate\Support\Carbon updated_at
- * @property int xl_id
- * @property int id
- * @property int customer_id
+ * @property \Illuminate\Support\Carbon $sync_ts
+ * @property string $name
+ * @property string $desc
+ * @property string $country
+ * @property string $street
+ * @property string $city
+ * @property string $post_code
+ * @property WarehouseTypeEnum $type
+ * @property bool $stockCounting
+ * @property bool $locked
+ * @property Customer $customer
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property int $xl_id
+ * @property int $id
+ * @property int $customer_id
  */
 class Warehouse extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 

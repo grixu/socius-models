@@ -12,16 +12,16 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon sentAt
- * @property Carbon received_at
- * @property int id
- * @property int xl_id
- * @property int order_id
- * @property int warehouse_id
- * @property int product_id
- * @property string product_index
- * @property string received_detailed_status
- * @property double amount
+ * @property Carbon $sentAt
+ * @property Carbon $received_at
+ * @property int $id
+ * @property int $xl_id
+ * @property int $order_id
+ * @property int $warehouse_id
+ * @property int $product_id
+ * @property string $product_index
+ * @property string $received_detailed_status
+ * @property double $amount
  */
 class OrderElement extends Model
 {
