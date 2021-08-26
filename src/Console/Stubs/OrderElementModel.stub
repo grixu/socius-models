@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Schema;
  * @property int product_id
  * @property string product_index
  * @property string received_detailed_status
- * @property double amount
+ * @property float amount
  */
 class DummyModel extends Base
 {

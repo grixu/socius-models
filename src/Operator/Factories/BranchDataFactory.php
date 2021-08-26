@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Operator\Factories;
 
-use Grixu\SociusModels\Operator\DataTransferObjects\BranchData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Operator\DataTransferObjects\BranchData;
 
 class BranchDataFactory extends Factory
 {

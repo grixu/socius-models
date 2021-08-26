@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Description\Factories;
 
-use Grixu\SociusModels\Description\DataTransferObjects\LanguageData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Description\DataTransferObjects\LanguageData;
 
 class LanguageDataFactory extends Factory
 {

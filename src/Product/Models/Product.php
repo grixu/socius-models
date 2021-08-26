@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Schema;
  * @property ProductMeasureUnitEnum $measure_unit
  * @property ProductVatTypeEnum $tax_group
  * @property int $tax_value
- * @property double $weight
- * @property double $price
+ * @property float $weight
+ * @property float $price
  * @property bool $eshop
  * @property bool $availability
  * @property int $availability_in_days
@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Schema;
  * @property Brand $brand
  * @property int $product_type_id
  * @property ProductType $productType
- * @property double $eshop_price
+ * @property float $eshop_price
  * @property \Illuminate\Support\Carbon $price_updated
  * @property int $flags
  */

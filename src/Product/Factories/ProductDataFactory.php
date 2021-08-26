@@ -2,10 +2,10 @@
 
 namespace Grixu\SociusModels\Product\Factories;
 
+use Grixu\DataFactories\Factory;
 use Grixu\SociusModels\Product\DataTransferObjects\ProductData;
 use Grixu\SociusModels\Product\Enums\ProductMeasureUnitEnum;
 use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
-use Grixu\DataFactories\Factory;
 
 class ProductDataFactory extends Factory
 {

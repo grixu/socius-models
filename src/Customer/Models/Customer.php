@@ -15,14 +15,14 @@ use Illuminate\Support\Carbon;
  * @property Carbon $updated_at
  * @property int $payment_period
  * @property int $xl_id
- * @property mixed $email
- * @property mixed $phone2
- * @property mixed $phone1
- * @property mixed $district
- * @property mixed $voivodeship
- * @property mixed $street
- * @property mixed $city
- * @property mixed $postal_code
+ * @property string $email
+ * @property string $phone2
+ * @property string $phone1
+ * @property string $district
+ * @property string $voivodeship
+ * @property string $street
+ * @property string $city
+ * @property string $postal_code
  */
 class Customer extends Model
 {

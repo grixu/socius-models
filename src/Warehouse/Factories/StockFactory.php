@@ -9,7 +9,7 @@ class StockFactory extends Factory
 {
     protected $model = Stock::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'amount' => $this->faker->numberBetween(0, 10000),

@@ -10,7 +10,7 @@ class OrderElementFactory extends Factory
 {
     protected $model = OrderElement::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'xl_id' => $this->faker->numberBetween(100000000, 999999999),

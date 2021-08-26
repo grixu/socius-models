@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Customer\Factories;
 
-use Grixu\SociusModels\Customer\DataTransferObjects\CustomerData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Customer\DataTransferObjects\CustomerData;
 
 class CustomerDataFactory extends Factory
 {

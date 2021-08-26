@@ -2,9 +2,9 @@
 
 namespace Grixu\SociusModels\Warehouse\Factories;
 
+use Grixu\DataFactories\Factory;
 use Grixu\SociusModels\Warehouse\DataTransferObjects\WarehouseData;
 use Grixu\SociusModels\Warehouse\Enums\WarehouseTypeEnum;
-use Grixu\DataFactories\Factory;
 
 class WarehouseDataFactory extends Factory
 {

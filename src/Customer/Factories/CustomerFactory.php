@@ -9,7 +9,7 @@ class CustomerFactory extends Factory
 {
     protected $model = Customer::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,

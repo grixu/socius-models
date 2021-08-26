@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Operator\Factories;
 
-use Grixu\SociusModels\Operator\DataTransferObjects\OperatorData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Operator\DataTransferObjects\OperatorData;
 
 class OperatorDataFactory extends Factory
 {

@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Product\Factories;
 
-use Grixu\SociusModels\Product\DataTransferObjects\ProductTypeData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Product\DataTransferObjects\ProductTypeData;
 
 class ProductTypeDataFactory extends Factory
 {
