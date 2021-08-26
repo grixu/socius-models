@@ -2,6 +2,13 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.4.0 - 2021-08-26
+- Added availability fields in Product
+- Added PHPStan
+- Added PHP_CS Fixer
+- Added PHP Insights
+- Fixed style & PHPDoc errors
+
 ## 2.3.0 - 2021-05-27
 
 - New field in Product

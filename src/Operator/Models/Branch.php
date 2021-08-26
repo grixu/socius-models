@@ -8,24 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
- * @property int xl_id
- * @property string name
+ * @property \Illuminate\Support\Carbon $sync_ts
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property int $xl_id
+ * @property string $name
  */
 class Branch extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
     public $incrementing = true;
 
     protected $dates = [
         'sync_ts',
-        'updated_at'
+        'updated_at',
     ];
 
     protected $fillable = [

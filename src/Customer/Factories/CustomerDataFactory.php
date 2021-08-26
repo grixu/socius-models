@@ -2,17 +2,16 @@
 
 namespace Grixu\SociusModels\Customer\Factories;
 
-use Grixu\SociusModels\Customer\DataTransferObjects\CustomerData;
 use Grixu\DataFactories\Factory;
-
+use Grixu\SociusModels\Customer\DataTransferObjects\CustomerData;
 
 class CustomerDataFactory extends Factory
 {
     public function create(array $parameters = []): CustomerData
     {
         return new CustomerData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy klient',
                 'country' => 'PL',
                 'postalCode' => '87-100',
@@ -24,7 +23,7 @@ class CustomerDataFactory extends Factory
                 'paymentPeriod' => 15,
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

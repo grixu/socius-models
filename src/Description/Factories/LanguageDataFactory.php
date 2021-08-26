@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Description\Factories;
 
-use Grixu\SociusModels\Description\DataTransferObjects\LanguageData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Description\DataTransferObjects\LanguageData;
 
 class LanguageDataFactory extends Factory
 {
@@ -15,11 +15,11 @@ class LanguageDataFactory extends Factory
     public function create(array $parameters = []): LanguageData
     {
         return new LanguageData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy język',
                 'updatedAt' => now(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

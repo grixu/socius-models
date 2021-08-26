@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Operator\Factories;
 
-use Grixu\SociusModels\Operator\DataTransferObjects\OperatorData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Operator\DataTransferObjects\OperatorData;
 
 class OperatorDataFactory extends Factory
 {
@@ -15,14 +15,14 @@ class OperatorDataFactory extends Factory
     public function create(array $parameters = []): OperatorData
     {
         return new OperatorData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy klient',
                 'xlUsername' => 'USER',
                 'email' => 'user@cdn.xl',
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

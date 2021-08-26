@@ -10,7 +10,7 @@ class WarehouseFactory extends Factory
 {
     protected $model = Warehouse::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,

@@ -32,7 +32,9 @@ abstract class FactoryGenerator extends GeneratorCommand
         ];
 
         return str_replace(
-            array_keys($replace), array_values($replace), parent::buildClass($name)
+            array_keys($replace),
+            array_values($replace),
+            parent::buildClass($name)
         );
     }
 
@@ -91,5 +93,4 @@ abstract class FactoryGenerator extends GeneratorCommand
             ['model_namespace', InputArgument::OPTIONAL, 'The namespace of the local Model.'],
         ];
     }
-
 }

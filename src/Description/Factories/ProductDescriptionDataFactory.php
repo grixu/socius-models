@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Description\Factories;
 
-use Grixu\SociusModels\Description\DataTransferObjects\ProductDescriptionData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Description\DataTransferObjects\ProductDescriptionData;
 
 class ProductDescriptionDataFactory extends Factory
 {
@@ -15,8 +15,8 @@ class ProductDescriptionDataFactory extends Factory
     public function create(array $parameters = []): ProductDescriptionData
     {
         return new ProductDescriptionData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowa nazwa produktu',
                 'desc' => 'Testowy opis długi',
                 'pageTitle' => 'Testowa nazwa strony',
@@ -27,7 +27,7 @@ class ProductDescriptionDataFactory extends Factory
                 'lastModification' => now()->subMinute(),
                 'updatedAt' => now(),
                 'syncTs' => now(),
-                'xlId' => (string)rand(100,999),
+                'xlId' => (string) rand(100, 999),
             ]
         );
     }

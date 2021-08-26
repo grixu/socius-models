@@ -10,28 +10,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property string name
- * @property string desc
- * @property string page_title
- * @property string keywords
- * @property string short_desc
- * @property string meta_desc
- * @property string url
- * @property \Illuminate\Support\Carbon created_at
- * @property \Illuminate\Support\Carbon updated_at
- * @property \Illuminate\Support\Carbon|null last_modification
- * @property \Illuminate\Support\Carbon|null last_modification_desc
- * @property int xl_id
- * @property int language_id
- * @property int product_id
+ * @property \Illuminate\Support\Carbon $sync_ts
+ * @property string $name
+ * @property string $desc
+ * @property string $page_title
+ * @property string $keywords
+ * @property string $short_desc
+ * @property string $meta_desc
+ * @property string $url
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property \Illuminate\Support\Carbon|null $last_modification
+ * @property \Illuminate\Support\Carbon|null $last_modification_desc
+ * @property int $xl_id
+ * @property int $language_id
+ * @property int $product_id
  */
 class ProductDescription extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
     public $incrementing = true;

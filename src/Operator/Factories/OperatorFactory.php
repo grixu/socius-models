@@ -9,7 +9,7 @@ class OperatorFactory extends Factory
 {
     protected $model = Operator::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,

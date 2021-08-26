@@ -9,7 +9,9 @@ class ProductVatTypeEnumCaster implements Caster
 {
     public function cast(mixed $value): ProductVatTypeEnum
     {
-        if ($value instanceof ProductVatTypeEnum) return $value;
+        if ($value instanceof ProductVatTypeEnum) {
+            return $value;
+        }
 
         return ProductVatTypeEnum::make($value);
     }

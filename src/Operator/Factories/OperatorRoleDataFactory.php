@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Operator\Factories;
 
-use Grixu\SociusModels\Operator\DataTransferObjects\OperatorRoleData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Operator\DataTransferObjects\OperatorRoleData;
 
 class OperatorRoleDataFactory extends Factory
 {
@@ -15,11 +15,11 @@ class OperatorRoleDataFactory extends Factory
     public function create(array $parameters = []): OperatorRoleData
     {
         return new OperatorRoleData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy klient',
                 'updatedAt' => now(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

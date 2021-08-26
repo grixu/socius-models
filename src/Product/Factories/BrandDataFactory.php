@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Product\Factories;
 
-use Grixu\SociusModels\Product\DataTransferObjects\BrandData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Product\DataTransferObjects\BrandData;
 
 class BrandDataFactory extends Factory
 {
@@ -15,11 +15,11 @@ class BrandDataFactory extends Factory
     public function create(array $parameters = []): BrandData
     {
         return new BrandData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowa marka',
                 'updatedAt' => now()->subWeek(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

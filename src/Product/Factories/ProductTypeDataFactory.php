@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Product\Factories;
 
-use Grixu\SociusModels\Product\DataTransferObjects\ProductTypeData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Product\DataTransferObjects\ProductTypeData;
 
 class ProductTypeDataFactory extends Factory
 {
@@ -15,11 +15,11 @@ class ProductTypeDataFactory extends Factory
     public function create(array $parameters = []): ProductTypeData
     {
         return new ProductTypeData(
-            $parameters +
-            [
+            $parameters
+            + [
                 'name' => 'Testowy typ',
                 'updatedAt' => now()->subWeek(),
-                'xlId' => rand(100,999),
+                'xlId' => rand(100, 999),
             ]
         );
     }

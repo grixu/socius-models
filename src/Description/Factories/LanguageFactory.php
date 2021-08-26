@@ -9,7 +9,7 @@ class LanguageFactory extends Factory
 {
     protected $model = Language::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,

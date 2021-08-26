@@ -9,7 +9,7 @@ class CustomerFactory extends Factory
 {
     protected $model = Customer::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,
@@ -23,7 +23,7 @@ class CustomerFactory extends Factory
             'phone1' => $this->faker->phoneNumber,
             'phone2' => $this->faker->phoneNumber,
             'email' => $this->faker->email,
-            'payment_period' => $this->faker->numberBetween(0,60),
+            'payment_period' => $this->faker->numberBetween(0, 60),
             'xl_id' => $this->faker->numberBetween(100000000, 999999999),
             'sync_ts' => now(),
             'updated_at' => now(),

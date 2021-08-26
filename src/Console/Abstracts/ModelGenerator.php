@@ -59,5 +59,4 @@ abstract class ModelGenerator extends GeneratorCommand
             ['factory_namespace', InputArgument::OPTIONAL, 'The namespace of the local model Factory.'],
         ];
     }
-
 }

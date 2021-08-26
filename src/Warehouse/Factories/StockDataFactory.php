@@ -2,8 +2,8 @@
 
 namespace Grixu\SociusModels\Warehouse\Factories;
 
-use Grixu\SociusModels\Warehouse\DataTransferObjects\StockData;
 use Grixu\DataFactories\Factory;
+use Grixu\SociusModels\Warehouse\DataTransferObjects\StockData;
 
 class StockDataFactory extends Factory
 {
@@ -15,13 +15,13 @@ class StockDataFactory extends Factory
     public function create(array $parameters = []): StockData
     {
         return new StockData(
-            $parameters +
-            [
-                'amount' => (double) rand(1,1000),
+            $parameters
+            + [
+                'amount' => (float) rand(1, 1000),
                 'receptionDate' => now()->subDay(),
                 'syncTs' => now(),
                 'updatedAt' => now(),
-                'xlId' => (string)rand(100,999),
+                'xlId' => (string) rand(100, 999),
             ]
         );
     }

@@ -10,23 +10,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property int xl_id
- * @property int warehouse_id
- * @property int product_id
- * @property int id
- * @property float amount
- * @property \Illuminate\Support\Carbon updated_at
- * @property \Illuminate\Support\Carbon reception_date
- * @property Warehouse warehouse
- * @property Product product
+ * @property \Illuminate\Support\Carbon $sync_ts
+ * @property int $xl_id
+ * @property int $warehouse_id
+ * @property int $product_id
+ * @property int $id
+ * @property float $amount
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property \Illuminate\Support\Carbon $reception_date
+ * @property Warehouse $warehouse
+ * @property Product $product
  */
 class Stock extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
 

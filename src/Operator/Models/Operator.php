@@ -9,28 +9,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * @property \Illuminate\Support\Carbon sync_ts
- * @property \Illuminate\Support\Carbon updated_at
- * @property int operator_role_id
- * @property int id
- * @property int xl_id
- * @property string xl_username
- * @property string name
- * @property string email
+ * @property \Illuminate\Support\Carbon $sync_ts
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property int $operator_role_id
+ * @property int $id
+ * @property int $xl_id
+ * @property string $xl_username
+ * @property string $name
+ * @property string $email
  */
 class Operator extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+    public const CREATED_AT = 'created_at';
+    public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
     public $incrementing = true;
 
     protected $dates = [
         'sync_ts',
-        'updated_at'
+        'updated_at',
     ];
 
     protected $fillable = [

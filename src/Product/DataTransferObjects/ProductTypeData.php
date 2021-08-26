@@ -7,7 +7,7 @@ use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Spatie\DataTransferObject\Attributes\CastWith;
 
-class ProductTypeData  extends SociusDto
+class ProductTypeData extends SociusDto
 {
     public string $name;
 

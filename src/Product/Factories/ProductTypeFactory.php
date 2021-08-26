@@ -9,7 +9,7 @@ class ProductTypeFactory extends Factory
 {
     protected $model = ProductType::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->safeColorName,
