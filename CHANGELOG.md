@@ -2,6 +2,9 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.4.1 - 2021-08-30
+- Small tweaks in Product & Customer DTOs and migrations  
+
 ## 2.4.0 - 2021-08-26
 - Added availability fields in Product
 - Added PHPStan

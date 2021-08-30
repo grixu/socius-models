@@ -11,6 +11,7 @@ class UpdateProductsTableAddAvailabilities extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->unsignedSmallInteger('availability_in_days')->nullable();
             $table->string('availability_in_days_in_words')->nullable();
+            $table->boolean('availability')->nullable()->change();
         });
     }
 
@@ -19,6 +20,7 @@ class UpdateProductsTableAddAvailabilities extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('availability_in_days');
             $table->dropColumn('availability_in_days_in_words');
+            $table->boolean('availability')->default(false)->change();
         });
     }
 }

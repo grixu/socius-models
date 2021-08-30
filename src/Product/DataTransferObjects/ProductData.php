@@ -34,7 +34,7 @@ class ProductData extends SociusDto
     public Carbon $updatedAt;
 
     public bool $eshop = false;
-    public bool $availability = false;
+    public bool|null $availability = null;
     public int|null $availabilityInDays = null;
     public string|null $availabilityInDaysInWords = null;
     public bool $attachments = false;

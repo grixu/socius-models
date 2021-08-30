@@ -11,13 +11,13 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('country');
-            $table->string('postal_code');
-            $table->string('city');
-            $table->string('vat_number');
-            $table->string('street');
-            $table->string('voivodeship');
-            $table->string('district');
+            $table->string('country')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('city')->nullable();
+            $table->string('vat_number')->nullable();
+            $table->string('street')->nullable();
+            $table->string('voivodeship')->nullable();
+            $table->string('district')->nullable();
             $table->string('phone1')->nullable();
             $table->string('phone2')->nullable();
             $table->string('email')->nullable();

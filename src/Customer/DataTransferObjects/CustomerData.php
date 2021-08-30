@@ -11,19 +11,19 @@ class CustomerData extends SociusDto
 {
     public string $name;
 
-    public string $country;
+    public string|null $country;
 
-    public string $postalCode;
+    public string|null $postalCode;
 
-    public string $city;
+    public string|null $city;
 
-    public string $vatNumber;
+    public string|null $vatNumber;
 
-    public string $street;
+    public string|null $street;
 
-    public string $voivodeship;
+    public string|null $voivodeship;
 
-    public string $district;
+    public string|null $district;
 
     public string|null $phone1;
 
