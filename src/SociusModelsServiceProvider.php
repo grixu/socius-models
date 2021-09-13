@@ -34,7 +34,7 @@ use Illuminate\Support\ServiceProvider;
 
 class SociusModelsServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes(
@@ -149,12 +149,12 @@ class SociusModelsServiceProvider extends ServiceProvider
         }
     }
 
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'socius-models');
     }
 
-    protected function publishBranchMigration()
+    protected function publishBranchMigration(): void
     {
         $this->publishes(
             [
@@ -166,7 +166,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishOperatorRoleMigration()
+    protected function publishOperatorRoleMigration(): void
     {
         $this->publishes(
             [
@@ -178,7 +178,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishOperatorMigration()
+    protected function publishOperatorMigration(): void
     {
         $this->publishes(
             [
@@ -190,7 +190,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishOperatorBranchesMigration()
+    protected function publishOperatorBranchesMigration(): void
     {
         $this->publishes(
             [
@@ -202,7 +202,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishCategoryMigration()
+    protected function publishCategoryMigration(): void
     {
         $this->publishes(
             [
@@ -214,7 +214,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishBrandMigration()
+    protected function publishBrandMigration(): void
     {
         $this->publishes(
             [
@@ -226,7 +226,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishProductTypeMigration()
+    protected function publishProductTypeMigration(): void
     {
         $this->publishes(
             [
@@ -238,7 +238,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishProductMigration()
+    protected function publishProductMigration(): void
     {
         $this->publishes(
             [
@@ -253,7 +253,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishCustomerMigration()
+    protected function publishCustomerMigration(): void
     {
         $this->publishes(
             [
@@ -265,7 +265,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishOrderMigration()
+    protected function publishOrderMigration(): void
     {
         $this->publishes(
             [
@@ -277,7 +277,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishOrderElementMigration()
+    protected function publishOrderElementMigration(): void
     {
         $this->publishes(
             [
@@ -289,7 +289,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishLanguageMigration()
+    protected function publishLanguageMigration(): void
     {
         $this->publishes(
             [
@@ -301,7 +301,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishProductDescriptionMigration()
+    protected function publishProductDescriptionMigration(): void
     {
         $this->publishes(
             [
@@ -313,7 +313,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishWarehouseMigration()
+    protected function publishWarehouseMigration(): void
     {
         $this->publishes(
             [
@@ -325,7 +325,7 @@ class SociusModelsServiceProvider extends ServiceProvider
         );
     }
 
-    protected function publishStockMigration()
+    protected function publishStockMigration(): void
     {
         $this->publishes(
             [
