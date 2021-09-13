@@ -44,6 +44,7 @@ class ProductData extends SociusDto
     public float|int|null $price;
     public float|int|null $eshopPrice;
     public string|null $eshopUrl;
+    public string|null $eshopImage;
 
     #[CastWith(CarbonCaster::class)]
     public Carbon|null $priceUpdated;
