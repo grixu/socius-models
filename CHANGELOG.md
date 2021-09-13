@@ -2,12 +2,18 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 2.4.4 - 2021-09-13
+
+- Updated ServiceProvider: added new migration to publishing
+
 ## 2.4.3 - 2021-09-13
+
 - Added `eshopImage` field in Product
 - New migration for `products` table
 - Style fixes applied
 
 ## 2.4.2 - 2021-08-21
+
 - Added PHPInsights config file
 
 ## 2.4.1 - 2021-08-30

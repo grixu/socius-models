@@ -248,6 +248,9 @@ class SociusModelsServiceProvider extends ServiceProvider
                 __DIR__ . '/../migrations/update_products_table_add_availabilities.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_update_products_table_add_availabilities.php'
                 ),
+                __DIR__ . '/../migrations/update_products_table_add_images.stub' => database_path(
+                    'migrations/' . date('Y_m_d_His', time()) . '_update_products_table_add_images.php'
+                ),
             ],
             'socius-migrations-product'
         );
