@@ -39,6 +39,14 @@ class ProductTest extends ModelTestCase
     }
 
     /** @test */
+    public function product_attachments_relationship(): void
+    {
+        $this->makeModelInstance();
+
+        $this->assertEquals(HasMany::class, get_class($this->modelInstance->attachments()));
+    }
+
+    /** @test */
     public function stocks_relationship(): void
     {
         $this->makeModelInstance();
