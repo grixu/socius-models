@@ -37,7 +37,6 @@ class ProductData extends SociusDto
     public bool|null $availability = null;
     public int|null $availabilityInDays = null;
     public string|null $availabilityInDaysInWords = null;
-    public bool $attachments = false;
     public bool $archived = true;
     public bool $blocked = true;
     public int|null $flags;
