@@ -100,9 +100,6 @@ class SociusModelsServiceProvider extends ServiceProvider
                     __DIR__ . '/../migrations/create_products_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                     ),
-                    __DIR__ . '/../migrations/create_product_attachments_table.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time()) . '_create_product_attachments_table.php'
-                    ),
                     __DIR__ . '/../migrations/create_customers_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_customers_table.php'
                     ),
@@ -114,6 +111,9 @@ class SociusModelsServiceProvider extends ServiceProvider
                     ),
                     __DIR__ . '/../migrations/create_product_descriptions_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time() + 1) . '_create_product_descriptions_table.php'
+                    ),
+                    __DIR__ . '/../migrations/create_product_attachments_table.stub' => database_path(
+                        'migrations/' . date('Y_m_d_His', time() + 1) . '_create_product_attachments_table.php'
                     ),
                     __DIR__ . '/../migrations/create_stocks_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time() + 1) . '_create_stocks_table.php'
