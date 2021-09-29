@@ -100,6 +100,9 @@ class SociusModelsServiceProvider extends ServiceProvider
                     __DIR__ . '/../migrations/create_products_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                     ),
+                    __DIR__ . '/../migrations/create_product_attachments_table.stub' => database_path(
+                        'migrations/' . date('Y_m_d_His', time()) . '_create_product_attachments_table.php'
+                    ),
                     __DIR__ . '/../migrations/create_customers_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time()) . '_create_customers_table.php'
                     ),
@@ -124,9 +127,6 @@ class SociusModelsServiceProvider extends ServiceProvider
                     __DIR__ . '/../migrations/create_order_elements_table.stub' => database_path(
                         'migrations/' . date('Y_m_d_His', time() + 3) . '_create_order_elements_table.php'
                     ),
-                    __DIR__ . '/../migrations/update_products_table_add_availabilities.stub' => database_path(
-                        'migrations/' . date('Y_m_d_His', time() + 3) . '_update_products_table_add_availabilities.php'
-                    ),
                 ],
                 'socius-migrations'
             );
@@ -139,6 +139,7 @@ class SociusModelsServiceProvider extends ServiceProvider
             $this->publishBrandMigration();
             $this->publishProductTypeMigration();
             $this->publishProductMigration();
+            $this->publishProductAttachmentsMigration();
             $this->publishCustomerMigration();
             $this->publishOrderMigration();
             $this->publishOrderElementMigration();
@@ -245,15 +246,18 @@ class SociusModelsServiceProvider extends ServiceProvider
                 __DIR__ . '/../migrations/create_products_table.stub' => database_path(
                     'migrations/' . date('Y_m_d_His', time()) . '_create_products_table.php'
                 ),
-                __DIR__ . '/../migrations/update_products_table_add_availabilities.stub' => database_path(
-                    'migrations/' . date('Y_m_d_His', time()) . '_update_products_table_add_availabilities.php'
-                ),
-                __DIR__ . '/../migrations/update_products_table_add_images.stub' => database_path(
-                    'migrations/' . date('Y_m_d_His', time()) . '_update_products_table_add_images.php'
-                ),
             ],
             'socius-migrations-product'
         );
+    }
+
+    protected function publishProductAttachmentsMigration(): void
+    {
+        $this->publishes([
+            __DIR__ . '/../migrations/create_product_attachments_table.stub' => database_path(
+                'migrations/' . date('Y_m_d_His', time()) . '_create_product_attachments_table.php'
+            ),
+        ]);
     }
 
     protected function publishCustomerMigration(): void
