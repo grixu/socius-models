@@ -20,18 +20,20 @@ class CreateProductsTable extends Migration
             $table->boolean('blocked')->default(false);
             $table->boolean('archived')->default(false);
             $table->boolean('eshop')->default(false);
-            $table->boolean('availability')->default(false);
-            $table->boolean('attachments')->default(false);
             $table->dateTime('sync_ts')->nullable();
             $table->unsignedBigInteger('xl_id')->unique();
             $table->foreignId('brand_id')->nullable()->constrained('brands')->nullOnDelete();
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
             $table->foreignId('product_type_id')->nullable()->constrained('product_types')->nullOnDelete();
+            $table->unsignedInteger('flags')->nullable();
             $table->double('price', 10,2)->nullable();
             $table->dateTime('price_updated')->nullable();
             $table->double('eshop_price', 10,2)->nullable();
-            $table->unsignedInteger('flags')->nullable();
             $table->string('eshop_url')->nullable();
+            $table->string('eshop_image')->nullable();
+            $table->boolean('availability')->nullable();
+            $table->unsignedSmallInteger('availability_in_days')->nullable();
+            $table->string('availability_in_days_in_words')->nullable();
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();
             }
