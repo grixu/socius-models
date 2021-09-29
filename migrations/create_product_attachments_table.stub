@@ -15,7 +15,7 @@ class CreateProductAttachmentsTable extends Migration
             $table->dateTime('xl_updated_at')->nullable();
             $table->dateTime('sync_ts')->nullable();
             $table->unsignedBigInteger('xl_id')->unique();
-            $table->foreignId('product_id')->constrained('products')->nullOnDelete();
+            $table->foreignId('product_id')->constrained('products')->cascade();
             if (Schema::hasTable('languages')) {
                 $table->foreignId('language_id')->constrained('languages')->nullOnDelete();
             }
