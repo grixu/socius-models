@@ -2,8 +2,25 @@
 
 namespace Grixu\SociusModels\Tests\Helpers;
 
+use CreateBranchesTable;
+use CreateBrandsTable;
+use CreateCategoriesTable;
+use CreateCustomersTable;
+use CreateLanguagesTable;
+use CreateOperatorBranchPivotTable;
+use CreateOperatorRolesTable;
+use CreateOperatorsTable;
+use CreateOrderElementsTable;
+use CreateOrdersTable;
+use CreateProductAttachmentsTable;
+use CreateProductDescriptionsTable;
+use CreateProductsTable;
+use CreateProductTypesTable;
+use CreateStocksTable;
+use CreateWarehouseTable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase;
+use Spatie\LaravelRay\RayServiceProvider;
 
 abstract class ModelTestCase extends TestCase
 {
@@ -16,7 +33,7 @@ abstract class ModelTestCase extends TestCase
     protected function getPackageProviders($app): array
     {
         return [
-            \Spatie\LaravelRay\RayServiceProvider::class,
+            RayServiceProvider::class,
         ];
     }
 
@@ -28,70 +45,67 @@ abstract class ModelTestCase extends TestCase
     protected function migrateCustomer(): void
     {
         require_once __DIR__ . '/../../migrations/create_customers_table.stub';
-        (new \CreateCustomersTable())->up();
+        (new CreateCustomersTable())->up();
     }
 
     protected function migrateDescription(): void
     {
         require_once __DIR__ . '/../../migrations/create_languages_table.stub';
-        (new \CreateLanguagesTable())->up();
+        (new CreateLanguagesTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_product_descriptions_table.stub';
-        (new \CreateProductDescriptionsTable())->up();
+        (new CreateProductDescriptionsTable())->up();
     }
 
     protected function migrateProduct(): void
     {
         require_once __DIR__ . '/../../migrations/create_brands_table.stub';
-        (new \CreateBrandsTable())->up();
+        (new CreateBrandsTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_product_types_table.stub';
-        (new \CreateProductTypesTable())->up();
+        (new CreateProductTypesTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_categories_table.stub';
-        (new \CreateCategoriesTable())->up();
+        (new CreateCategoriesTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_products_table.stub';
-        (new \CreateProductsTable())->up();
+        (new CreateProductsTable())->up();
 
-        require_once __DIR__ . '/../../migrations/update_products_table_add_availabilities.stub';
-        (new \UpdateProductsTableAddAvailabilities())->up();
-
-        require_once __DIR__ . '/../../migrations/update_products_table_add_images.stub';
-        (new \UpdateProductsTableAddImages())->up();
+        require_once __DIR__ . '/../../migrations/create_product_attachments_table.stub';
+        (new CreateProductAttachmentsTable())->up();
     }
 
     protected function migrateOperator(): void
     {
         require_once __DIR__ . '/../../migrations/create_branches_table.stub';
-        (new \CreateBranchesTable())->up();
+        (new CreateBranchesTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_operator_roles_table.stub';
-        (new \CreateOperatorRolesTable())->up();
+        (new CreateOperatorRolesTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_operators_table.stub';
-        (new \CreateOperatorsTable())->up();
+        (new CreateOperatorsTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_operator_branch_pivot_table.stub';
-        (new \CreateOperatorBranchPivotTable())->up();
+        (new CreateOperatorBranchPivotTable())->up();
     }
 
     protected function migrateWarehouse(): void
     {
         require_once __DIR__ . '/../../migrations/create_warehouse_table.stub';
-        (new \CreateWarehouseTable())->up();
+        (new CreateWarehouseTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_stocks_table.stub';
-        (new \CreateStocksTable())->up();
+        (new CreateStocksTable())->up();
     }
 
     protected function migrateOrder(): void
     {
         require_once __DIR__ . '/../../migrations/create_orders_table.stub';
-        (new \CreateOrdersTable())->up();
+        (new CreateOrdersTable())->up();
 
         require_once __DIR__ . '/../../migrations/create_order_elements_table.stub';
-        (new \CreateOrderElementsTable())->up();
+        (new CreateOrderElementsTable())->up();
     }
 
     public function migrateAll(): void
