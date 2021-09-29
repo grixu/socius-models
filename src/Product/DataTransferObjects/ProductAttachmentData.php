@@ -12,8 +12,6 @@ class ProductAttachmentData extends SociusDto
     public string $name;
     public string $type;
     public int $xlId;
-    public int $productId;
-    public int|null $languageId;
 
     #[CastWith(CarbonCaster::class)]
     public Carbon $xlUpdatedAt;
