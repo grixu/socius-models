@@ -7,10 +7,11 @@ use Grixu\SociusModels\Product\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon $sync_ts
+ * @property Carbon $sync_ts
  * @property string $name
  * @property string $desc
  * @property string $page_title
@@ -18,10 +19,10 @@ use Illuminate\Support\Facades\Schema;
  * @property string $short_desc
  * @property string $meta_desc
  * @property string $url
- * @property \Illuminate\Support\Carbon $created_at
- * @property \Illuminate\Support\Carbon $updated_at
- * @property \Illuminate\Support\Carbon|null $last_modification
- * @property \Illuminate\Support\Carbon|null $last_modification_desc
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @property Carbon|null $last_modification
+ * @property Carbon|null $last_modification_desc
  * @property int $xl_id
  * @property int $language_id
  * @property int $product_id
@@ -34,7 +35,6 @@ class ProductDescription extends Model
     public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
-    public $incrementing = true;
 
     protected $fillable = [
         'name',
@@ -55,21 +55,11 @@ class ProductDescription extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
-        'desc' => 'string',
-        'page_title' => 'string',
-        'keywords' => 'string',
-        'short_desc' => 'string',
-        'meta_desc' => 'string',
-        'url' => 'string',
         'xl_id' => 'string',
-    ];
-
-    protected $dates = [
-        'last_modification',
-        'last_modification_desc',
-        'sync_ts',
-        'updated_at',
+        'sync_ts' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime',
+        'last_modification' => 'immutable_datetime',
+        'last_modification_desc' => 'immutable_datetime',
     ];
 
     public function language(): BelongsTo

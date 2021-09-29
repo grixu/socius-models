@@ -10,11 +10,10 @@ class OperatorBranch extends Pivot
     public const UPDATED_AT = 'updated_at';
 
     public $timestamps = true;
-    public $incrementing = false;
     protected $table = 'operator_branch';
 
-    protected $dates = [
-        'updated_at',
+    protected $casts = [
+        'updated_at' => 'immutable_datetime',
     ];
 
     protected $fillable = [

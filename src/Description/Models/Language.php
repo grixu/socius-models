@@ -21,7 +21,6 @@ class Language extends Model
     public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
-    public $incrementing = true;
 
     protected $fillable = [
         'name',
@@ -31,12 +30,8 @@ class Language extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
         'xl_id' => 'integer',
-    ];
-
-    protected $dates = [
-        'updated_at',
+        'updated_at' => 'immutable_datetime',
     ];
 
     public function descriptions(): HasMany

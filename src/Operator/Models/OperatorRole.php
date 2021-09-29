@@ -6,9 +6,10 @@ use Grixu\SociusModels\Operator\Factories\OperatorRoleFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
- * @property \Illuminate\Support\Carbon $updated_at
+ * @property Carbon $updated_at
  * @property string $name
  * @property int $xl_id
  * @property int $id
@@ -22,11 +23,6 @@ class OperatorRole extends Model
     public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
-    public $incrementing = true;
-
-    protected $dates = [
-        'updated_at',
-    ];
 
     protected $fillable = [
         'name',
@@ -36,8 +32,8 @@ class OperatorRole extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
         'xl_id' => 'integer',
+        'updated_at' => 'immutable_datetime',
     ];
 
     public function operators(): HasMany

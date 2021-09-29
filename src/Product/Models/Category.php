@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
  * @property int $parent_id
@@ -14,8 +15,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $xl_id
  * @property string $name
  * @property Category $parent
- * @property \Illuminate\Support\Carbon $sync_ts
- * @property \Illuminate\Support\Carbon $updated_at
+ * @property Carbon $sync_ts
+ * @property Carbon $updated_at
  */
 class Category extends Model
 {
@@ -27,12 +28,8 @@ class Category extends Model
     public $timestamps = false;
 
     protected $casts = [
-        'name' => 'string',
-    ];
-
-    protected $dates = [
-        'sync_ts',
-        'updated_at',
+        'sync_ts' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime',
     ];
 
     protected $fillable = [

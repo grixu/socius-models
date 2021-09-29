@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Carbon;
 
 /**
- * @property \Illuminate\Support\Carbon $sync_ts
- * @property \Illuminate\Support\Carbon $updated_at
+ * @property Carbon $sync_ts
+ * @property Carbon $updated_at
  * @property int $operator_role_id
  * @property int $id
  * @property int $xl_id
@@ -26,12 +27,6 @@ class Operator extends Model
     public const UPDATED_AT = 'updated_at';
 
     public $timestamps = false;
-    public $incrementing = true;
-
-    protected $dates = [
-        'sync_ts',
-        'updated_at',
-    ];
 
     protected $fillable = [
         'name',
@@ -45,10 +40,9 @@ class Operator extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
-        'xl_username' => 'string',
-        'email' => 'string',
         'xl_id' => 'integer',
+        'sync_ts' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime',
     ];
 
     public function role(): BelongsTo

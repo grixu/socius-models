@@ -6,12 +6,13 @@ use Grixu\SociusModels\Product\Factories\ProductTypeFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 /**
  * @property string $name
  * @property int $xl_id
  * @property int $id
- * @property \Illuminate\Support\Carbon $updated_at
+ * @property Carbon $updated_at
  * @property Product $products
  */
 class ProductType extends Model
@@ -24,11 +25,7 @@ class ProductType extends Model
     public $timestamps = false;
 
     protected $casts = [
-        'name' => 'string',
-    ];
-
-    protected $dates = [
-        'updated_at',
+        'updated_at' => 'immutable_datetime',
     ];
 
     protected $fillable = [

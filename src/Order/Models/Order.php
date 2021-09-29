@@ -14,8 +14,6 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon $receive_created_at
- * @property Carbon $receive_updated_at
  * @property int $id
  * @property int $xl_id
  * @property int $warehouse_id
@@ -23,18 +21,14 @@ use Illuminate\Support\Facades\Schema;
  * @property string $order_number
  * @property string $received_detailed_status
  * @property ReceiveStatusEnum $receive_status
+ * @property Carbon $receive_created_at
+ * @property Carbon $receive_updated_at
  */
 class Order extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
-    public $incrementing = true;
-
-    protected $dates = [
-        'receive_created_at',
-        'receive_updated_at',
-    ];
 
     protected $fillable = [
         'xl_id',
@@ -51,6 +45,8 @@ class Order extends Model
     protected $casts = [
         'receive_status' => ReceiveStatusEnum::class,
         'xl_id' => 'integer',
+        'receive_created_at' => 'immutable_datetime',
+        'receive_updated_at' => 'immutable_datetime',
     ];
 
     public function operator(): ?BelongsTo

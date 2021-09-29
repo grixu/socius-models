@@ -7,17 +7,18 @@ use Grixu\SociusModels\Warehouse\Factories\StockFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon $sync_ts
  * @property int $xl_id
  * @property int $warehouse_id
  * @property int $product_id
  * @property int $id
  * @property float $amount
- * @property \Illuminate\Support\Carbon $updated_at
- * @property \Illuminate\Support\Carbon $reception_date
+ * @property Carbon $sync_ts
+ * @property Carbon $updated_at
+ * @property Carbon $reception_date
  * @property Warehouse $warehouse
  * @property Product $product
  */
@@ -33,12 +34,9 @@ class Stock extends Model
     protected $casts = [
         'amount' => 'double',
         'xl_id' => 'string',
-    ];
-
-    protected $dates = [
-        'reception_date',
-        'sync_ts',
-        'updated_at',
+        'reception_date' => 'immutable_datetime',
+        'sync_ts' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime',
     ];
 
     protected $fillable = [
