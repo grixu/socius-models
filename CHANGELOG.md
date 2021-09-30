@@ -8,6 +8,7 @@ All notable changes to `socius-models` will be documented in this file
 - New model, migration, factory, DTO & DTO's factory for Product Attachments
 - Updated unit tests
 - Removed `attachments` field from `Product` model
+- Unified timestamps in migrations, models & DTOs
 
 ## 2.4.4 - 2021-09-13
 
