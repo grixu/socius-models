@@ -9,7 +9,7 @@ use Spatie\DataTransferObject\Attributes\CastWith;
 
 class ProductAttachmentData extends SociusDto
 {
-    public string $name;
+    public string $filename;
     public string $type;
     public int $xlId;
 
