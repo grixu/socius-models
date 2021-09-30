@@ -19,7 +19,4 @@ class OperatorData extends SociusDto
     public Carbon $syncTs;
 
     public int $xlId;
-
-    #[CastWith(CarbonCaster::class)]
-    public Carbon $updatedAt;
 }

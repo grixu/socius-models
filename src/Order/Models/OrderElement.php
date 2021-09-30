@@ -12,8 +12,6 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property Carbon $sentAt
- * @property Carbon $received_at
  * @property int $id
  * @property int $xl_id
  * @property int $order_id
@@ -22,18 +20,13 @@ use Illuminate\Support\Facades\Schema;
  * @property string $product_index
  * @property string $received_detailed_status
  * @property float $amount
+ * @property Carbon received_at
  */
 class OrderElement extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-    public $incrementing = true;
-
-    protected $dates = [
-        'sentAt',
-        'received_at',
-    ];
+    public $timestamps = true;
 
     protected $fillable = [
         'xl_id',
@@ -50,6 +43,7 @@ class OrderElement extends Model
     protected $casts = [
         'amount' => 'double',
         'xl_id' => 'integer',
+        'received_at' => 'immutable_datetime',
     ];
 
     public function order(): BelongsTo

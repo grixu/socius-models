@@ -27,7 +27,6 @@ class ProductFactory extends Factory
             'availability' => $this->faker->numberBetween(0, 1),
             'availability_in_days' => $this->faker->numberBetween(1, 14),
             'availability_in_days_in_words' => $this->faker->word(),
-            'attachments' => $this->faker->numberBetween(0, 1),
             'blocked' => $this->faker->numberBetween(0, 1),
             'archived' =>$this->faker->numberBetween(0, 1),
             'eshop' => $this->faker->numberBetween(0, 1),

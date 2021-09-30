@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * @property \Illuminate\Support\Carbon $sync_ts
  * @property string $name
  * @property string $desc
  * @property string $country
@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Schema;
  * @property string $city
  * @property string $post_code
  * @property WarehouseTypeEnum $type
- * @property bool $stockCounting
  * @property bool $locked
  * @property Customer $customer
- * @property \Illuminate\Support\Carbon $updated_at
+ * @property Carbon $sync_ts
+ * @property Carbon $updated_at
  * @property int $xl_id
  * @property int $id
  * @property int $customer_id
@@ -32,25 +32,13 @@ class Warehouse extends Model
 {
     use HasFactory;
 
-    public const CREATED_AT = 'created_at';
-    public const UPDATED_AT = 'updated_at';
-
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $casts = [
-        'name' => 'string',
-        'desc' => 'string',
-        'country' => 'string',
-        'stockCounting' => 'boolean',
         'locked' => 'boolean',
         'type' => WarehouseTypeEnum::class,
-    ];
-
-    protected $dates = [
-        'sync_ts',
-        'stockCountingDate',
-        'last_modification',
-        'updated_at',
+        'sync_ts' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime',
     ];
 
     protected $fillable = [

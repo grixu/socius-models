@@ -1,21 +1,21 @@
 <?php
 
-namespace Grixu\SociusModels\Warehouse\DataTransferObjects;
+namespace Grixu\SociusModels\Product\DataTransferObjects;
 
 use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Illuminate\Support\Carbon;
 use Spatie\DataTransferObject\Attributes\CastWith;
 
-class StockData extends SociusDto
+class ProductAttachmentData extends SociusDto
 {
-    public float|int $amount;
+    public string $filename;
+    public string $type;
+    public int $xlId;
 
     #[CastWith(CarbonCaster::class)]
-    public Carbon $receptionDate;
+    public Carbon $xlUpdatedAt;
 
     #[CastWith(CarbonCaster::class)]
     public Carbon $syncTs;
-
-    public string $xlId;
 }

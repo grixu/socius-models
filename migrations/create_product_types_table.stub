@@ -15,8 +15,7 @@ class CreateProductTypesTable extends Migration
             if (!empty(config('socius-models.checksum_field'))) {
                 $table->string(config('socius-models.checksum_field'))->nullable();
             }
-            $table->timestamp('created_at', 0)->nullable();
-            $table->timestamp('updated_at', 0)->nullable();
+            $table->timestamps();
         });
     }
 

@@ -28,11 +28,7 @@ class Customer extends Model
 {
     use HasFactory;
 
-    public const CREATED_AT = 'created_at';
-    public const UPDATED_AT = 'updated_at';
-
-    public $timestamps = false;
-    public $incrementing = true;
+    public $timestamps = true;
 
     protected $fillable = [
         'name',
@@ -54,24 +50,10 @@ class Customer extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
-        'country' => 'string',
-        'postal_code' => 'string',
-        'city' => 'string',
-        'vat_number' => 'string',
-        'street' => 'string',
-        'voivodeship' => 'string',
-        'district' => 'string',
-        'phone1' => 'string',
-        'phone2' => 'string',
-        'email' => 'string',
         'payment_period' => 'integer',
         'xl_id' => 'integer',
-    ];
-
-    protected $dates = [
-        'sync_ts',
-        'updated_at',
+        'sync_ts' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime',
     ];
 
     public static function newFactory()

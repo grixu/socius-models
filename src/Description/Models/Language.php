@@ -17,11 +17,7 @@ class Language extends Model
 {
     use HasFactory;
 
-    public const CREATED_AT = 'created_at';
-    public const UPDATED_AT = 'updated_at';
-
-    public $timestamps = false;
-    public $incrementing = true;
+    public $timestamps = true;
 
     protected $fillable = [
         'name',
@@ -31,12 +27,8 @@ class Language extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
         'xl_id' => 'integer',
-    ];
-
-    protected $dates = [
-        'updated_at',
+        'updated_at' => 'immutable_datetime',
     ];
 
     public function descriptions(): HasMany
