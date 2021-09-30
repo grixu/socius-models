@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class OperatorBranch extends Pivot
 {
-    public const CREATED_AT = 'created_at';
-    public const UPDATED_AT = 'updated_at';
-
     public $timestamps = true;
     protected $table = 'operator_branch';
 

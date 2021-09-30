@@ -30,9 +30,6 @@ class ProductData extends SociusDto
     #[CastWith(CarbonCaster::class)]
     public Carbon $syncTs;
 
-    #[CastWith(CarbonCaster::class)]
-    public Carbon $updatedAt;
-
     public bool $eshop = false;
     public bool|null $availability = null;
     public int|null $availabilityInDays = null;

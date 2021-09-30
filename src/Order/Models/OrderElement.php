@@ -26,8 +26,7 @@ class OrderElement extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-    public $incrementing = true;
+    public $timestamps = true;
 
     protected $fillable = [
         'xl_id',

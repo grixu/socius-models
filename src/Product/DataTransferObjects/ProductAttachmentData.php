@@ -18,7 +18,4 @@ class ProductAttachmentData extends SociusDto
 
     #[CastWith(CarbonCaster::class)]
     public Carbon $syncTs;
-
-    #[CastWith(CarbonCaster::class)]
-    public Carbon $updatedAt;
 }

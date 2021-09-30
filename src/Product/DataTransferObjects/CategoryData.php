@@ -14,8 +14,5 @@ class CategoryData extends SociusDto
     #[CastWith(CarbonCaster::class)]
     public Carbon $syncTs;
 
-    #[CastWith(CarbonCaster::class)]
-    public Carbon $updatedAt;
-
     public int $xlId;
 }

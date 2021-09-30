@@ -26,10 +26,7 @@ class Stock extends Model
 {
     use HasFactory;
 
-    public const CREATED_AT = 'created_at';
-    public const UPDATED_AT = 'updated_at';
-
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $casts = [
         'amount' => 'double',
