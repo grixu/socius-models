@@ -12,8 +12,7 @@ class CreateOperatorBranchPivotTable extends Migration
             $table->id();
             $table->foreignId('operator_id')->constrained('operators')->cascadeOnDelete();
             $table->foreignId('branch_id')->constrained('branches')->cascadeOnDelete();
-            $table->timestamp('created_at', 0)->nullable();
-            $table->timestamp('updated_at', 0)->nullable();
+            $table->timestamps();
         });
     }
 
