@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Schema;
  * @property string $product_index
  * @property string $received_detailed_status
  * @property float $amount
- * @property Carbon received_at
+ * @property Carbon $received_at
  */
 class OrderElement extends Model
 {
