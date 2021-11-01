@@ -48,7 +48,7 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
         "insights": "vendor/bin/phpinsights",
         "cs": "vendor/bin/php-cs-fixer fix src",
-        "phpstan": "vendor/bin/phpstan analyse"
+        "stan": "vendor/bin/phpstan analyse"
     },
     "config": {
         "sort-packages": true
