@@ -2,6 +2,12 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 3.1.0 - 2021-11-01
+
+- Added code quality tools such as PHP_CS_Fixer, PHP Insights & PHPStan
+- Added scanning & formatting code with those tools in CI pipeline
+- Applied formatting on code base
+
 ## 3.0.0 - 2021-09-29
 
 - Merged migrations into one for `products`
