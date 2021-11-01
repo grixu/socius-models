@@ -19,7 +19,7 @@ class ModelGeneratorTestCase extends TestCase
     {
         return [
             \Spatie\LaravelRay\RayServiceProvider::class,
-            SociusModelsServiceProvider::class
+            SociusModelsServiceProvider::class,
         ];
     }
 
@@ -83,7 +83,7 @@ class ModelGeneratorTestCase extends TestCase
             [
                 'name' => $this->commandParamName,
                 'namespace' => $this->commandParamNamespace,
-                'factory_namespace' => $this->commandParamFactoryNamespace
+                'factory_namespace' => $this->commandParamFactoryNamespace,
             ]
         );
 

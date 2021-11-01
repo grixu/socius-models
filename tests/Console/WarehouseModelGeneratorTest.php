@@ -10,5 +10,4 @@ class WarehouseModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyWarehouse';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

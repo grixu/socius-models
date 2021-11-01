@@ -10,5 +10,4 @@ class OperatorRoleModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyOperatorRole';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

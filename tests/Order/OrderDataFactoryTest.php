@@ -14,7 +14,7 @@ class OrderDataFactoryTest extends DataFactoryTestCase
     public function caster_check()
     {
         $obj = $this->factory::new()->create([
-        'receiveStatus' => 0
+        'receiveStatus' => 0,
     ]);
 
         $this->assertNotEmpty($obj);

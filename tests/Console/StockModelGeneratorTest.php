@@ -10,5 +10,4 @@ class StockModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyStock';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

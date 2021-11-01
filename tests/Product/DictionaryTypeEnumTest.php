@@ -15,5 +15,4 @@ class DictionaryTypeEnumTest extends TestCase
         $this->assertIsString(DictionaryTypeEnum::BRANDS()->value);
         $this->assertNotEquals('BRANDS', DictionaryTypeEnum::BRANDS()->value);
     }
-
 }

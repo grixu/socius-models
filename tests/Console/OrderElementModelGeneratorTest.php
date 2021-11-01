@@ -10,5 +10,4 @@ class OrderElementModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyOrderElement';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

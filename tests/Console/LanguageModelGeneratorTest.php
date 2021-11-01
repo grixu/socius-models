@@ -10,5 +10,4 @@ class LanguageModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyLanguage';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

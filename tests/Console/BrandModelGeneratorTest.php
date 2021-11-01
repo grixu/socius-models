@@ -10,5 +10,4 @@ class BrandModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyBrand';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

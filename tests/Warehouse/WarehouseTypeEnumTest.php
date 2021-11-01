@@ -17,5 +17,4 @@ class WarehouseTypeEnumTest extends TestCase
         $this->assertIsString(WarehouseTypeEnum::DEPOSIT()->value);
         $this->assertNotEquals('self::DEPOSIT()', WarehouseTypeEnum::DEPOSIT()->value);
     }
-
 }
