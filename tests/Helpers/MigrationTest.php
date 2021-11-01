@@ -6,8 +6,6 @@ use Grixu\SociusModels\SociusModelsServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase;
 
-use function Symfony\Component\Translation\t;
-
 abstract class MigrationTest extends TestCase
 {
     protected $obj;

@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'checksum_field' => 'checksum'
+    'checksum_field' => 'checksum',
 ];

@@ -10,5 +10,4 @@ class BranchModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyBranch';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }

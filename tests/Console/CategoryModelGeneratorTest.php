@@ -10,5 +10,4 @@ class CategoryModelGeneratorTest extends ModelGeneratorTestCase
     protected string $commandParamName = 'MyCategory';
     protected string $commandParamNamespace = 'My\\Models';
     protected string $commandParamFactoryNamespace = 'My\\Factories';
-
 }
