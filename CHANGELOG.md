@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 3.1.1 - 2021-11-08
+
+- Updated Larastan to `1.0.1`
+
 ## 3.1.0 - 2021-11-01
 
 - Added code quality tools such as PHP_CS_Fixer, PHP Insights & PHPStan
