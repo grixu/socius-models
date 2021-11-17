@@ -2,6 +2,17 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 3.2.0 - 2021-11-17
+
+- Added `composer-git-hooks`
+- Configured hooks with auto-install/update
+- Added timeouts in pipelines
+- Added  auto-merge pipeline for small updates made by dependabot
+- Added `x-ray`
+- Added `x-ray` checking in CI pipeline
+- Added `x-ray` checking in git hooks
+- Added `changelog-updater-action` to CD pipeline
+
 ## 3.1.1 - 2021-11-08
 
 - Updated Larastan to `1.0.1`
@@ -35,9 +46,11 @@ All notable changes to `socius-models` will be documented in this file
 - Added PHPInsights config file
 
 ## 2.4.1 - 2021-08-30
-- Small tweaks in Product & Customer DTOs and migrations  
+
+- Small tweaks in Product & Customer DTOs and migrations
 
 ## 2.4.0 - 2021-08-26
+
 - Added availability fields in Product
 - Added PHPStan
 - Added PHP_CS Fixer
@@ -77,7 +90,7 @@ All notable changes to `socius-models` will be documented in this file
 
 ## 1.4.0 - 2021-02-26
 
-- Created a new block: Order 
+- Created a new block: Order
 - Two new models: Order & OrderElement + factories for them
 - Two new tables: orders & order_elements
 - DTOs for new models in Order block + data factories for them
