@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 3.2.2 - 2021-11-18
+
+- Fixed auto-merge
+
 ## 3.2.1 - 2021-11-18
 
 - Fixed auto-merging on dependabot's updates
