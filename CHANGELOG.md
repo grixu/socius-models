@@ -2,6 +2,10 @@
 
 All notable changes to `socius-models` will be documented in this file
 
+## 4.0.0 - 2022-07-24
+
+- BREAKING CHANGE: compatibility only with PHP 8.0 & Laravel 9.x
+
 ## 3.2.2 - 2021-11-18
 
 - Fixed auto-merge
