@@ -28,7 +28,7 @@
         "brainmaestro/composer-git-hooks": "^v3.0.0-alpha.1",
         "doctrine/dbal": "^3.1",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "nunomaduro/larastan": "^1.0.0",
+        "nunomaduro/larastan": "^1.0.0 || ^2.0.0",
         "nunomaduro/phpinsights": "^2.0",
         "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.5",
