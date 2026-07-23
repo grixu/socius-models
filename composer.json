@@ -19,8 +19,8 @@
         "php": "^8.0",
         "grixu/data-factories": "^2.0",
         "grixu/socius-dto": "^2.0",
-        "illuminate/database": "^9.0",
-        "illuminate/support": "^9.0",
+        "illuminate/database": "^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0|^13.0",
         "spatie/data-transfer-object": "^3.8",
         "spatie/laravel-enum": "^3.0"
     },
