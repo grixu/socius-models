@@ -16,7 +16,7 @@ class ProductAttachmentDataFactory extends Factory
 
     public function create(array $parameters = []): ProductData
     {
-        return new ProductData(
+        return ProductData::from(
             $parameters
             + [
                 'name' => 'Test',

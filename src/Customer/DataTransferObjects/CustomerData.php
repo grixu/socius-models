@@ -5,7 +5,7 @@ namespace Grixu\SociusModels\Customer\DataTransferObjects;
 use Grixu\SociusDto\SociusDto;
 use Grixu\SociusModels\Casters\CarbonCaster;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\Attributes\CastWith;
+use Spatie\LaravelData\Attributes\WithCast;
 
 class CustomerData extends SociusDto
 {
@@ -35,6 +35,6 @@ class CustomerData extends SociusDto
 
     public int $xlId;
 
-    #[CastWith(CarbonCaster::class)]
+    #[WithCast(CarbonCaster::class)]
     public Carbon $syncTs;
 }

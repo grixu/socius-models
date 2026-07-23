@@ -14,7 +14,7 @@ class BranchDataFactory extends Factory
 
     public function create(array $parameters = []): BranchData
     {
-        return new BranchData(
+        return BranchData::from(
             $parameters
             + [
                 'name' => 'Testowy klient',

@@ -14,7 +14,7 @@ class OperatorDataFactory extends Factory
 
     public function create(array $parameters = []): OperatorData
     {
-        return new OperatorData(
+        return OperatorData::from(
             $parameters
             + [
                 'name' => 'Testowy klient',

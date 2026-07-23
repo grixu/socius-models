@@ -14,7 +14,7 @@ class StockDataFactory extends Factory
 
     public function create(array $parameters = []): StockData
     {
-        return new StockData(
+        return StockData::from(
             $parameters
             + [
                 'amount' => (float) rand(1, 1000),

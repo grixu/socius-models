@@ -9,6 +9,13 @@ abstract class DataFactoryTestCase extends TestCase
 {
     protected string $factory;
 
+    protected function getPackageProviders($app): array
+    {
+        return [
+            \Spatie\LaravelData\LaravelDataServiceProvider::class,
+        ];
+    }
+
     /** @test */
     public function creation_check()
     {

@@ -15,7 +15,7 @@ class WarehouseDataFactory extends Factory
 
     public function create(array $parameters = []): WarehouseData
     {
-        return new WarehouseData(
+        return WarehouseData::from(
             $parameters
             + [
                 'name' => 'Testowy magazyn',

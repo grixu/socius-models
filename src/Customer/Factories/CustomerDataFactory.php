@@ -9,7 +9,7 @@ class CustomerDataFactory extends Factory
 {
     public function create(array $parameters = []): CustomerData
     {
-        return new CustomerData(
+        return CustomerData::from(
             $parameters
             + [
                 'name' => 'Testowy klient',
