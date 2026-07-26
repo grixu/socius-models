@@ -14,7 +14,7 @@ class CategoryDataFactory extends Factory
 
     public function create(array $parameters = []): CategoryData
     {
-        return new CategoryData(
+        return CategoryData::from(
             $parameters
             + [
                 'name' => 'Testowa kat',

@@ -14,7 +14,7 @@ class OperatorRoleDataFactory extends Factory
 
     public function create(array $parameters = []): OperatorRoleData
     {
-        return new OperatorRoleData(
+        return OperatorRoleData::from(
             $parameters
             + [
                 'name' => 'Testowy klient',

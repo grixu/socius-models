@@ -9,7 +9,7 @@ use Grixu\SociusModels\Casters\ProductVatTypeEnumCaster;
 use Grixu\SociusModels\Product\Enums\ProductMeasureUnitEnum;
 use Grixu\SociusModels\Product\Enums\ProductVatTypeEnum;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\Attributes\CastWith;
+use Spatie\LaravelData\Attributes\WithCast;
 
 class ProductData extends SociusDto
 {
@@ -17,17 +17,17 @@ class ProductData extends SociusDto
     public string $index;
     public string|null $ean;
 
-    #[CastWith(ProductMeasureUnitEnumCaster::class)]
+    #[WithCast(ProductMeasureUnitEnumCaster::class)]
     public ProductMeasureUnitEnum|null $measureUnit;
 
-    #[CastWith(ProductVatTypeEnumCaster::class)]
+    #[WithCast(ProductVatTypeEnumCaster::class)]
     public ProductVatTypeEnum|null $taxGroup;
 
     public int|null $taxValue;
     public float|null $weight;
     public int $xlId;
 
-    #[CastWith(CarbonCaster::class)]
+    #[WithCast(CarbonCaster::class)]
     public Carbon $syncTs;
 
     public bool $eshop = false;
@@ -42,6 +42,6 @@ class ProductData extends SociusDto
     public string|null $eshopUrl;
     public string|null $eshopImage;
 
-    #[CastWith(CarbonCaster::class)]
+    #[WithCast(CarbonCaster::class)]
     public Carbon|null $priceUpdated;
 }

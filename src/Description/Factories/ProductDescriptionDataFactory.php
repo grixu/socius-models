@@ -14,7 +14,7 @@ class ProductDescriptionDataFactory extends Factory
 
     public function create(array $parameters = []): ProductDescriptionData
     {
-        return new ProductDescriptionData(
+        return ProductDescriptionData::from(
             $parameters
             + [
                 'name' => 'Testowa nazwa produktu',

@@ -14,7 +14,7 @@ class LanguageDataFactory extends Factory
 
     public function create(array $parameters = []): LanguageData
     {
-        return new LanguageData(
+        return LanguageData::from(
             $parameters
             + [
                 'name' => 'Testowy język',

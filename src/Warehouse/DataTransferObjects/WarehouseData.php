@@ -7,7 +7,7 @@ use Grixu\SociusModels\Casters\CarbonCaster;
 use Grixu\SociusModels\Casters\WarehouseTypeEnumCaster;
 use Grixu\SociusModels\Warehouse\Enums\WarehouseTypeEnum;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\Attributes\CastWith;
+use Spatie\LaravelData\Attributes\WithCast;
 
 class WarehouseData extends SociusDto
 {
@@ -20,9 +20,9 @@ class WarehouseData extends SociusDto
     public bool $locked;
     public int $xlId;
 
-    #[CastWith(WarehouseTypeEnumCaster::class)]
+    #[WithCast(WarehouseTypeEnumCaster::class)]
     public WarehouseTypeEnum $type;
 
-    #[CastWith(CarbonCaster::class)]
+    #[WithCast(CarbonCaster::class)]
     public Carbon $syncTs;
 }

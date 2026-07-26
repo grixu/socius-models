@@ -14,7 +14,7 @@ class ProductTypeDataFactory extends Factory
 
     public function create(array $parameters = []): ProductTypeData
     {
-        return new ProductTypeData(
+        return ProductTypeData::from(
             $parameters
             + [
                 'name' => 'Testowy typ',

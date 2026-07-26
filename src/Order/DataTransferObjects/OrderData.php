@@ -7,7 +7,7 @@ use Grixu\SociusModels\Casters\CarbonCaster;
 use Grixu\SociusModels\Casters\ReceiveStatusEnumCaster;
 use Grixu\SociusModels\Order\Enums\ReceiveStatusEnum;
 use Illuminate\Support\Carbon;
-use Spatie\DataTransferObject\Attributes\CastWith;
+use Spatie\LaravelData\Attributes\WithCast;
 
 class OrderData extends SociusDto
 {
@@ -15,13 +15,13 @@ class OrderData extends SociusDto
 
     public string|null $orderNumber;
 
-    #[CastWith(ReceiveStatusEnumCaster::class)]
+    #[WithCast(ReceiveStatusEnumCaster::class)]
     public ReceiveStatusEnum $receiveStatus;
 
-    #[CastWith(CarbonCaster::class)]
+    #[WithCast(CarbonCaster::class)]
     public Carbon|null $receiveCreatedAt;
 
-    #[CastWith(CarbonCaster::class)]
+    #[WithCast(CarbonCaster::class)]
     public Carbon|null $receiveUpdatedAt;
 
     public string|null $receivedDetailedStatus;

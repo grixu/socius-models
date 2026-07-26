@@ -14,7 +14,7 @@ class BrandDataFactory extends Factory
 
     public function create(array $parameters = []): BrandData
     {
-        return new BrandData(
+        return BrandData::from(
             $parameters
             + [
                 'name' => 'Testowa marka',
