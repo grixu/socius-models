@@ -15,16 +15,10 @@
             "role": "Developer"
         }
     ],
-    "repositories": [
-        { "type": "path", "url": "../socius-dto" },
-        { "type": "path", "url": "../data-factories" }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^8.1",
-        "grixu/data-factories": "@dev",
-        "grixu/socius-dto": "@dev",
+        "grixu/data-factories": "^2.1",
+        "grixu/socius-dto": "^3.0",
         "illuminate/database": "^10.0|^11.0|^12.0|^13.0",
         "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
         "spatie/laravel-data": "^4.0",
