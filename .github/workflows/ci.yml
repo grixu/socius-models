@@ -58,7 +58,7 @@ jobs:
       run: ./vendor/bin/php-cs-fixer fix
 
     - name: Commit files to repository
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v7
       with:
         commit_message: "chore: cs_fixer applied"
         commit_user_name: "Socius GitHub Actions Bot"
